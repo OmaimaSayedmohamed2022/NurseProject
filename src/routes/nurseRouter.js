@@ -1,14 +1,12 @@
 import express from 'express';
 import { register, getAllNurses, getNurseById, updateNurse, deleteNurse } from '../controllers/nurseController.js';
 import upload from '../middlewares/uploadImage.js';
-import userDuplicate from '../middlewares/userDuplicate.js';
-import Nurse from '../models/nurseModel.js';
+import {userValidation} from "../validations/userValidation.js"
 import nurseMiddleware from '../middlewares/nurseMiddleware.js';
-import validateNurse from '../validations/nurseValidation.js';
 
 const router = express.Router();
 
-router.post('/register', upload.single("image"), validateNurse, userDuplicate, register);
+router.post('/register', upload.single("image"), userValidation(false), nurseMiddleware, register);
 
 router.get('/getAllNurses', getAllNurses);
 
