@@ -1,13 +1,13 @@
 import bcrypt from "bcryptjs";
 import uploadToCloudinary from "../middlewares/uploadToCloudinary.js";
 import logger from "../utilites/logger.js";
-import User from "../models/userModel.js"
+import Nurse from "../models/nurseModel.js"
 
 export const register = async (req, res) => {
     try {
-        const { userName, email, password, role, phone } = req.body;
+        const { userName, email, password, role, phone, experience, specialty, location, idCard } = req.body;
         
-        await User.findOne({ email });
+        await Nurse.findOne({ email });
 
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
@@ -23,13 +23,17 @@ export const register = async (req, res) => {
             }
         }
 
-        const newNurse = new User({
+        const newNurse = new Nurse({
             userName,
             email,
             password: hashedPassword,
             role,
             phone,
-            image
+            image,
+            experience,
+            specialty,
+            location,
+            idCard
         });
         
         await newNurse.save();
@@ -43,7 +47,7 @@ export const register = async (req, res) => {
 
 export const getAllNurses = async (req, res) => {
     try {
-        const nurses = await User.find({}, { "password": 0, "__v": 0 });
+        const nurses = await Nurse.find({}, { "password": 0, "__v": 0 });
         res.status(200).json({ success: true, data: nurses });
     }
     catch (error) {
@@ -55,7 +59,7 @@ export const getAllNurses = async (req, res) => {
 export const getNurseById = async (req, res) => {
     try {
         const { nurseId } = req.params;
-        const nurse = await User.findById(nurseId, { password: 0, __v: 0 });
+        const nurse = await Nurse.findById(nurseId, { password: 0, __v: 0 });
 
         res.status(200).json({ success: true, data: nurse });
     } catch (error) {
@@ -67,7 +71,7 @@ export const getNurseById = async (req, res) => {
 export const updateNurse = async (req, res) => {
     try {
         const { nurseId } = req.params;
-        const updateNurse = await User.findByIdAndUpdate(nurseId, req.body, { new: true });
+        const updateNurse = await Nurse.findByIdAndUpdate(nurseId, req.body, { new: true });
 
         res.status(200).json({ success: true, message: 'Nurse updated successfully', data: updateNurse });
     }
@@ -81,7 +85,7 @@ export const updateNurse = async (req, res) => {
 export const deleteNurse = async (req, res) => {
     try {
         const { nurseId } = req.params;
-        await User.findByIdAndDelete(nurseId);
+        await Nurse.findByIdAndDelete(nurseId);
 
         res.status(200).json({ success: true, message: 'Nurse deleted successfully' });
     }

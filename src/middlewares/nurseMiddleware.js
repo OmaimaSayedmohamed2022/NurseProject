@@ -1,22 +1,22 @@
 import mongoose from "mongoose";
-import User from "../models/userModel.js"
+import Nurse from "../models/nurseModel.js"
 import logger from "../utilites/logger.js";
 
 const nurseMiddleware = async (req, res, next) => {
     try {
         const { nurseId } = req.params;
-        const { email, phoneNumber } = req.body;
+        const { email, phone } = req.body;
 
-        if (email || phoneNumber) {
+        if (email || phone) {
             let existingField = null;
 
             if (email) {
-                const existingEmail = await User.findOne({ email });
+                const existingEmail = await Nurse.findOne({ email });
                 if (existingEmail) existingField = "Email";
             }
 
-            if (phoneNumber) {
-                const existingPhone = await User.findOne({ phoneNumber });
+            if (phone) {
+                const existingPhone = await Nurse.findOne({ phone });
                 if (existingPhone) existingField = "Phone number";
             }
 
@@ -30,7 +30,7 @@ const nurseMiddleware = async (req, res, next) => {
                 return res.status(400).json({ success: false, message: "Invalid Nurse ID format" });
             }
 
-            const nurse = await User.findById(nurseId, { password: 0, __v: 0 });
+            const nurse = await Nurse.findById(nurseId, { password: 0, __v: 0 });
 
             if (!nurse) {
                 return res.status(404).json({ success: false, message: "Nurse not found" });
