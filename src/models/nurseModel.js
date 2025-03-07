@@ -1,51 +1,98 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const nurseSchema = new mongoose.Schema({
+const nurseSchema = new mongoose.Schema(
+  {
     userName: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     email: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true,
     },
     password: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     role: {
-        type: String,
-        enum: ['client', 'nurse'],
-        required: true
+      type: String,
+      enum: ["client", "nurse"],
+      required: true,
     },
     phone: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true,
     },
     image: {
-        type: String,
+      type: String,
     },
     experience: {
-        type: String, 
-        required: true
+      type: String,
+      required: true,
     },
-    specialty: {
-        type: String, 
-        required: true
-    },
+    specialty: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Service",
+      required: true,
+    }],
     location: {
-        type: String, 
-        required: true
+      type: {
+        type: String,
+        enum: ["Point"], //  GeoJSON Type
+        default: "Point",
+      },
+      coordinates: {
+        type: [Number], //  [longitude, latitude]
+      },
     },
     idCard: {
-        type: String, 
-        required: true
-    }
-}, {
-    timestamps: true
-});
+      type: String,
+      required: true,
+    },
+    clients: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Client",
+      },
+    ],
+    rating: {
+      type: Number,
+      default: 0,
+    },
+    language: {
+      type: [String],
+      default: ["Arabic"],
+    },
+    reviews: [{
+      client: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Client",
+          required: true
+      },
+      comment: {
+          type: String,
+          required: true
+      },
+      rating: {
+          type: Number,
+          required: true,
+          min: 1,
+          max: 5
+      },
+      createdAt: {
+          type: Date,
+          default: Date.now
+      }
+  }],
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const Nurse = mongoose.model('Nurse', nurseSchema);
+nurseSchema.index({ location: "2dsphere" });
+
+const Nurse = mongoose.model("Nurse", nurseSchema);
 export default Nurse;

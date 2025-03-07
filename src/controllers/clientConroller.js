@@ -1,4 +1,4 @@
-import User from "../models/userModel.js";
+import Client from "../models/clientModel.js";
 import bcrypt from "bcryptjs";
 import logger from "../utilites/logger.js";
 
@@ -8,7 +8,7 @@ export const createUser= async(req,res)=>{
    try{
     const salt= await bcrypt.genSalt(10)
     const hashedPssword= await bcrypt.hash(password,salt)
-    const newUser= new User({
+    const newUser= new Client({
         userName,
         email,
         password:hashedPssword,
@@ -27,7 +27,7 @@ export const createUser= async(req,res)=>{
 export const updateUser = async(req,res)=>{
  const {id}= req.params;
  try{
- const  udatedUser = await User.findByIdAndUpdate(id,req.body,{
+ const  udatedUser = await Client.findByIdAndUpdate(id,req.body,{
     new:true,
     runValidators:true
  });
@@ -42,7 +42,7 @@ export const updateUser = async(req,res)=>{
 export const deleteUser= async(req,res)=>{
     const {id}= req.params;
     try{
-        const deletedUser = await User.findByIdAndDelete(id)
+        const deletedUser = await Client.findByIdAndDelete(id)
         res.status(201).json({message:"user deleted successfuly",  deletedUser})   
     } catch(error){
         logger.error('Error deleting user:', error.message || error);
@@ -54,7 +54,7 @@ export const getUserById= async(req,res)=>{
     // console.log('req.params:', req.params);
    const {id} = req.params
 try{
-    const user = await User.findById(id)
+    const user = await Client.findById(id)
     res.status(201).json({message:"user fetched successfuly",  user})   
 } catch(error){
     logger.error('Error fetching user:', error.message || error);
@@ -64,7 +64,7 @@ try{
 
 export const getAllUsers = async(req ,res)=>{
   try{
-   const users = await User.find().select("-password")
+   const users = await Client.find().select("-password")
    res.status(201).json({message:"users fetched successfuly",  users})   
   } catch(error){
     logger.error('Error fetching users:', error.message || error);

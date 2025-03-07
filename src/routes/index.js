@@ -1,13 +1,18 @@
 import express from "express";
 const router = express.Router();
-import sickRouter from './sickRoutes.js'
+
+import clientRouter from "./clientRouter.js"
 import nurseRouter from "./nurseRouter.js"
+import bookingRouter from "./bookingRouter.js"
+import serviceRouter from "./serviceRouter.js"
+import sessionRouter from "./sessionRouter.js"
 
 
-
-router.use("/sick",sickRouter);
+router.use("/client",clientRouter);
 router.use("/nurse",nurseRouter);
-
+router.use("/booking", bookingRouter);
+router.use("/service", serviceRouter);
+router.use("/session", sessionRouter);
 
 export default router
 
