@@ -1,4 +1,4 @@
-import User from "../models/userModel.js"
+import Client from '../models/clientModel.js'
 
 export const userMiddleware = async (req, res, next) => {
     const { id } = req.params;
@@ -8,7 +8,7 @@ export const userMiddleware = async (req, res, next) => {
     }
     try {
         const user =
-            await User.findById(id)
+            await Client.findById(id)
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }

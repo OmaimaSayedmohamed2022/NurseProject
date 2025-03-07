@@ -1,6 +1,6 @@
 import { body } from 'express-validator';
 import { validateRequest } from '../middlewares/validationResultMiddleware.js';
-import User from '../models/userModel.js';
+import Client from '../models/clientModel.js'
 
 export const userValidation = (isUpdate = false) => [
 
@@ -15,11 +15,11 @@ export const userValidation = (isUpdate = false) => [
   .withMessage('Invalid email format')
   .custom(async (value, { req }) => {
     if (isUpdate) {
-      const user = await User.findById(req.params.id);
+      const user = await Client.findById(req.params.id);
       if (!user) throw new Error('User not found');
       if (value === user.email) return true; 
     }
-    const existingUser = await User.findOne({ email: value, _id: { $ne: req.params.id } });
+    const existingUser = await Client.findOne({ email: value, _id: { $ne: req.params.id } });
     if (existingUser) throw new Error('Email already registered');
     return true;
   }),
@@ -42,7 +42,7 @@ export const userValidation = (isUpdate = false) => [
     .if(() => !isUpdate) 
     .notEmpty()
     .withMessage('Role is required')
-    .isIn(['nurse', 'sick']) 
+    .isIn(['nurse', 'client']) 
     .withMessage('Invalid role'),
 
   

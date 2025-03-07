@@ -1,7 +1,7 @@
 import { body } from 'express-validator';
 import { validateRequest } from '../middlewares/validationResultMiddleware.js';
 import Nurse from '../models/nurseModel.js';
-
+import mongoose from 'mongoose';
 export const nurseValidation = (isUpdate = false) => [
 
   body('userName')
@@ -29,8 +29,7 @@ export const nurseValidation = (isUpdate = false) => [
   body('password')
     .if(() => !isUpdate) // Only validate for registration
     .isLength({ min: 8 })
-    .withMessage('Password must be at least 8 characters long')
-    .trim(),
+    .withMessage('Password must be at least 8 characters long'),
 
   // Validate phone (required for registration only)
   body('phone')
@@ -55,18 +54,19 @@ export const nurseValidation = (isUpdate = false) => [
     .trim(),
 
   // Validate specialty
-  body('specialty')
+  body("specialty")
     .if(() => !isUpdate)
-    .notEmpty()
-    .withMessage('Specialty is required')
-    .trim(),
+    .isArray({ min: 1 })
+    .withMessage("Specialty must be an array with at least one value")
+    .custom((value) => {
+      for (const id of value) {
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+          throw new Error(`Invalid specialty ID: ${id}`);
+        }
+      }
+      return true;
+    }),
 
-  // Validate location
-  body('location')
-    .if(() => !isUpdate)
-    .notEmpty()
-    .withMessage('Location is required')
-    .trim(),
 
   // Validate ID card
   body('idCard')
