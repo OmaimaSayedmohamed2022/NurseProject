@@ -19,7 +19,7 @@ export const register = async (req, res) => {
                 image = await uploadToCloudinary(req.file.buffer);
                 // console.log(imageUrl);
             } catch (error) {
-                return res.status(500).json({ success: false, message: "Image upload failed" });
+                return res.status(500).json({ success: false, message: "Image upload failed", error:error.message});
             }
         }
 

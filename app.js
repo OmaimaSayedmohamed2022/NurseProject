@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import helmet from 'helmet';
+import session from 'express-session'
 import rateLimit from 'express-rate-limit';
 import config from './src/utilites/config.js';
 import logger from './src/utilites/logger.js';
@@ -25,6 +26,12 @@ app.use(
   })
 );
 
+app.use(session({
+  secret: process.env.SESSION_SECRET || "mysecret", 
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } 
+}));
 // Rate Limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes

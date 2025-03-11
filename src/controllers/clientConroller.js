@@ -1,4 +1,4 @@
-import User from "../models/userModel.js";
+import User from "../models/clientModel.js";
 import bcrypt from "bcryptjs";
 import logger from "../utilites/logger.js";
 
