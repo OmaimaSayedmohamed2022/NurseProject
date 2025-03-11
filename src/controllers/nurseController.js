@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs";
 import uploadToCloudinary from "../middlewares/uploadToCloudinary.js";
 import logger from "../utilites/logger.js";
 import Nurse from "../models/nurseModel.js"
+import { generateToken } from "../middlewares/authMiddleware.js";
 
 export const register = async (req, res) => {
     try {
@@ -35,9 +36,9 @@ export const register = async (req, res) => {
             location,
             idCard
         });
-        
+        const token = generateToken({ _id: newUser._id, email, role });
         await newNurse.save();
-        res.status(201).json({ success: true, message: 'Nurse registered successfully', data: newNurse });
+        res.status(201).json({ success: true, message: 'Nurse registered successfully', data: newNurse ,token});
     }
     catch (error) {
         logger.error(`Error registering nurse: ${error.message}`);
