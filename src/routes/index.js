@@ -1,12 +1,15 @@
 import express from "express";
 const router = express.Router();
-import sickRouter from './sickRoutes.js'
+import clientRoutes from './clientRoutes.js'
 import nurseRouter from "./nurseRouter.js"
+import  authRoutes from "./authRoutes.js"
 
 
 
-router.use("/sick",sickRouter);
+router.use("/sick",clientRoutes);
 router.use("/nurse",nurseRouter);
+router.use("/auth",authRoutes)
+
 
 
 export default router

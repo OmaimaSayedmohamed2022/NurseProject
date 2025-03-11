@@ -1,6 +1,6 @@
 import { body } from 'express-validator';
 import { validateRequest } from '../middlewares/validationResultMiddleware.js';
-import User from '../models/userModel.js';
+import User from '../models/clientModel.js';
 
 export const userValidation = (isUpdate = false) => [
 
