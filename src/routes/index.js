@@ -6,7 +6,7 @@ import  authRoutes from "./authRoutes.js"
 
 
 
-router.use("/sick",clientRoutes);
+router.use("/client",clientRoutes);
 router.use("/nurse",nurseRouter);
 router.use("/auth",authRoutes)
 

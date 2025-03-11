@@ -1,26 +1,33 @@
 import User from "../models/clientModel.js";
 import bcrypt from "bcryptjs";
 import logger from "../utilites/logger.js";
+import { generateToken } from "../middlewares/authMiddleware.js";
+import { TokenInstance } from "twilio/lib/rest/oauth/v1/token.js";
 
 
 export const createUser= async(req,res)=>{
-   const {userName,email,password,role,phone}= req.body;
-   try{
-    const salt= await bcrypt.genSalt(10)
-    const hashedPssword= await bcrypt.hash(password,salt)
-    const newUser= new User({
-        userName,
-        email,
-        password:hashedPssword,
-        role,
-        phone
-    });
-     await newUser.save()
-     res.status(201).json({message:"new user created successfuly",newUser})
-   }catch(error){
-    res.status(500).json({message:"error creatting new user",error:error.message})
-   logger.error({message:"error creatting new user",error:error.message})
-   }
+  const {userName,email,password,role,phone,age,years,gender}= req.body;
+  try{
+   const salt= await bcrypt.genSalt(10)
+   const hashedPssword= await bcrypt.hash(password,salt)
+
+   const newUser= new User({
+       userName,
+       email,
+       password:hashedPssword,
+       role,
+       phone,
+       age,
+       years,
+       gender,
+   });
+     const token = generateToken({ _id: newUser._id, email, role });
+    await newUser.save()
+    res.status(201).json({message:"new user created successfuly",newUser,token})
+  }catch(error){
+   res.status(500).json({message:"error creatting new user",error:error.message})
+  logger.error({message:"error creatting new user",error:error.message})
+  }
 
 }
 
