@@ -31,3 +31,16 @@ export const authorizeRole = (roles) => {
     next();
   };
 };
+
+// generate token
+export const generateToken = (user, userType) => {
+  return jwt.sign(
+    {
+      id: user._id,
+      email: user.email,
+      role: user.role || userType,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "1h" }
+  );
+};
