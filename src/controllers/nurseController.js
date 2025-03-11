@@ -36,7 +36,7 @@ export const register = async (req, res) => {
             location,
             idCard
         });
-        const token = generateToken({ _id: newUser._id, email, role });
+        const token = generateToken({ _id: newNurse._id, email, role });
         await newNurse.save();
         res.status(201).json({ success: true, message: 'Nurse registered successfully', data: newNurse ,token});
     }
