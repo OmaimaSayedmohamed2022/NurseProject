@@ -14,14 +14,19 @@ const sessionSchema = new mongoose.Schema(
     },
     client: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "Client",
       required: true,
     },
-    status: {
-      type: String,
-      enum: ["pending", "confirmed", "completed", "canceled"],
-      default: "pending",
+    booking: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Booking"
     },
+    code: {
+      type: String,
+      unique: true
+    },
+    tubeImage: { type: String },
+    videoOrPhotos: { type: String },
   },
   { timestamps: true }
 );
