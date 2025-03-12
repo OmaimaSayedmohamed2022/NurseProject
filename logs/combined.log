@@ -830,3 +830,8 @@
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:11:30.079Z"}
 {"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:11:53.611Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:11:54.642Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:28:17.511Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:28:18.538Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:05:29:07 +0000] \"POST /api/nurse/contactUs HTTP/1.1\" 400 53 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T05:29:07.399Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:29:28.801Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:29:29.781Z"}
