@@ -42,7 +42,8 @@ const nurseSchema = new mongoose.Schema({
     idCard: {
         type: String, 
         required: true
-    }
+    },
+    fingerPrint:{type:String},
 }, {
     timestamps: true
 });

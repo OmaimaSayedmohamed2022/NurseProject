@@ -1,4 +1,4 @@
-import User from "../models/userModel.js"
+import User from "../models/clientModel.js"
 
 export const userMiddleware = async (req, res, next) => {
     const { id } = req.params;

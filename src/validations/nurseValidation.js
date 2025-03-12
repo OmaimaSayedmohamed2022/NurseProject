@@ -3,43 +3,40 @@ import { validateRequest } from '../middlewares/validationResultMiddleware.js';
 import Nurse from '../models/nurseModel.js';
 
 export const nurseValidation = (isUpdate = false) => [
-
   body('userName')
     .if(() => !isUpdate) 
     .notEmpty()
     .withMessage('userName is required')
-    .trim(), 
+    .trim(),
 
   // Validate email
   body('email')
-  .isEmail()
-  .withMessage('Invalid email format')
-  .custom(async (value, { req }) => {
-    if (isUpdate) {
-      const user = await Nurse.findById(req.params.id);
-      if (!user) throw new Error('Nurse not found');
-      if (value === user.email) return true; 
-    }
-    const existingUser = await Nurse.findOne({ email: value, _id: { $ne: req.params.id } });
-    if (existingUser) throw new Error('Email already registered');
-    return true;
-  }),
+    .isEmail()
+    .withMessage('Invalid email format')
+    .custom(async (value, { req }) => {
+      if (isUpdate) {
+        const user = await Nurse.findById(req.params.id);
+        if (!user) throw new Error('Nurse not found');
+        if (value === user.email) return true; 
+      }
+      const existingUser = await Nurse.findOne({ email: value, _id: { $ne: req.params.id } });
+      if (existingUser) throw new Error('Email already registered');
+      return true;
+    }),
 
-  // Validate password 
+  // Validate password
   body('password')
-    .if(() => !isUpdate) // Only validate for registration
+    .if(() => !isUpdate) 
     .isLength({ min: 8 })
     .withMessage('Password must be at least 8 characters long')
     .trim(),
 
-  // Validate phone (required for registration only)
-  body('phone')
-    .if(() => !isUpdate) // Only validate for registration
-    .isMobilePhone()
-    .withMessage('Enter a valid phone number')
-    .trim(), // Sanitize: Remove extra spaces
+  // Validate phone number (Allow international format)
+  body("phone")
+    .matches(/^\+?[1-9]\d{9,14}$/) 
+    .withMessage("Enter a valid phone number"),
 
-  // Validate role (required for registration only)
+  // Validate role
   body('role')
     .if(() => !isUpdate) 
     .notEmpty()
