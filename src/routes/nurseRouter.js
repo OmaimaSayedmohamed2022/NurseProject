@@ -10,9 +10,11 @@ router.post('/register', upload.single("image"), nurseValidation(false), nurseMi
 
 router.get('/getAllNurses', getAllNurses);
 
-router.get('/getNurse/:nurseId', nurseMiddleware, getNurseById);
-router.patch('/update/:nurseId', nurseMiddleware, updateNurse);
-router.delete('/delete/:nurseId', nurseMiddleware, deleteNurse);
+router.get('/getNurse/:nurseId', getNurseById);
+router.patch('/update/:nurseId', updateNurse);
+router.delete('/delete/:nurseId', deleteNurse);
+
+
 
 
 export default router;
