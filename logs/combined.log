@@ -509,3 +509,324 @@
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-11T04:30:13.683Z"}
 {"level":"info","message":"Server running on port 5005","timestamp":"2025-03-11T04:31:16.517Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-11T04:31:17.652Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T00:57:19.558Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T00:57:20.878Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:10:09.548Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:10:10.811Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:10:32.767Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:10:33.790Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:10:48.218Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:10:49.375Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:01:11:53 +0000] \"GET /api/notification/sendNotification HTTP/1.1\" 500 183 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T01:11:53.756Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:01:12:02 +0000] \"POST /api/notification/sendNotification HTTP/1.1\" 400 62 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T01:12:02.036Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:15:17.800Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:15:19.089Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:16:49.933Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:16:51.014Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:17:47.081Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:17:48.244Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:17:58.107Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:17:59.174Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:18:08.693Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:18:09.814Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:18:19.195Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:18:25.038Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:18:26.072Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:18:30.092Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:18:31.174Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:20:29.190Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:20:30.336Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:01:21:07 +0000] \"GET /api/notification/read/67d0e0228c98066024599494 HTTP/1.1\" 404 185 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T01:21:07.244Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:01:21:41 +0000] \"GET /api/notification/read/67d0e0228c98066024599494 HTTP/1.1\" 404 185 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T01:21:41.097Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:01:25:00 +0000] \"PUT /api/notification/67c64152a3ddd60d7aa7ad6b HTTP/1.1\" 404 180 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T01:25:00.913Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:32:32.080Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:32:33.284Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:58:39.248Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:58:43.027Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:58:44.118Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:58:52.470Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:58:53.539Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:59:17.640Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:59:18.776Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:59:22.215Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:59:23.426Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T01:59:52.551Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T01:59:53.672Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T02:00:19.408Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T02:00:20.450Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T02:05:00.412Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T02:05:01.454Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T02:47:20.506Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T02:47:21.696Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:50:17 +0000] \"PATCH /api/nurse/getNurse/:nurseId HTTP/1.1\" 404 168 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:50:17.308Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T02:50:21.275Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T02:50:22.454Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:50:39 +0000] \"GET /api/nurse/getNurse/67d0b067c38c41970722ad1b HTTP/1.1\" 400 50 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:50:39.995Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:50:46 +0000] \"GET /api/nurse/getNurse/67d0b067c38c41970722ad1b HTTP/1.1\" 400 50 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:50:46.200Z"}
+{"level":"error","message":"Error getting nurse by ID: Cannot populate path `reviews` because it is not in your schema. Set the `strictPopulate` option to false to override.","timestamp":"2025-03-12T02:51:01.251Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:51:01 +0000] \"GET /api/nurse/getNurse/67d0b067c38c41970722ad1b HTTP/1.1\" 500 42 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:51:01.255Z"}
+{"level":"error","message":"Error getting nurse by ID: Cannot populate path `reviews` because it is not in your schema. Set the `strictPopulate` option to false to override.","timestamp":"2025-03-12T02:51:06.945Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:51:06 +0000] \"GET /api/nurse/getNurse/67d0b067c38c41970722ad1b HTTP/1.1\" 500 42 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:51:06.953Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T02:53:24.158Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T02:53:25.272Z"}
+{"level":"error","message":"Error getting nurse by ID: Cannot populate path `reviews` because it is not in your schema. Set the `strictPopulate` option to false to override.","timestamp":"2025-03-12T02:53:26.062Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:53:26 +0000] \"GET /api/nurse/getNurse/67d0b067c38c41970722ad1b HTTP/1.1\" 500 42 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:53:26.074Z"}
+{"level":"error","message":"Error getting nurse by ID: Cannot populate path `reviews` because it is not in your schema. Set the `strictPopulate` option to false to override.","timestamp":"2025-03-12T02:53:36.556Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:53:36 +0000] \"GET /api/nurse/getNurse/67d0b067c38c41970722ad1b HTTP/1.1\" 500 42 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:53:36.559Z"}
+{"level":"error","message":"Error getting nurse by ID: Cannot populate path `reviews` because it is not in your schema. Set the `strictPopulate` option to false to override.","timestamp":"2025-03-12T02:54:24.806Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:54:24 +0000] \"GET /api/nurse/getNurse/67d0bab7c38c41970722ad22 HTTP/1.1\" 500 42 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:54:24.811Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T02:55:40.661Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T02:55:42.885Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:57:52 +0000] \"DELETE /api/nurse/deleteNurse/67d0bab7c38c41970722ad22 HTTP/1.1\" 404 188 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:57:52.252Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:59:03 +0000] \"GET /api/nurse/update/67d0bab7c38c41970722ad22 HTTP/1.1\" 404 180 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:59:03.525Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:59:09 +0000] \"PUT /api/nurse/update/67d0bab7c38c41970722ad22 HTTP/1.1\" 404 180 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:59:09.210Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:02:59:30 +0000] \"PUT /api/nurse/update/67d0bab7c38c41970722ad22 HTTP/1.1\" 404 180 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T02:59:30.193Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T02:59:48.958Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T02:59:53.517Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T02:59:54.759Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:02:17 +0000] \"PUT /api/nurse/update/67d0bab7c38c41970722ad22 HTTP/1.1\" 404 180 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:02:17.006Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:02:22 +0000] \"PUT /api/nurse/update/67d0bab7c38c41970722ad22 HTTP/1.1\" 404 180 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:02:22.371Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:02:29 +0000] \"PATCH /api/nurse/update/67d0bab7c38c41970722ad22 HTTP/1.1\" 400 50 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:02:29.659Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:02:45.649Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:02:47.569Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:08:40.589Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:08:42.681Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:08:53.211Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:09:01.178Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:09:09.096Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:09:15.427Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:09:28.211Z"}
+{"level":"error","message":"Error updating nurse: Operation `nurses.findOneAndUpdate()` buffering timed out after 10000ms","timestamp":"2025-03-12T03:09:40.274Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:09:40 +0000] \"PATCH /api/nurse/update/67d0bab7c38c41970722ad22 HTTP/1.1\" 500 101 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:09:40.287Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:09:40.478Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:09:53.209Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:10:20.347Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:10:35.707Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:10:46.343Z"}
+{"level":"error","message":"Error updating nurse: Operation `nurses.findOne()` buffering timed out after 10000ms","timestamp":"2025-03-12T03:10:57.270Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:10:57 +0000] \"PATCH /api/nurse/update/67d0bab7c38c41970722ad22 HTTP/1.1\" 500 92 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:10:57.293Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:11:11.552Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:11:23.383Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:11:24.567Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:11:42.454Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:11:43.862Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:11:52 +0000] \"PATCH /api/nurse/update/67d0bab7c38c41970722ad22 HTTP/1.1\" 404 29 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:11:52.942Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:14:20 +0000] \"PATCH /api/nurse/update/67d0bab7c38c41970722ad22 HTTP/1.1\" 404 29 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:14:20.529Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:16:20.665Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:16:49.543Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:17:16.401Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:17:32.825Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:17:36.283Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:19:19.890Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:19:21.177Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:19:38.799Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:19:40.937Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:20:02.561Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:20:05.166Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:41:48 +0000] \"GET /api/nurse/session/createSession HTTP/1.1\" 404 170 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:41:48.677Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:41:56 +0000] \"POST /api/nurse/session/createSession HTTP/1.1\" 404 171 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:41:56.039Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T03:42:24.662Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:42:24 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:42:24.664Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T03:45:35.898Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:45:35 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:45:35.900Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T03:45:56.599Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:45:56 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:45:56.604Z"}
+{"level":"error","message":"Error creating session: Cast to ObjectId failed for value \"Nutrition\" (type string) at path \"_id\" for model \"Service\"","timestamp":"2025-03-12T03:49:02.485Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:49:02 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 129 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:49:02.588Z"}
+{"level":"error","message":"Error creating session: Cast to ObjectId failed for value \"Nutrition\" (type string) at path \"_id\" for model \"Service\"","timestamp":"2025-03-12T03:49:17.272Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:49:17 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 129 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:49:17.285Z"}
+{"level":"error","message":"Error creating session: Cast to ObjectId failed for value \"Nutrtion\" (type string) at path \"_id\" for model \"Service\"","timestamp":"2025-03-12T03:50:37.958Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:50:37 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 128 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:50:37.960Z"}
+{"level":"error","message":"Error creating session: Cast to ObjectId failed for value \"Nutrition\" (type string) at path \"_id\" for model \"Service\"","timestamp":"2025-03-12T03:50:58.948Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:50:58 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 129 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:50:58.951Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:51:36.660Z"}
+{"level":"error","message":"Error creating session: Parameter \"filter\" to findOne() must be an object, got \"Nutrition\" (type string)","timestamp":"2025-03-12T03:51:38.236Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:51:38 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 114 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:51:38.253Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:51:41.553Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:51:55.592Z"}
+{"level":"error","message":"Error creating session: Operation `services.findOne()` buffering timed out after 10000ms","timestamp":"2025-03-12T03:52:08.149Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:52:08 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 94 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:52:08.168Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:52:23.782Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:52:28.230Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:52:41.065Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:53:35.028Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:53:36.940Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:53:38 +0000] \"POST /api/session/createSession HTTP/1.1\" 404 50 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:53:38.558Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:55:51 +0000] \"POST /api/session/createSession HTTP/1.1\" 404 50 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:55:51.434Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:57:09 +0000] \"POST /api/session/createSession HTTP/1.1\" 404 50 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:57:09.974Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:57:14 +0000] \"POST /api/session/createSession HTTP/1.1\" 404 50 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:57:14.648Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:57:46.736Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:57:48.543Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:58:12.903Z"}
+{"level":"error","message":"Error creating session: Operation `services.findOne()` buffering timed out after 10000ms","timestamp":"2025-03-12T03:58:23.308Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:58:23 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 94 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:58:23.334Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:58:35.900Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T03:58:57.997Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:03:58:58 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T03:58:58.046Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T03:59:30.917Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T03:59:34.193Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:00:31.748Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:00:39.045Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:00:42.501Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:00:46.000Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:00:51.320Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:00:56.453Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:00:57.731Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:01:13.769Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:01:16.398Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T04:01:37.620Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:01:37 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:01:37.632Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T04:01:52.176Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:01:52 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:01:52.180Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T04:02:04.785Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:02:04 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:02:04.790Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T04:04:54.486Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:04:54 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:04:54.489Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:05:25.928Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:05:31.974Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:05:37.715Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:05:38.879Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T04:05:40.081Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:05:40 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:05:40.090Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:05:56.852Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:05:57.905Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:06:03.119Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:06:04.118Z"}
+{"level":"error","message":"Error creating session: serviceData is not defined","timestamp":"2025-03-12T04:06:05.677Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:06:05 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 56 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:06:05.692Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:06:49.527Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:06:50.627Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:07:19.803Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:07:20.849Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T04:08:26.191Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:08:26 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:08:26.201Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:09:39.289Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:09:40.639Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:10:02 +0000] \"GET /api/session/nurseSessions/67cf88f548a9babe7ea07309 HTTP/1.1\" 404 31 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:10:02.161Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:12:17.217Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:12:18.240Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:12:37.587Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:12:44.142Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:12:48.459Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:12:52.578Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:12:54.187Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:13:12.910Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:13:14.170Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:13:20.523Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:13:21.545Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:14:36.697Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:14:42.286Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:14:43.355Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:25:05.709Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:25:09.891Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:25:11.009Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:25:47.191Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:25:48.196Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T04:25:49.497Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:25:49 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:25:49.508Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T04:26:55.865Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:26:55 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:26:55.868Z"}
+{"level":"error","message":"Error creating session: Session validation failed: client: Path `client` is required., nurse: Path `nurse` is required., service: Path `service` is required.","timestamp":"2025-03-12T04:27:45.415Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:27:45 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 163 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:27:45.419Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:33:04.982Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:33:06.043Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:34:09.915Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:34:10.955Z"}
+{"level":"error","message":"Error getting sessions: Cannot populate path `booking` because it is not in your schema. Set the `strictPopulate` option to false to override.","timestamp":"2025-03-12T04:34:19.892Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:34:19 +0000] \"GET /api/session/nurseSessions/67cf88f548a9babe7ea07309 HTTP/1.1\" 500 148 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:34:19.899Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:34:46.066Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:34:47.100Z"}
+{"level":"error","message":"Error getting sessions: Cannot populate path `booking` because it is not in your schema. Set the `strictPopulate` option to false to override.","timestamp":"2025-03-12T04:34:47.211Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:34:47 +0000] \"GET /api/session/nurseSessions/67cf88f548a9babe7ea07309 HTTP/1.1\" 500 148 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:34:47.227Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:35:15.260Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:35:16.329Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:35:49 +0000] \"GET /api/session/addSessionData/67d10ec238194159e52eacc7 HTTP/1.1\" 404 190 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:35:49.996Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:36:16 +0000] \"GET /api/session/confirm/67cf88f548a9babe7ea07309 HTTP/1.1\" 404 183 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:36:16.728Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:36:22 +0000] \"PUT /api/session/confirm/67cf88f548a9babe7ea07309 HTTP/1.1\" 404 47 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:36:22.395Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:37:21 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 126 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:37:21.765Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:37:36 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 126 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:37:36.862Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:37:55 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 126 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:37:55.491Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:37:57 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 126 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:37:57.499Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:38:52.547Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:38:53.625Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:42:20 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 126 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:42:20.546Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:42:22 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 126 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:42:22.328Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:42:35.635Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:42:36.803Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:42:36 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 126 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:42:36.919Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:42:38 +0000] \"POST /api/session/createSession HTTP/1.1\" 500 126 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:42:38.850Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:43:36 +0000] \"GET /api/session/cancel/67d10ec238194159e52eacc7 HTTP/1.1\" 404 182 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:43:36.510Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:45:58.533Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:45:59.685Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:46:26.998Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:46:28.158Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:46:39.088Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:46:40.053Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:46:50.363Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:46:51.498Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:47:13 +0000] \"PUT /api/session/completed/67d10ec238194159e52eacc7 HTTP/1.1\" 404 185 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:47:13.270Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:47:19 +0000] \"PUT /api/session/complete/67d10ec238194159e52eacc7 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:47:19.995Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:47:36 +0000] \"PUT /api/session/conform/67d10ec238194159e52eacc7 HTTP/1.1\" 404 183 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:47:36.617Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:47:59.552Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:48:00.650Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:48:10 +0000] \"PUT /api/session/cancel67d10ec238194159e52eacc7 HTTP/1.1\" 404 181 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:48:10.091Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:48:33.836Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:48:39.390Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:48:49.564Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:49:04.173Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:49:05.231Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:49:13.519Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:49:14.654Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:49:20.091Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:49:21.211Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:49:43.426Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:49:44.568Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:50:04.335Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:50:05.324Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:50:07 +0000] \"PUT /api/session/cancel/67d10ec238194159e52eacc7 HTTP/1.1\" 500 38 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:50:07.644Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:50:35.025Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:50:35.994Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:52:06.047Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:52:07.339Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:52:07 +0000] \"PUT /api/session/cancel/67d10ec238194159e52eacc7 HTTP/1.1\" 400 73 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:52:07.472Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T04:52:30.331Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T04:52:31.381Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:04:53:04 +0000] \"POST /api/session/addSessionData/67d10ec238194159e52eacc7 HTTP/1.1\" 404 191 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T04:53:04.300Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:01:26.876Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:01:30.539Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:02:13.550Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:02:14.589Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:03:56.949Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:03:58.019Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:06:52.770Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:06:53.917Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:07:39.784Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:07:40.776Z"}
+{"_message":"Session validation failed","errors":{"nurse":{"kind":"required","message":"Path `nurse` is required.","name":"ValidatorError","path":"nurse","properties":{"message":"Path `nurse` is required.","path":"nurse","type":"required"}}},"level":"error","message":"Error updating session: Session validation failed: nurse: Path `nurse` is required.","stack":"ValidationError: Session validation failed: nurse: Path `nurse` is required.\n    at Document.invalidate (C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\document.js:3329:32)\n    at C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\document.js:3090:17\n    at C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2025-03-12T05:07:41.848Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:05:07:41 +0000] \"PUT /api/session/addSessionData/67d10ec238194159e52eacc7?nurse=omaima%20sayed HTTP/1.1\" 500 51 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T05:07:41.862Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:08:25.476Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:08:26.474Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:08:38.249Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:08:39.285Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:09:00.159Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:09:01.249Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:09:30.608Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:09:31.670Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:09:40.581Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:09:41.560Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:09:52.153Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:09:53.210Z"}
+{"_message":"Session validation failed","errors":{"nurseName":{"kind":"required","message":"Path `nurseName` is required.","name":"ValidatorError","path":"nurseName","properties":{"message":"Path `nurseName` is required.","path":"nurseName","type":"required"}}},"level":"error","message":"Error updating session: Session validation failed: nurseName: Path `nurseName` is required.","stack":"ValidationError: Session validation failed: nurseName: Path `nurseName` is required.\n    at Document.invalidate (C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\document.js:3329:32)\n    at C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\document.js:3090:17\n    at C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2025-03-12T05:09:53.341Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:05:09:53 +0000] \"PUT /api/session/addSessionData/67d10ec238194159e52eacc7?nurse=omaima%20sayed HTTP/1.1\" 500 51 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T05:09:53.361Z"}
+{"_message":"Session validation failed","errors":{"nurseName":{"kind":"required","message":"Path `nurseName` is required.","name":"ValidatorError","path":"nurseName","properties":{"message":"Path `nurseName` is required.","path":"nurseName","type":"required"}}},"level":"error","message":"Error updating session: Session validation failed: nurseName: Path `nurseName` is required.","stack":"ValidationError: Session validation failed: nurseName: Path `nurseName` is required.\n    at Document.invalidate (C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\document.js:3329:32)\n    at C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\document.js:3090:17\n    at C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2025-03-12T05:10:12.044Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:05:10:12 +0000] \"PUT /api/session/addSessionData/67d10ec238194159e52eacc7?nurseName=omaima%20sayed HTTP/1.1\" 500 51 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T05:10:12.070Z"}
+{"_message":"Session validation failed","errors":{"nurseName":{"kind":"required","message":"Path `nurseName` is required.","name":"ValidatorError","path":"nurseName","properties":{"message":"Path `nurseName` is required.","path":"nurseName","type":"required"}}},"level":"error","message":"Error updating session: Session validation failed: nurseName: Path `nurseName` is required.","stack":"ValidationError: Session validation failed: nurseName: Path `nurseName` is required.\n    at Document.invalidate (C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\document.js:3329:32)\n    at C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\document.js:3090:17\n    at C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2025-03-12T05:10:13.854Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:05:10:13 +0000] \"PUT /api/session/addSessionData/67d10ec238194159e52eacc7?nurseName=omaima%20sayed HTTP/1.1\" 500 51 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T05:10:13.858Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:10:56.622Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:10:57.675Z"}
+{"_message":"Session validation failed","errors":{"nurseName":{"kind":"required","message":"Path `nurseName` is required.","name":"ValidatorError","path":"nurseName","properties":{"message":"Path `nurseName` is required.","path":"nurseName","type":"required"}}},"level":"error","message":"Error updating session: Session validation failed: nurseName: Path `nurseName` is required.","stack":"ValidationError: Session validation failed: nurseName: Path `nurseName` is required.\n    at Document.invalidate (C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\document.js:3329:32)\n    at C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\document.js:3090:17\n    at C:\\Users\\اميمة\\Desktop\\nurse\\NurseProject\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","timestamp":"2025-03-12T05:11:07.921Z"}
+{"level":"info","message":"::1 - - [12/Mar/2025:05:11:08 +0000] \"PUT /api/session/addSessionData/67d10ec238194159e52eacc7?nurseName=omaima%20sayed HTTP/1.1\" 500 51 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-12T05:11:08.019Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:11:28.979Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:11:30.079Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-12T05:11:53.611Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-12T05:11:54.642Z"}

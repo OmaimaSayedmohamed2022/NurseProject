@@ -8,9 +8,11 @@ import config from './src/utilites/config.js';
 import logger from './src/utilites/logger.js';
 import connectDB from './src/db/mongoDb.js';
 import routes from './src/routes/index.js';
+import {Server} from "socket.io"
+import http from 'http';
 // import { errorHandler } from './src/middlewares/errorHandler.js';
-
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 const app = express();
@@ -25,13 +27,24 @@ app.use(
     stream: { write: (message) => logger.info(message.trim()) },
   })
 );
+// socket server 
+const server = http.createServer(app);
+export const io = new Server(server, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+});
 
+
+// session
 app.use(session({
   secret: process.env.SESSION_SECRET || "mysecret", 
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false } 
 }));
+
 // Rate Limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -45,7 +58,8 @@ connectDB();
 // Routes
 app.use('/api', routes);
 
-// Error Handling Middleware
+
+
 // app.use(errorHandler);
 
 export default app;

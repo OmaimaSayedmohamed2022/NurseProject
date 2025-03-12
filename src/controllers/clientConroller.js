@@ -2,7 +2,7 @@ import User from "../models/clientModel.js";
 import bcrypt from "bcryptjs";
 import logger from "../utilites/logger.js";
 import { generateToken } from "../middlewares/authMiddleware.js";
-import { TokenInstance } from "twilio/lib/rest/oauth/v1/token.js";
+
 
 
 export const createUser= async(req,res)=>{
