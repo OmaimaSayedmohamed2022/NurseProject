@@ -100,15 +100,27 @@ export const getNurseById = async (req, res) => {
 export const updateNurse = async (req, res) => {
     try {
         const { nurseId } = req.params;
-        const updateNurse = await Nurse.findByIdAndUpdate(nurseId, req.body, { new: true });
+        let updateData = { ...req.body };
 
-        res.status(200).json({ success: true, message: 'Nurse updated successfully', data: updateNurse });
+        if (req.file) {
+            try {
+                const uploadedImage = await uploadToCloudinary(req.file.buffer);
+                updateData.image = uploadedImage;
+            } catch (error) {
+                return res.status(500).json({ success: false, message: "Image upload failed" });
+            }
+        }
+
+        const updatedNurse = await Nurse.findByIdAndUpdate(nurseId, updateData, { new: true });
+
+        res.status(200).json({ success: true, message: 'Nurse updated successfully', data: updatedNurse });
     }
     catch (error) {
         logger.error(`Error updating nurse: ${error.message}`);
         res.status(500).json({ success: false, message: error.message });
     }
 };
+
 
 
 export const deleteNurse = async (req, res) => {

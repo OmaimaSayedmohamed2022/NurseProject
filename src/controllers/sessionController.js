@@ -11,42 +11,35 @@ export const createSession = async (req, res) => {
   try {
     const { service, client, nurse, booking } = req.body;
 
+    if (!service || !client || !nurse) {
+      return res.status(400).json({ success: false, message: "Service, Client, and Nurse are required" });
+    }
+
     const serviceData = await Service.findById(service);
     const clientData = await Client.findById(client);
-    const nearestNurse = await Nurse.findOne({ service });
-    const bookingData = await Booking.findOne({ client, nurse });
+    const nurseData = await Nurse.findById(nurse);
 
-    if (!nearestNurse) {
-      return res
-        .status(404)
-        .json({ message: "No available nurses for this service" });
+    if (!serviceData || !clientData || !nurseData) {
+      return res.status(404).json({ success: false, message: "Invalid IDs: Service, Client, or Nurse not found" });
     }
 
     const session = new Session({
-      serviceData,
-      clientData,
-      nearestNurse,
-      bookingData,
+      service: serviceData._id,
+      client: clientData._id,
+      nurse: nurseData._id,
     });
 
     await session.save();
 
-    const populatedSession = await Session.findById(session._id)
-      .populate("service")
-      .populate("nurse")
-      .populate("client")
-      .populate("booking");
+    res.status(201).json({
+      success: true,
+      message: "Session created successfully",
+      data: session,
+    });
 
-    res
-      .status(201)
-      .json({
-        status: true,
-        message: "Session created sucsessfully",
-        data: populatedSession,
-      });
   } catch (error) {
-    logger.error(`Error creating session: ${error.message}`);
-    res.status(500).json({ success: false, message: error.message });
+    logger.error("Error creating session:", error);
+    res.status(500).json({ success: false, message: "Internal server error" });
   }
 };
 
@@ -72,6 +65,10 @@ export const getSessions = async (req, res) => {
 export const addSessionData = async (req, res) => {
   try {
     const { sessionId } = req.params;
+
+    if (!sessionId) {
+      return res.status(400).json({ success: false, message: "Session ID is required" });
+    }
 
     let session = await Session.findById(sessionId);
     if (!session) {
@@ -112,6 +109,9 @@ export const addSessionData = async (req, res) => {
 export const getSessionByCode = async (req, res) => {
     try {
         const { code } = req.params;
+        if (!code) {
+          return res.status(400).json({ success: false, message: "Code is required" });
+        }
         const session = await Session.findOne({ code });
 
         if (!session) {

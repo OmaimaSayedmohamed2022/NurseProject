@@ -23,7 +23,7 @@ router.post('/register', upload.single("image"), nurseValidation(false), nurseMi
 router.get('/getAllNurses', getAllNurses);
 
 router.get('/getNurse/:nurseId', nurseMiddleware, getNurseById);
-router.patch('/update/:nurseId', nurseMiddleware, updateNurse);
+router.patch('/update/:nurseId', upload.single("image"), nurseMiddleware, updateNurse);
 router.delete('/delete/:nurseId', nurseMiddleware, deleteNurse);
 
 router.get('/bySpecialty/:serviceId', serviceMiddleware, getNursesBySpeciality);
