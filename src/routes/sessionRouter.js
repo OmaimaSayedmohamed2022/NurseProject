@@ -1,5 +1,6 @@
 import express from 'express';
 import { createSession, getSessions, addSessionData, getSessionByCode } from '../controllers/sessionController.js';
+import upload from '../middlewares/uploadImage.js';
 
 const router = express.Router();
 
