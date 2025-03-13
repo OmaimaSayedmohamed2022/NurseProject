@@ -12,7 +12,7 @@ router.post('/register', upload.single("image"), nurseValidation(false), nurseMi
 router.get('/getAllNurses', getAllNurses);
 
 router.get('/getNurse/:nurseId', getNurseById);
-router.patch('/update/:nurseId', updateNurse);
+router.patch('/update/:nurseId', upload.single("image"), nurseMiddleware, updateNurse);
 router.delete('/delete/:nurseId', deleteNurse);
 
 //contact

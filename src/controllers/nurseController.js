@@ -2,7 +2,7 @@ import bcrypt from "bcryptjs";
 import uploadToCloudinary from "../middlewares/uploadToCloudinary.js";
 import logger from "../utilites/logger.js";
 import Nurse from "../models/nurseModel.js"
-// import Service from "../models/serviceModel.js";
+import Service from "../models/serviceModel.js";
 
 export const register = async (req, res) => {
     try {
@@ -27,22 +27,6 @@ export const register = async (req, res) => {
             } catch (error) {
                 return res.status(500).json({ success: false, message: "Image upload failed" });
             }
-        }
-
-        let parsedLocation = location;
-        if (typeof location === "string") {
-            try {
-                parsedLocation = JSON.parse(location);
-            } catch (error) {
-                return res.status(400).json({ success: false, message: "Invalid location format" });
-            }
-        }
-
-        if (!parsedLocation || !parsedLocation.coordinates || !Array.isArray(parsedLocation.coordinates) || parsedLocation.coordinates.length !== 2) {
-            return res.status(400).json({
-                success: false,
-                message: "Invalid location coordinates."
-            });
         }
 
         const newNurse = new Nurse({
@@ -93,25 +77,27 @@ export const getNurseById = async (req, res) => {
 export const updateNurse = async (req, res) => {
     try {
         const { nurseId } = req.params;
-
-      const nurse= await Nurse.findById(nurseId)
-        if (!nurse){
-        return res.status(404).json({message:"nurse not found"})
-        }
         let updateData = { ...req.body };
-        if (req.body.password) {
-            const salt = await bcrypt.genSalt(10);
-            updateData.password = await bcrypt.hash(req.body.password, salt);
+
+        if (req.file) {
+            try {
+                const uploadedImage = await uploadToCloudinary(req.file.buffer);
+                updateData.image = uploadedImage;
+            } catch (error) {
+                return res.status(500).json({ success: false, message: "Image upload failed" });
+            }
         }
-        const updateNurse = await Nurse.findByIdAndUpdate(nurseId, updateData, { new: true });
-    
-        res.status(200).json({ success: true, message: 'Nurse updated successfully', data: updateNurse });
+
+        const updatedNurse = await Nurse.findByIdAndUpdate(nurseId, updateData, { new: true });
+
+        res.status(200).json({ success: true, message: 'Nurse updated successfully', data: updatedNurse });
     }
     catch (error) {
         logger.error(`Error updating nurse: ${error.message}`);
         res.status(500).json({ success: false, message: error.message });
     }
 };
+
 
 
 export const deleteNurse = async (req, res) => {
@@ -185,34 +171,33 @@ export const getNurseReviews = async (req, res) => {
     }
 };
 
+// search nurses by location 
+export const searchNurses = async (req, res) => {
+    try {
+        const { service, latitude, longitude, range } = req.query;
 
-// // search nurses by location 
-// export const searchNurses = async (req, res) => {
-//     try {
-//         const { service, latitude, longitude, range } = req.query;
+        if (!service || !latitude || !longitude || !range) {
+            return res.status(400).json({ success: false, message: "Missing required parameters" });
+        }
 
-//         if (!service || !latitude || !longitude || !range) {
-//             return res.status(400).json({ success: false, message: "Missing required parameters" });
-//         }
+        const serviceDoc = await Service.findOne({ service });
 
-//         const serviceDoc = await Service.findOne({ service });
+        const nurses = await Nurse.find({
+            specialty: serviceDoc,
+            location: {
+                $near: {
+                    $geometry: {
+                        type: "Point",
+                        coordinates: [parseFloat(longitude), parseFloat(latitude)],
+                    },
+                    $maxDistance: parseFloat(range) * 1000, 
+                },
+            },
+        }).select("-password -__v"); 
 
-//         const nurses = await Nurse.find({
-//             specialty: serviceDoc,
-//             location: {
-//                 $near: {
-//                     $geometry: {
-//                         type: "Point",
-//                         coordinates: [parseFloat(longitude), parseFloat(latitude)],
-//                     },
-//                     $maxDistance: parseFloat(range) * 1000, 
-//                 },
-//             },
-//         }).select("-password -__v"); 
-
-//         res.status(200).json({ success: true, nurses });
-//     } catch (error) {
-//         logger.error(`Error searching for nurses: ${error.message}`);
-//         res.status(500).json({ success: false, message: error.message });
-//     }
-// };
+        res.status(200).json({ success: true, nurses });
+    } catch (error) {
+        logger.error(`Error searching for nurses: ${error.message}`);
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
