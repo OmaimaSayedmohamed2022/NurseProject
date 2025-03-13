@@ -22,4 +22,3 @@ router.post("/contactUs",contactUs)
 
 
 export default router;
-
