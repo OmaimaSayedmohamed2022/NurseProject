@@ -918,3 +918,11 @@
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-13T13:44:23.015Z"}
 {"level":"info","message":"::1 - - [13/Mar/2025:13:48:57 +0000] \"PATCH /api/nurse/update/67d0c005c38c41970722ad33 HTTP/1.1\" 400 50 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-13T13:48:57.078Z"}
 {"level":"info","message":"::1 - - [13/Mar/2025:13:49:58 +0000] \"PATCH /api/nurse/update/67d0c005c38c41970722ad33 HTTP/1.1\" 400 50 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-13T13:49:58.229Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-13T15:28:59.954Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-13T15:29:03.572Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-13T15:29:04.587Z"}
+{"level":"info","message":"::1 - - [13/Mar/2025:15:29:49 +0000] \"POST /api/nurse/register HTTP/1.1\" 400 57 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-13T15:29:49.643Z"}
+{"level":"error","message":"Error registering nurse: newUser is not defined","timestamp":"2025-03-13T15:30:02.194Z"}
+{"level":"info","message":"::1 - - [13/Mar/2025:15:30:02 +0000] \"POST /api/nurse/register HTTP/1.1\" 500 52 \"-\" \"PostmanRuntime/7.43.0\"","timestamp":"2025-03-13T15:30:02.199Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-13T15:30:28.566Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-13T15:30:29.829Z"}

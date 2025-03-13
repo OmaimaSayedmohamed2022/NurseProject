@@ -63,3 +63,4 @@
 {"level":"error","message":"Error registering nurse: Cast to ObjectId failed for value \"Nutrition\" (type string) at path \"_id\" for model \"Service\"","timestamp":"2025-03-12T23:41:20.758Z"}
 {"level":"error","message":"Error registering nurse: Cast to ObjectId failed for value \"Nutrition\" (type string) at path \"_id\" for model \"Service\"","timestamp":"2025-03-12T23:42:01.601Z"}
 {"level":"error","message":"Error registering nurse: Cast to ObjectId failed for value \"[67d21afccc7a8cc8fb92f27d]\" (type string) at path \"_id\" for model \"Service\"","timestamp":"2025-03-12T23:48:04.688Z"}
+{"level":"error","message":"Error registering nurse: newUser is not defined","timestamp":"2025-03-13T15:30:02.194Z"}
