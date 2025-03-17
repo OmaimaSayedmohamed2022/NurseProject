@@ -3,15 +3,23 @@ import multer from "multer";
 const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {
-  const allowedTypes = [
-    "image/jpeg", "image/png", "image/jpg",   
-    "video/mp4", "video/mov", "video/avi"    
-  ];
+  const allowedTypes = {
+    image: ["image/jpeg", "image/png", "image/jpg"],
+    videoOrPhotos: ["image/jpeg", "image/png", "image/jpg","video/mp4", "video/avi", "video/mov"],
+    tubeImage: ["image/jpeg", "image/png", "image/jpg"],
+    cv: ["application/pdf"],
+  };
 
-  if (allowedTypes.includes(file.mimetype)) {
+  if (file.fieldname === "image" && allowedTypes.image.includes(file.mimetype)) {
+    cb(null, true);
+  } else if (file.fieldname === "cv" && allowedTypes.cv.includes(file.mimetype)) {
+    cb(null, true);
+  } else if (file.fieldname === "videoOrPhotos" && allowedTypes.videoOrPhotos.includes(file.mimetype)) {
+    cb(null, true);
+  } else if (file.fieldname === "tubeImage" && allowedTypes.tubeImage.includes(file.mimetype)) {
     cb(null, true);
   } else {
-    cb(new Error("Invalid file type. Only images (JPEG, PNG, JPG) and videos (MP4, MOV, AVI) are allowed."));
+    cb(new Error("Invalid file type. Only images (JPEG, PNG, JPG) and videos (MP4, MOV, AVI) and PDFs are allowed."));
   }
 };
 

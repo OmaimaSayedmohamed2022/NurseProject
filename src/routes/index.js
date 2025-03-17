@@ -6,6 +6,7 @@ import authRoutes from "./authRoutes.js"
 import notificationRoutes from "./notificationRoutes.js"
 import sessionRoutes from "./sessionRoutes.js"
 import serviceRouter from "./serviceRouter.js"
+import bookingRouter from "./bookingRouter.js"
 
 
 
@@ -15,7 +16,7 @@ router.use("/auth",authRoutes)
 router.use("/notification",notificationRoutes)
 router.use("/session",sessionRoutes)
 router.use("/service",serviceRouter)
-
+router.use("/booking",bookingRouter)
 
 export default router
 
