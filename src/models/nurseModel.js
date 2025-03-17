@@ -29,6 +29,9 @@ const nurseSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    cv: {
+      type: String,
+    },
     experience: {
       type: String,
       required: true,
