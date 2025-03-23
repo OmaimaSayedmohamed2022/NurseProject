@@ -1472,3 +1472,23 @@
 {"level":"info","message":"::1 - - [23/Mar/2025:04:18:02 +0000] \"GET /api/session/getClientRequests/67c64152a3ddd60d7aa7ad6b HTTP/1.1\" 500 51 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T04:18:02.602Z"}
 {"level":"info","message":"Server running on port 5005","timestamp":"2025-03-23T04:19:58.689Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-23T04:19:59.889Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-23T20:26:50.332Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-23T20:26:53.254Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-23T20:26:54.474Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-23T20:36:49.618Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-23T20:36:50.892Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:20:36:54 +0000] \"POST /booking/bookNow HTTP/1.1\" 404 155 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:36:54.243Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-23T20:36:58.591Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-23T20:36:59.665Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:20:37:18 +0000] \"GET /booking/status/67d836fbaa0c547ea26aaeb5 HTTP/1.1\" 404 178 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:37:18.875Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:20:37:27 +0000] \"GET /api/booking/status/67d836fbaa0c547ea26aaeb5 HTTP/1.1\" 404 47 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:37:27.889Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:20:37:47 +0000] \"PATCH /api/booking/update/67d836fbaa0c547ea26aaeb5 HTTP/1.1\" 404 47 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:37:47.070Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:20:37:49 +0000] \"PATCH /api/booking/update/67d836fbaa0c547ea26aaeb5 HTTP/1.1\" 404 47 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:37:49.072Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:20:38:26 +0000] \"PATCH /api/booking/update/67d836fbaa0c547ea26aaeb5 HTTP/1.1\" 404 47 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:38:26.683Z"}
+{"level":"error","message":"Error tracking nurse: Cannot read properties of null (reading 'location')","timestamp":"2025-03-23T20:40:10.561Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:20:40:10 +0000] \"GET /api/booking/track/67e070f2b54c1fda610508a9 HTTP/1.1\" 500 81 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:40:10.565Z"}
+{"level":"error","message":"Error tracking nurse: Cannot read properties of null (reading 'location')","timestamp":"2025-03-23T20:40:16.925Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:20:40:16 +0000] \"GET /api/booking/track/67e070f2b54c1fda610508a9 HTTP/1.1\" 500 81 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:40:16.927Z"}
+{"level":"error","message":"Error calculating ETA: Cannot read properties of null (reading 'location')","timestamp":"2025-03-23T20:40:37.969Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:20:40:37 +0000] \"GET /api/booking/estimatedTimeOfArrival/67e070f2b54c1fda610508a9 HTTP/1.1\" 500 81 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:40:37.972Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:20:55:43 +0000] \"GET /api/nurse/getNurseReviews/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 189 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:55:43.721Z"}
