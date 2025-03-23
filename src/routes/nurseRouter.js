@@ -4,10 +4,13 @@ import upload from '../middlewares/uploadImage.js';
 import {nurseValidation} from "../validations/nurseValidation.js"
 import nurseMiddleware from '../middlewares/nurseMiddleware.js';
 import { contactUs } from '../controllers/contactController.js';
+import { verifyToken } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
-router.post('/register', upload.single("image"), nurseValidation(false), nurseMiddleware, register);
+router.post('/register', upload.fields([
+    { name: "image", maxCount: 1 }, 
+    { name: "cv", maxCount: 1 }]), nurseValidation(false), nurseMiddleware, register);
 
 router.get('/getAllNurses', getAllNurses);
 
@@ -16,7 +19,7 @@ router.patch('/update/:nurseId', upload.single("image"), nurseMiddleware, update
 router.delete('/delete/:nurseId', deleteNurse);
 
 //contact
-router.post("/contactUs",contactUs)
+router.post("/contactUs",verifyToken,contactUs)
 
 
 

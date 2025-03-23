@@ -6,17 +6,55 @@ import Booking from "../models/bookingModel.js";
 import uploadToCloudinary from "../middlewares/uploadToCloudinary.js";
 import {generateCode}from "../utilites/generateCode.js";
 import logger from "../utilites/logger.js";
+import mongoose from "mongoose";
+import { sendNotification} from "./notificationController.js";
+
 
 export const createSession = async (req, res) => {
-    try {
-      const { client, nurse, service } = req.body;
-      const session = new Session({ client, nurse, service });
-      await session.save();
-      res.status(201).json({ success: true, message: "Session created", session });
-    } catch (error) {
-      res.status(500).json({ success: false, message: error.message });
+  try {
+    const { service, client, nurse, booking } = req.body;
+
+    if (!service || !client || !nurse) {
+      return res.status(400).json({ success: false, message: "Service, Client, and Nurse are required" });
     }
-  };
+
+    // ✅ البحث عن الخدمة بالاسم إذا لم يكن ObjectId
+    const serviceData = mongoose.Types.ObjectId.isValid(service)
+      ? await Service.findById(service)
+      : await Service.findOne({ name: service });
+
+    const clientData = await Client.findById(client);
+    const nurseData = await Nurse.findById(nurse);
+
+    if (!serviceData || !clientData || !nurseData) {
+      return res.status(404).json({ success: false, message: "Invalid IDs: Service, Client, or Nurse not found" });
+    }
+
+    const uniqueCode = generateCode();
+
+    const session = new Session({
+      service: serviceData._id,
+      client: clientData._id,
+      nurse: nurseData._id,
+      code: uniqueCode,
+    });
+
+    await session.save();
+
+    await sendNotification(nurse, `you have a new request with client ${clientData.userName}`);
+
+    res.status(201).json({
+      success: true,
+      message: "Session created successfully",
+      data: session,
+    });
+
+  } catch (error) {
+    logger.error("Error creating session:", error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+};
+
 
 export const getSessions = async (req, res) => {
   try {
@@ -140,6 +178,9 @@ export const confirmSession = async (req, res) => {
   
       session.status = "confirmed";
       await session.save();
+      console.log("Sending notification to:", session.client);
+     await sendNotification(session.client, `Your request is approved`);
+      
   
       res.status(200).json({ success: true, message: "Session confirmed", session });
     } catch (error) {
@@ -158,6 +199,7 @@ export const cancelSession = async (req, res) => {
       }
 
     session.status = "canceled";
+    await sendNotification(session.client, `Your request is canceled`);
   
       res.status(200).json({ success: true, message: "Session canceled", session });
     } catch (error) {

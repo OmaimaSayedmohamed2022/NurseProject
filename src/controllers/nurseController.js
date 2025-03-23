@@ -7,7 +7,7 @@ import { generateToken } from "../middlewares/authMiddleware.js";
 
 export const register = async (req, res) => {
     try {
-        const { userName, email, password, role, phone, experience, specialty, location, idCard } = req.body;
+        const { userName, email, password, role, phone, experience, specialty,  idCard } = req.body;
         
         const validSpecialties = await Service.find({ _id: { $in: specialty } });
         if (validSpecialties.length !== specialty.length) {
@@ -20,13 +20,23 @@ export const register = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
 
         let image = "";
-        if (req.file) {
+        let cv= "";
+
+        if (req.files?.image) {
             try {
                 // console.log(req.file.originalname);
-                image = await uploadToCloudinary(req.file.buffer);
+                image = await uploadToCloudinary(req.files.image[0].buffer);
                 // console.log(imageUrl);
             } catch (error) {
                 return res.status(500).json({ success: false, message: "Image upload failed" });
+            }
+        }
+
+        if (req.files?.cv) {
+            try {
+                cv = await uploadToCloudinary(req.files.cv[0].buffer);
+            } catch (error) {
+                return res.status(500).json({ success: false, message: "CV upload failed" });
             }
         }
 
@@ -37,9 +47,9 @@ export const register = async (req, res) => {
             role,
             phone,
             image,
+            cv,
             experience,
             specialty,
-            location,
             idCard,
         });
           const token = generateToken({ _id: newNurse._id, email, role });

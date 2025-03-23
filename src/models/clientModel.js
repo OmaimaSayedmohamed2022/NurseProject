@@ -3,13 +3,14 @@ import mongoose from "mongoose"
 const clientSchema = new mongoose.Schema({
 
     userName: { type: String, required: true },
-    email: { type: String, required: true, unique: true},
+    email: { type: String, required: true},
     password: { type: String, required: true },
     role: { type: String, enum: ['sick', 'nurse'], required: true },
     phone: { type: Number},
-    fingerPrint:{type:String},
+    age:{type:Number},
+    fingerprint:{type:String},
     image: { type: String }, 
-
+    gender:{type:String, enum:["Male","Female"]},
     // complete profile
     idCard: { type: String, required: false },
     healthNumber: { type: String, required: false },
