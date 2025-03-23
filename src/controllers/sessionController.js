@@ -207,3 +207,28 @@ export const cancelSession = async (req, res) => {
     }
   };
   
+
+  export const getSessionsByClient = async (req, res) => {
+    try {
+      const { clientId } = req.params;
+  
+      // Check if the client exists
+      const clientExists = await Client.findById(clientId);
+      if (!clientExists) {
+        return res.status(404).json({ success: false, message: "Client not found" });
+      }
+      // Find all sessions related to the client
+      const sessions = await Session.find({ client: clientId })
+        .populate("nurse");
+  
+      if (!sessions.length) {
+        return res.status(404).json({ success: false, message: "No sessions found for this client" });
+      }
+  
+      res.status(200).json({ success: true, sessions });
+    } catch (error) {
+      logger.error(`Error fetching sessions for client: ${error.message}`);
+      res.status(500).json({ success: false, message: "Internal server error" });
+    }
+  };
+  

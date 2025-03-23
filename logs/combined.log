@@ -1465,3 +1465,10 @@
 {"level":"info","message":"Server running on port 5005","timestamp":"2025-03-23T03:44:52.954Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-23T03:44:53.904Z"}
 {"level":"info","message":"::1 - - [23/Mar/2025:04:00:43 +0000] \"GET /booking/status/67d836fbaa0c547ea26aaeb5 HTTP/1.1\" 404 178 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T04:00:43.277Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-23T04:15:47.803Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-23T04:15:51.796Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-23T04:15:52.855Z"}
+{"level":"error","message":"Error fetching sessions for client: Cast to ObjectId failed for value \"Nutrition\" (type string) at path \"_id\" for model \"Service\"","timestamp":"2025-03-23T04:18:02.588Z"}
+{"level":"info","message":"::1 - - [23/Mar/2025:04:18:02 +0000] \"GET /api/session/getClientRequests/67c64152a3ddd60d7aa7ad6b HTTP/1.1\" 500 51 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T04:18:02.602Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-23T04:19:58.689Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-23T04:19:59.889Z"}
