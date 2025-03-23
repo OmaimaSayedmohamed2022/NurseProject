@@ -5,7 +5,7 @@ import { sendNotification } from "./notificationController.js"
 export const requestConsultation = async (req, res) => {
   try {
     const { userId, type } = req.body;
-    if (!userId || !professionalId || !type) {
+    if (!userId || !type) {
       return res.status(400).json({ success: false, message: "All fields are required" });
     }
 
