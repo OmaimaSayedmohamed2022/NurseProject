@@ -10,18 +10,22 @@ export const userValidation = (isUpdate = false) => [
     .withMessage('userName is required')
     .trim(), 
   // Validate email
-  body('email')
+  body("email")
+  .optional()  
   .isEmail()
-  .withMessage('Invalid email format')
+  .withMessage("Invalid email format")
   .custom(async (value, { req }) => {
-    if (isUpdate) {
-      const user = await User.findById(req.params.id);
-      if (!user) throw new Error('User not found');
-      if (value === user.email) return true; 
+    if (!value) return true;
+
+    const user = await User.findById(req.params.id);
+    if (!user) throw new Error("User not found");
+
+    if (value === user.email) return true; 
+
+    const existingUser = await User.findOne({ email: value });
+    if (existingUser && existingUser._id.toString() !== req.params.id) {
+      throw new Error("Email already registered");
     }
-    const existingUser = await User.findOne({ email: value, _id: { $ne: req.params.id } });
-    if (existingUser) throw new Error('Email already registered');
-    return true;
   }),
 
   body('password')

@@ -7,34 +7,42 @@ import { generateToken } from "../middlewares/authMiddleware.js";
 
 
 // generate finger print 
-
-
-export const saveFingerprint = async (req, res) => {
+  export const saveFingerprint = async (req, res) => {
     try {
-        const { email } = req.body; 
+        const { email } = req.body;
         const fingerprint = generateFingerprint(req);
         const token = req.headers.authorization?.split(' ')[1];
+
         if (!token) {
             return res.status(400).json({ message: 'Bad request. Token is missing.' });
         }
-        // Find and update user
-        const user = await Client.findOneAndUpdate(
+
+        // Update Client (if exists)
+        const clientUpdate = await Client.findOneAndUpdate(
             { email },
             { fingerprint },
             { new: true }
         );
-     if(!user){
-        user = await Nurse.findOneAndUpdate(
+
+        // Update Nurse (if exists)
+        const nurseUpdate = await Nurse.findOneAndUpdate(
             { email },
             { fingerprint },
             { new: true }
-        )
-     }
-        if (!user) {
+        );
+
+        // If neither was found, return error
+        if (!clientUpdate && !nurseUpdate) {
             return res.status(404).json({ message: "User not found" });
         }
 
-        res.json({ message: "Fingerprint saved successfully", fingerprint });
+        res.json({ 
+            message: "Fingerprint saved successfully", 
+            fingerprint,
+            updatedClient: clientUpdate,
+            updatedNurse: nurseUpdate
+        });
+
     } catch (error) {
         res.status(500).json({ message: "Error saving fingerprint", error: error.message });
     }

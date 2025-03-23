@@ -4,7 +4,7 @@ const sessionSchema = new mongoose.Schema(
   {
     service: {
       type: String,
-    //   ref: "Service",
+      ref: "Service",
       required: true,
     },
     nurse: {
@@ -17,10 +17,10 @@ const sessionSchema = new mongoose.Schema(
       ref: "Client",
       required: true,
     },
-    // booking: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "Booking"
-    // },
+    booking: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Booking"
+    },
     code: {
       type: String,
       unique: true,
@@ -29,8 +29,8 @@ const sessionSchema = new mongoose.Schema(
     nurseName:{
         type: String
     },
-   location: { type: String }, // Add this if not already present
-  date: { type: Date },
+   location: { type: String }, 
+   date: { type: Date },
     status: { type: String, enum: ["pending", "confirmed", "canceled"], default: "pending" },
     tubeImage: { type: String },
     videoOrPhotos: { type: String },

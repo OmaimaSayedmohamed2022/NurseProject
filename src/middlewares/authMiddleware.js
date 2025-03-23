@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import Nurse from '../models/nurseModel.js';
+import Client from '../models/clientModel.js';
 
 export const verifyToken = async (req, res, next) => {
   try {
@@ -12,9 +13,14 @@ export const verifyToken = async (req, res, next) => {
     req.user = decoded; 
 
     let user = await Nurse.findById(req.user.id);
+    if (!user){
+        user = await Client.findById(req.user.id);
+    }
+
     if (!user) {
       return res.status(404).json({ message: 'User not found.' });
     }
+
 
     req.user.role = user.role; 
     next();
