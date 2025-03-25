@@ -1492,3 +1492,5 @@
 {"level":"error","message":"Error calculating ETA: Cannot read properties of null (reading 'location')","timestamp":"2025-03-23T20:40:37.969Z"}
 {"level":"info","message":"::1 - - [23/Mar/2025:20:40:37 +0000] \"GET /api/booking/estimatedTimeOfArrival/67e070f2b54c1fda610508a9 HTTP/1.1\" 500 81 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:40:37.972Z"}
 {"level":"info","message":"::1 - - [23/Mar/2025:20:55:43 +0000] \"GET /api/nurse/getNurseReviews/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 189 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-23T20:55:43.721Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-23T21:10:38.706Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-23T21:10:39.778Z"}
