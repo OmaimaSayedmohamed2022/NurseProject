@@ -1666,3 +1666,30 @@
 {"level":"info","message":"::1 - - [27/Mar/2025:05:54:51 +0000] \"GET /api/patientData/67c64152a3ddd60d7aa7ad6b HTTP/1.1\" 500 52 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-27T05:54:51.647Z"}
 {"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T05:55:09.436Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-27T05:55:10.751Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T17:01:20.457Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T17:01:24.079Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-27T17:01:25.236Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T17:03:16.345Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T17:03:36.458Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-27T17:03:37.491Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T17:08:32.451Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-27T17:08:33.805Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T17:48:26.643Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-27T17:48:27.738Z"}
+{"level":"info","message":"::1 - - [27/Mar/2025:18:28:47 +0000] \"GET /service/getService/67ca141088f4cce4b44b2d69 HTTP/1.1\" 404 182 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-27T18:28:47.242Z"}
+{"level":"error","message":"Error adding service: E11000 duplicate key error collection: myDatabase.services index: name_1 dup key: { name: \"Wound Care\" }","timestamp":"2025-03-27T18:32:42.555Z"}
+{"level":"info","message":"::1 - - [27/Mar/2025:18:32:42 +0000] \"POST /api/service/addService HTTP/1.1\" 500 136 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-27T18:32:42.558Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T18:32:46.203Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T18:32:50.006Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-27T18:32:51.114Z"}
+{"level":"error","message":"Error adding service: Service validation failed: name: `   Medical Testes` is not a valid enum value for path `name`.","timestamp":"2025-03-27T18:33:36.033Z"}
+{"level":"info","message":"::1 - - [27/Mar/2025:18:33:36 +0000] \"POST /api/service/addService HTTP/1.1\" 500 125 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-27T18:33:36.052Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T19:18:53.841Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-27T19:18:55.011Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-03-27T19:19:01.451Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-03-27T19:19:02.579Z"}
+{"level":"info","message":"::1 - - [27/Mar/2025:19:19:58 +0000] \"POST /api/nurse/register HTTP/1.1\" 400 126 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-27T19:19:58.506Z"}
+{"level":"error","message":"Error registering nurse: Nurse validation failed: location: Cast to string failed for value \"[ 'egypt', '13 Main Street, City, Country' ]\" (type Array) at path \"location\"","timestamp":"2025-03-27T19:20:17.602Z"}
+{"level":"info","message":"::1 - - [27/Mar/2025:19:20:17 +0000] \"POST /api/nurse/register HTTP/1.1\" 500 179 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-27T19:20:17.613Z"}
+{"level":"info","message":"::1 - - [27/Mar/2025:19:20:38 +0000] \"POST /api/nurse/register HTTP/1.1\" 500 1225 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-27T19:20:38.316Z"}
+{"level":"info","message":"::1 - - [27/Mar/2025:19:20:43 +0000] \"POST /api/nurse/register HTTP/1.1\" 500 1225 \"-\" \"PostmanRuntime/7.43.2\"","timestamp":"2025-03-27T19:20:43.131Z"}

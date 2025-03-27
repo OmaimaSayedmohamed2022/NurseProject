@@ -81,3 +81,6 @@
 {"level":"error","message":"Error tracking nurse: Cannot read properties of null (reading 'location')","timestamp":"2025-03-23T20:40:16.925Z"}
 {"level":"error","message":"Error calculating ETA: Cannot read properties of null (reading 'location')","timestamp":"2025-03-23T20:40:37.969Z"}
 {"error":"E11000 duplicate key error collection: myDatabase.clients index: email_1 dup key: { email: \"omaimasayed7@gmail.com\" }","level":"error","message":"error creatting new user","timestamp":"2025-03-27T04:51:55.788Z"}
+{"level":"error","message":"Error adding service: E11000 duplicate key error collection: myDatabase.services index: name_1 dup key: { name: \"Wound Care\" }","timestamp":"2025-03-27T18:32:42.555Z"}
+{"level":"error","message":"Error adding service: Service validation failed: name: `   Medical Testes` is not a valid enum value for path `name`.","timestamp":"2025-03-27T18:33:36.033Z"}
+{"level":"error","message":"Error registering nurse: Nurse validation failed: location: Cast to string failed for value \"[ 'egypt', '13 Main Street, City, Country' ]\" (type Array) at path \"location\"","timestamp":"2025-03-27T19:20:17.602Z"}

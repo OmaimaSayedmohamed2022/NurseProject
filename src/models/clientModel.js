@@ -11,6 +11,7 @@ const clientSchema = new mongoose.Schema({
     fingerprint:{type:String},
     image: { type: String }, 
     gender:{type:String, enum:["Male","Female"]},
+    address:{type:String},
     // complete profile
     idCard: { type: String, required: false },
     healthNumber: { type: String, required: false },
