@@ -213,3 +213,21 @@ export const searchNurses = async (req, res) => {
         res.status(500).json({ success: false, message: error.message });
     }
 };
+
+
+export const getNurseCompletedSessions = async (req, res) => {
+    try {
+      const { nurseId } = req.params;
+      const nurse = await Nurse.findById(nurseId).select("userName completedSessions");
+      
+      if (!nurse) {
+        return res.status(404).json({ success: false, message: "Nurse not found" });
+      }
+  
+      res.status(200).json({ success: true, completedSessions: nurse.completedSessions });
+    } catch (error) {
+      logger.error(`Error fetching completed sessions: ${error.message}`);
+      res.status(500).json({ success: false, message: error.message });
+    }
+  };
+  

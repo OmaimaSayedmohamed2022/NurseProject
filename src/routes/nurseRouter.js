@@ -1,6 +1,6 @@
 import express from 'express';
 import { register, getAllNurses, getNurseById, updateNurse, deleteNurse ,
-    getNursesBySpeciality,searchNurses, addReview,getNurseReviews
+    getNursesBySpeciality,searchNurses, addReview,getNurseReviews,getNurseCompletedSessions
 } from '../controllers/nurseController.js';
 import upload from '../middlewares/uploadImage.js';
 import {nurseValidation} from "../validations/nurseValidation.js"
@@ -32,6 +32,7 @@ router.get('/reviews/:nurseId', nurseMiddleware, getNurseReviews);
 
 //contact
 router.post("/contactUs",verifyToken,contactUs)
+router.get("/NumOfSessions/:nurseId",getNurseCompletedSessions)
 
 
 

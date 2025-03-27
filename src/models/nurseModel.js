@@ -62,6 +62,10 @@ const nurseSchema = new mongoose.Schema(
       type: [String],
       default: ["Arabic"],
     },
+    completedSessions: {
+      type: Number,
+      default: 0, 
+    },
     reviews: [{
       client: {
           type: mongoose.Schema.Types.ObjectId,
@@ -78,12 +82,14 @@ const nurseSchema = new mongoose.Schema(
           min: 1,
           max: 5
       },
+
       createdAt: {
           type: Date,
           default: Date.now
       }
   }],
   },
+  
   {
     timestamps: true,
   }
