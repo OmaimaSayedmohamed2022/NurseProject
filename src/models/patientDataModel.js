@@ -8,7 +8,7 @@ const patientSchema = new mongoose.Schema({
   description: { type: String },
   phoneNumber: { type: String },
   date: { type: Date, required: true },
-  videoOrPhotos: { type: String }, 
+  videoOrPhotos: [{ type: String }], 
 }, { timestamps: true });
 
 const PatientData = mongoose.model("PatientData", patientSchema);
