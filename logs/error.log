@@ -80,3 +80,4 @@
 {"level":"error","message":"Error tracking nurse: Cannot read properties of null (reading 'location')","timestamp":"2025-03-23T20:40:10.561Z"}
 {"level":"error","message":"Error tracking nurse: Cannot read properties of null (reading 'location')","timestamp":"2025-03-23T20:40:16.925Z"}
 {"level":"error","message":"Error calculating ETA: Cannot read properties of null (reading 'location')","timestamp":"2025-03-23T20:40:37.969Z"}
+{"error":"E11000 duplicate key error collection: myDatabase.clients index: email_1 dup key: { email: \"omaimasayed7@gmail.com\" }","level":"error","message":"error creatting new user","timestamp":"2025-03-27T04:51:55.788Z"}

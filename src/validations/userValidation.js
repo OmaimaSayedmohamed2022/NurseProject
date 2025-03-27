@@ -11,22 +11,17 @@ export const userValidation = (isUpdate = false) => [
     .trim(), 
   // Validate email
   body("email")
-  .optional()  
-  .isEmail()
-  .withMessage("Invalid email format")
-  .custom(async (value, { req }) => {
-    if (!value) return true;
+    .optional()
+    .isEmail()
+    .withMessage("Invalid email format")
+    .custom(async (value) => {
+      if (!value) return true;
 
-    const user = await User.findById(req.params.id);
-    if (!user) throw new Error("User not found");
-
-    if (value === user.email) return true; 
-
-    const existingUser = await User.findOne({ email: value });
-    if (existingUser && existingUser._id.toString() !== req.params.id) {
-      throw new Error("Email already registered");
-    }
-  }),
+      const existingUser = await User.findOne({ email: value });
+      if (existingUser) {
+        throw new Error("Email already registered");
+      }
+    }),
 
   body('password')
     .if(() => !isUpdate) // Only validate for registration

@@ -8,6 +8,7 @@ import sessionRoutes from "./sessionRoutes.js"
 import serviceRouter from "./serviceRouter.js"
 import consultationRouter from "./consultationRouter.js"
 import bookingRouter from'./bookingRouter.js'
+import patientDataRouter from "./patientDataRouter.js"
 
 
 
@@ -19,6 +20,7 @@ router.use("/session",sessionRoutes)
 router.use("/service",serviceRouter)
 router.use("/consultation",consultationRouter)
 router.use("/booking",bookingRouter)
+router.use("/patientData",patientDataRouter)
 
 
 export default router
