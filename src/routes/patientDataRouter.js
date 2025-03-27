@@ -6,12 +6,13 @@ import {
   updatePatient,
   deletePatient,
 } from "../controllers/patientDataController.js";
+import upload from "../middlewares/uploadImage.js";
 
 const router = express.Router();
 
-router.post("/add", addPatient);
+router.post("/add", upload.single("videoOrPhotos"),addPatient);
 router.get("/", getAllPatients);
-router.get("/:id", getPatientById);
+router.get("/:clientId", getPatientById);
 router.put("/:id", updatePatient);
 router.delete("/:id", deletePatient);
 
