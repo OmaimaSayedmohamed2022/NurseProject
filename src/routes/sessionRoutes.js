@@ -17,6 +17,8 @@ router.put('/addSessionData/:sessionId', upload.fields([
     { name: "videoOrPhotos", maxCount: 1 }
   ]), addSessionData);
 
+
+  // dashboard
 router.get('/getSessionByCode/:code', getSessionByCode);
 router.get('/getClientRequests/:clientId',getSessionsByClient)
 
