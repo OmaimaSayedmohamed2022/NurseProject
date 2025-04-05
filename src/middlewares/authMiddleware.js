@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import Nurse from '../models/nurseModel.js';
 import Client from '../models/clientModel.js';
+import Admin from '../models/adminModel.js'
 
 export const verifyToken = async (req, res, next) => {
   try {
@@ -16,6 +17,9 @@ export const verifyToken = async (req, res, next) => {
     if (!user){
         user = await Client.findById(req.user.id);
     }
+    if (!user){
+      user = await Admin.findById(req.user.id);
+  }
 
     if (!user) {
       return res.status(404).json({ message: 'User not found.' });

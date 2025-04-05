@@ -12,7 +12,7 @@ import { sendNotification} from "./notificationController.js";
 
 export const createSession = async (req, res) => {
   try {
-    const { service, client, nurse, booking } = req.body;
+    const { service, client, nurse } = req.body;
 
     if (!service || !client || !nurse) {
       return res.status(400).json({ success: false, message: "Service, Client, and Nurse are required" });
@@ -153,7 +153,9 @@ export const getSessionsForNurse = async (req, res) => {
 export const getSessionByCode = async (req, res) => {
     try {
         const { code } = req.params;
-        const session = await Session.findOne({ code });
+        const session = await Session.findOne({ code })
+           .populate("client", "-password -__v") 
+           .populate("nurse", "-password -__v");;
 
         if (!session) {
             return res.status(404).json({ success: false, message: "Session not found" });
@@ -232,3 +234,4 @@ export const cancelSession = async (req, res) => {
     }
   };
   
+
