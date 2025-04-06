@@ -13,6 +13,7 @@ import patientDataRouter from "./patientDataRouter.js"
 import homeDashboardRouter from "./homeDashboardRouter.js"
 import nurseDashboardRouter from "./nurseDashboardRouter.js"
 import patientDashboardRouter from "./patientDashboardRouter.js"
+import serviceDashboardRouter from "./serviceDashboardRouter.js"
 
 
 router.use("/client",clientRoutes);
@@ -27,6 +28,7 @@ router.use("/patientData",patientDataRouter)
 router.use("/homeDashboard", homeDashboardRouter)
 router.use("/nurseDashboard", nurseDashboardRouter)
 router.use("/patientDashboard", patientDashboardRouter)
+router.use("/serviceDashboard", serviceDashboardRouter)
 
 export default router
 
