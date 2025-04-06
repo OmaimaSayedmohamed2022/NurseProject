@@ -1,5 +1,5 @@
 import express from 'express';
-import { register, getAllNurses, getNurseById, updateNurse, deleteNurse ,
+import { register, getAllNurses, getNurseById, updateNurse, updateNurseAvailability, deleteNurse ,
     getNursesBySpeciality,searchNurses, addReview,getNurseReviews,getNurseCompletedSessions
 } from '../controllers/nurseController.js';
 import upload from '../middlewares/uploadImage.js';
@@ -20,7 +20,7 @@ router.get('/getNurse/:nurseId', getNurseById);
 router.patch('/update/:nurseId', upload.single("image"), nurseMiddleware, updateNurse);
 router.delete('/delete/:nurseId', deleteNurse);
 
-
+router.patch('/updateNurseAvailability/:nurseId', nurseMiddleware, updateNurseAvailability);
 
 router.get('/bySpecialty/:serviceId', getNursesBySpeciality);
 

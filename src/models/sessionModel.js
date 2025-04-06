@@ -31,7 +31,7 @@ const sessionSchema = new mongoose.Schema(
     },
    location: { type: String }, 
    date: { type: Date },
-    status: { type: String, enum: ["pending", "confirmed", "canceled"], default: "pending" },
+    status: { type: String, enum: ["pending", "confirmed", "canceled", "returned"], default: "pending" },
     tubeImage: { type: String },
     videoOrPhotos: { type: String },
   },

@@ -48,6 +48,11 @@ const nurseSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    status: { type: String, enum: ["pending", "confirmed", "rejected"], default: "pending" },
+    available: {
+      type: Boolean,
+      default: false
+    },
     clients: [
       {
         type: mongoose.Schema.Types.ObjectId,

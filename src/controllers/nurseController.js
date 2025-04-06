@@ -232,3 +232,22 @@ export const getNurseCompletedSessions = async (req, res) => {
     }
   };
   
+
+// update nurse availability
+export const updateNurseAvailability = async (req, res) => {
+    const { nurseId } = req.body;
+  
+    try {
+      const nurse = await Nurse.findByIdAndUpdate(
+        nurseId,
+        { available: true },
+        { new: true }  
+      );
+      
+      
+      res.status(200).json({ success: true, message: "Nurse updated successfully", nurse });
+    } catch (error) {
+      console.error(`Error updating availability: ${error.message}`);
+      res.status(500).json({ success: false, message: error.message });
+    }
+  };
