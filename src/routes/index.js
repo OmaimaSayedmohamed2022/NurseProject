@@ -9,7 +9,10 @@ import serviceRouter from "./serviceRouter.js"
 import consultationRouter from "./consultationRouter.js"
 import bookingRouter from'./bookingRouter.js'
 import patientDataRouter from "./patientDataRouter.js"
+
 import homeDashboardRouter from "./homeDashboardRouter.js"
+import nurseDashboardRouter from "./nurseDashboardRouter.js"
+import patientDashboardRouter from "./patientDashboardRouter.js"
 
 
 router.use("/client",clientRoutes);
@@ -22,7 +25,8 @@ router.use("/consultation",consultationRouter)
 router.use("/booking",bookingRouter)
 router.use("/patientData",patientDataRouter)
 router.use("/homeDashboard", homeDashboardRouter)
-
+router.use("/nurseDashboard", nurseDashboardRouter)
+router.use("/patientDashboard", patientDashboardRouter)
 
 export default router
 

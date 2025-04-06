@@ -20,7 +20,7 @@ export const search = async (req, res) => {
 
     const nurses = await Nurse.find({
       userName: searchRegex,
-    });
+    }).select("-password -__v");
 
     res.status(200).json({
       success: true,
