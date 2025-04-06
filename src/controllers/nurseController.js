@@ -235,7 +235,7 @@ export const getNurseCompletedSessions = async (req, res) => {
 
 // update nurse availability
 export const updateNurseAvailability = async (req, res) => {
-    const { nurseId } = req.body;
+    const { nurseId } = req.params;
   
     try {
       const nurse = await Nurse.findByIdAndUpdate(
@@ -251,3 +251,35 @@ export const updateNurseAvailability = async (req, res) => {
       res.status(500).json({ success: false, message: error.message });
     }
   };
+
+
+// update nurse status
+export const updateNurseStatus = async (req, res) => {
+    const { nurseId } = req.params; 
+    const { status } = req.body;  
+  
+    if (!["confirmed", "rejected"].includes(status)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid status value. It must be either 'confirmed' or 'rejected'."
+      });
+    }
+  
+    try {
+      const updatedNurse = await Nurse.findByIdAndUpdate(
+        nurseId,
+        { status: status }, 
+        { new: true }
+      );
+  
+      res.status(200).json({
+        success: true,
+        message: "Nurse status updated successfully",
+        nurse: updatedNurse
+      });
+    } catch (error) {
+      console.error(`Error updating nurse status: ${error.message}`);
+      res.status(500).json({ success: false, message: error.message });
+    }
+  };
+  
