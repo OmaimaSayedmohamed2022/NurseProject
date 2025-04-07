@@ -20,7 +20,7 @@ import {verifyToken ,authorizeRole}from "../middlewares/authMiddleware.js"
 router.use("/client",clientRoutes);
 router.use("/nurse",nurseRouter);
 router.use("/auth",authRoutes)
-router.use("/admin",verifyToken, adminRoutes);
+router.use("/admin", adminRoutes);
 router.use("/notification",notificationRoutes)
 router.use("/session",sessionRoutes)
 router.use("/service",serviceRouter)
