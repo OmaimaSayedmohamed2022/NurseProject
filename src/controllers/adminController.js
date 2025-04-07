@@ -1,25 +1,48 @@
 import Admin from "../models/adminModel.js";
 import bcrypt from "bcryptjs";
 
-export const createAdmin = async (req, res) => {
+export const getAdminById = async (req, res) => {
+    const { id } = req.params;
+  
     try {
-        const { userName, email, password } = req.body;
-
-        const existingAdmin = await Admin.findOne({ email });
-        if (existingAdmin) {
-            return res.status(400).json({ success: false, message: "Email already in use" });
-        }
-         const salt = await bcrypt.genSalt(10);
-         const hashedPassword = await bcrypt.hash(password, salt);
-
-        const newAdmin = new Admin({ userName, email, password:hashedPassword });
-        await newAdmin.save();
-
-        res.status(201).json({ success: true, message: "Admin created successfully" });
-    } catch (error) {
-        console.error("Error creating admin:", error.message);
-        res.status(500).json({ success: false, message: error.message });
+      const admin = await Admin.findById(id);
+  
+      if (!admin) {
+        return res.status(404).json({ success: false, message: "Admin not found" });
+      }
+  
+      res.status(200).json({ success: true, admin });
+    } catch (err) {
+      res.status(500).json({ success: false, message: err.message });
     }
+  };
+
+export const updateEmployeePermissions = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const {
+      addService,
+      editService,
+      deleteService,
+      viewService
+    } = req.body;
+
+    const admin = await Admin.findById(id);
+    if (!admin) {
+      return res.status(404).json({ success: false, message: "Admin not found" });
+    }
+
+    admin.permissions = {
+      addService: addService ?? admin.permissions.addService,
+      editService: editService ?? admin.permissions.editService,
+      deleteService: deleteService ?? admin.permissions.deleteService,
+      viewService: viewService ?? admin.permissions.viewService,
+    };
+
+    await admin.save();
+
+    res.json({ success: true, message: "Permissions updated", admin });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Error updating permissions", error: error.message });
+  }
 };
-
-

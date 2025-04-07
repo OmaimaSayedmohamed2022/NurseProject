@@ -15,11 +15,25 @@ const adminSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    bio:{
+      type:String
+    },
     role: {
-        type: String,
-        default:"Admin",
-      },
-  }
+      type: String,
+      enum: ['Admin', 'Manager', 'Staff'],
+      default: "Admin",
+    },
+    image: {
+      type: String, // store image URL or file path
+    },
+    permissions: {
+      addService: { type: Boolean, default: false },
+      editService: { type: Boolean, default: false },
+      deleteService: { type: Boolean, default: false },
+      viewService: { type: Boolean, default: true }
+    }
+  },
+  { timestamps: true }
 );
 
 const Admin = mongoose.model("Admin", adminSchema);
