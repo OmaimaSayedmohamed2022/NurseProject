@@ -2,7 +2,7 @@ import express from 'express';
 
 import { register, getAllNurses, getNurseById, updateNurse, deleteNurse ,
     getNursesBySpeciality,searchNurses, addReview,getNurseReviews,getNurseCompletedSessions,
-    getUnconfirmedNurses,confirmNurse,updateNurseAvailability
+    getUnconfirmedNurses,confirmNurse,updateNurseAvailability,updateNurseStatus
         
 } from '../controllers/nurseController.js';
 import upload from '../middlewares/uploadImage.js';
