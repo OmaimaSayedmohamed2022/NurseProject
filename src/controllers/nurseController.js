@@ -232,7 +232,31 @@ export const getNurseCompletedSessions = async (req, res) => {
     }
   };
   
+  // Get all unconfirmed nurses
+export const getUnconfirmedNurses = async (req, res) => {
+    try {
+        const unconfirmedNurses = await Nurse.find({ confirmed: false }).select("-password -__v");
+        res.status(200).json({ success: true, nurses: unconfirmedNurses });
+    } catch (error) {
+        logger.error(`Error fetching unconfirmed nurses: ${error.message}`);
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+// confirm nurse
+export const confirmNurse = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const nurse = await Nurse.findByIdAndUpdate(id, { confirmed: true }, { new: true });
 
+        if (!nurse) {
+            return res.status(404).json({ success: false, message: "Nurse not found" });
+        }
+
+        res.status(200).json({ success: true, message: "Nurse confirmed successfully", data: nurse });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
 
 // update nurse availability
 export const updateNurseAvailability = async (req, res) => {
