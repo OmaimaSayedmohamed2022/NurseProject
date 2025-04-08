@@ -36,6 +36,12 @@ const nurseSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    licenseNumber: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true
+    },
     specialty: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Service",
@@ -47,6 +53,11 @@ const nurseSchema = new mongoose.Schema(
     idCard: {
       type: String,
       required: true,
+    },
+    status: { type: String, enum: ["pending", "confirmed", "rejected"], default: "pending" },
+    available: {
+      type: Boolean,
+      default: false
     },
     clients: [
       {

@@ -1,7 +1,9 @@
 import express from 'express';
+
 import { register, getAllNurses, getNurseById, updateNurse, deleteNurse ,
     getNursesBySpeciality,searchNurses, addReview,getNurseReviews,getNurseCompletedSessions,
     getUnconfirmedNurses,confirmNurse
+        
 } from '../controllers/nurseController.js';
 import upload from '../middlewares/uploadImage.js';
 import {nurseValidation} from "../validations/nurseValidation.js"
@@ -21,7 +23,8 @@ router.get('/getNurse/:nurseId', getNurseById);
 router.patch('/update/:nurseId', upload.single("image"), nurseMiddleware, updateNurse);
 router.delete('/delete/:nurseId', deleteNurse);
 
-
+router.patch('/updateNurseAvailability/:nurseId', nurseMiddleware, updateNurseAvailability);
+router.patch('/updateNurseStatus/:nurseId', nurseMiddleware, updateNurseStatus);
 
 router.get('/bySpecialty/:serviceId', getNursesBySpeciality);
 
