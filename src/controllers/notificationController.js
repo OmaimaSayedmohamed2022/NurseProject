@@ -62,4 +62,41 @@ export const markNotificationAsRead = async (req, res) => {
       res.status(500).json({ success: false, message: "Error updating notification", error: error.message });
     }
   };
+  // update notification
+  export const updateNotification = async (req, res) => {
+    try {
+      const { notificationId } = req.params;
+      const { message } = req.body;
+  
+      const notification = await Notification.findById(notificationId);
+      if (!notification) {
+        return res.status(404).json({ success: false, message: "Notification not found" });
+      }
+  
+      if (message) notification.message = message;
+      await notification.save();
+  
+      res.json({ success: true, message: "Notification updated", notification });
+    } catch (error) {
+      res.status(500).json({ success: false, message: "Error updating notification", error: error.message });
+    }
+  };
+
+  // delete notification
+  export const deleteNotification = async (req, res) => {
+    try {
+      const { notificationId } = req.params;
+  
+      const notification = await Notification.findByIdAndDelete(notificationId);
+  
+      if (!notification) {
+        return res.status(404).json({ success: false, message: "Notification not found" });
+      }
+  
+      res.json({ success: true, message: "Notification deleted" });
+    } catch (error) {
+      res.status(500).json({ success: false, message: "Error deleting notification", error: error.message });
+    }
+  };
+  
   

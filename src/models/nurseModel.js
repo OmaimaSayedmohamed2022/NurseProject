@@ -77,6 +77,10 @@ const nurseSchema = new mongoose.Schema(
       type: Number,
       default: 0, 
     },
+    confirmed: {
+      type: Boolean,
+      default: false
+    },
     reviews: [{
       client: {
           type: mongoose.Schema.Types.ObjectId,
@@ -93,6 +97,7 @@ const nurseSchema = new mongoose.Schema(
           min: 1,
           max: 5
       },
+     
 
       createdAt: {
           type: Date,

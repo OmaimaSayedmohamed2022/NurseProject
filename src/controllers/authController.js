@@ -4,6 +4,7 @@ import Client from "../models/clientModel.js";
 import logger from "../utilites/logger.js";
 import { generateFingerprint } from "../services/fingerPrint.js"
 import { generateToken } from "../middlewares/authMiddleware.js";
+import Admin from "../models/adminModel.js";
 
 
 // generate finger print 
@@ -62,6 +63,10 @@ export const loginUser = async (req, res) => {
       if (!user) {
         user = await Nurse.findOne({ email });
         userType = "Nurse";
+      }
+      if (!user) {
+        user = await Admin.findOne({ email });
+        userType = "Admin";
       }
   
       if (!user) {

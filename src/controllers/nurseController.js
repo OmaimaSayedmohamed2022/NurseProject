@@ -66,7 +66,7 @@ export const register = async (req, res) => {
 
 export const getAllNurses = async (req, res) => {
     try {
-        const nurses = await Nurse.find({}, { "password": 0, "__v": 0 }).populate("specialty");
+        const nurses = await Nurse.find({confirmed:true}, { "password": 0, "__v": 0 }).populate("specialty");
         res.status(200).json({ success: true, data: nurses });
     }
     catch (error) {
@@ -233,6 +233,7 @@ export const getNurseCompletedSessions = async (req, res) => {
   };
   
 
+
 // update nurse availability
 export const updateNurseAvailability = async (req, res) => {
     const { nurseId } = req.params;
@@ -283,3 +284,5 @@ export const updateNurseStatus = async (req, res) => {
     }
   };
   
+
+
