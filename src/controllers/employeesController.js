@@ -42,7 +42,7 @@ export const createEmployee = async (req, res) => {
 // Update employees
 export const updateEmployee = async (req, res) => {
     try {
-      const employee = await Employee.findByIdAndUpdate(req.params.id, req.body, { new: true });
+      const employee = await Admin.findByIdAndUpdate(req.params.id, req.body, { new: true });
       if (!employee) return res.status(404).json({ message: "Employee not found" });
       res.json({ success: true, employee });
     } catch (err) {
@@ -53,7 +53,7 @@ export const updateEmployee = async (req, res) => {
 // Delete employee
 export const deleteEmployee = async (req, res) => {
     try {
-      await Employee.findByIdAndDelete(req.params.id);
+      await Admin.findByIdAndDelete(req.params.id);
       res.json({ success: true, message: "Employee deleted" });
     } catch (err) {
       res.status(500).json({ success: false, message: err.message });
@@ -64,7 +64,7 @@ export const deleteEmployee = async (req, res) => {
 // all employees
 export const getAllEmployees = async (req, res) => {
     try {
-      const employees = await Employee.find().sort({ createdAt: -1 });
+      const employees = await Admin.find().sort({ createdAt: -1 });
       res.json({ success: true, employees });
     } catch (err) {
       res.status(500).json({ success: false, message: err.message });
