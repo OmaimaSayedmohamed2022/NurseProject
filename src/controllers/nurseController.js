@@ -167,38 +167,63 @@ export const getNurseCompletedSessions = catchAsync(async (req, res) => {
 
     if (!nurse) {
         return res.status(404).json({ success: false, message: "Nurse not found" });
-      }
-  
-      res.status(200).json({ success: true, completedSessions: nurse.completedSessions });
-    } catch (error) {
-      logger.error(`Error fetching completed sessions: ${error.message}`);
-      res.status(500).json({ success: false, message: error.message });
     }
-  };
+
+    res.status(200).json({ success: true, completedSessions: nurse.completedSessions });
+});
+
   
 
   // Get all unconfirmed nurses
-export const getUnconfirmedNurses = async (req, res) => {
-    try {
-        const unconfirmedNurses = await Nurse.find({ confirmed: false }).select("-password -__v");
-        res.status(200).json({ success: true, nurses: unconfirmedNurses });
-    } catch (error) {
-        logger.error(`Error fetching unconfirmed nurses: ${error.message}`);
-        res.status(500).json({ success: false, message: error.message });
-    }
-};
-// confirm nurse
-export const confirmNurse = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const nurse = await Nurse.findByIdAndUpdate(id, { confirmed: true }, { new: true });
+export const getUnconfirmedNurses = catchAsync(async (req, res) => {
+    const unconfirmedNurses = await Nurse.find({ confirmed: false }).select("-password -__v");
+    res.status(200).json({ success: true, nurses: unconfirmedNurses });
+});
+
+// Confirm nurse
+export const confirmNurse = catchAsync(async (req, res) => {
+    const { id } = req.params;
+    const nurse = await Nurse.findByIdAndUpdate(id, { confirmed: true }, { new: true });
 
     if (!nurse) {
         return res.status(404).json({ success: false, message: "Nurse not found" });
     }
 
-        res.status(200).json({ success: true, message: "Nurse confirmed successfully", data: nurse });
-    } catch (error) {
-        res.status(500).json({ success: false, message: error.message });
-    }
-};
+    res.status(200).json({ success: true, message: "Nurse confirmed successfully", data: nurse });
+});
+
+export const updateNurseAvailability = catchAsync(async (req, res) => {
+  const { nurseId } = req.params;
+
+  const nurse = await Nurse.findByIdAndUpdate(
+    nurseId,
+    { available: true },
+    { new: true }
+  );
+
+  res.status(200).json({ success: true, message: "Nurse updated successfully", nurse });
+});
+
+export const updateNurseStatus = catchAsync(async (req, res) => {
+  const { nurseId } = req.params;
+  const { status } = req.body;
+
+  if (!["confirmed", "rejected"].includes(status)) {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid status value. It must be either 'confirmed' or 'rejected'."
+    });
+  }
+
+  const updatedNurse = await Nurse.findByIdAndUpdate(
+    nurseId,
+    { status: status },
+    { new: true }
+  );
+
+  res.status(200).json({
+    success: true,
+    message: "Nurse status updated successfully",
+    nurse: updatedNurse
+  });
+});
