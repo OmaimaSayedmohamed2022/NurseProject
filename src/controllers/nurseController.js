@@ -191,3 +191,40 @@ export const confirmNurse = catchAsync(async (req, res) => {
 
     res.status(200).json({ success: true, message: "Nurse confirmed successfully", data: nurse });
 });
+
+export const updateNurseAvailability = catchAsync(async (req, res) => {
+  const { nurseId } = req.params;
+
+  const nurse = await Nurse.findByIdAndUpdate(
+    nurseId,
+    { available: true },
+    { new: true }
+  );
+
+  res.status(200).json({ success: true, message: "Nurse updated successfully", nurse });
+});
+
+export const updateNurseStatus = catchAsync(async (req, res) => {
+  const { nurseId } = req.params;
+  const { status } = req.body;
+
+  if (!["confirmed", "rejected"].includes(status)) {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid status value. It must be either 'confirmed' or 'rejected'."
+    });
+  }
+
+  const updatedNurse = await Nurse.findByIdAndUpdate(
+    nurseId,
+    { status: status },
+    { new: true }
+  );
+
+  res.status(200).json({
+    success: true,
+    message: "Nurse status updated successfully",
+    nurse: updatedNurse
+  });
+});
+
