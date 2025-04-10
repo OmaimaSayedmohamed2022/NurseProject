@@ -1,7 +1,8 @@
 import express from "express";
-import { getAdminById,updateEmployeePermissions} from "../controllers/adminController.js";
+import { getAdminById,updateEmployeePermissions,
+    createEmployee,updateEmployee,deleteEmployee,getAllEmployees
+} from "../controllers/adminController.js";
 import { verifyToken,authorizeRole } from "../middlewares/authMiddleware.js";
-import { createEmployee,updateEmployee,deleteEmployee,getAllEmployees } from "../controllers/employeesController.js";
 import upload from "../middlewares/uploadImage.js"
 
 const router = express.Router();

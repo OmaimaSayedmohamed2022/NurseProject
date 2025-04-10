@@ -1,102 +1,77 @@
-import Notification from "../models/NotificationModel.js"; 
-import { io } from "../../app.js"; 
+import Notification from "../models/NotificationModel.js";
+import { io } from "../../app.js";
+import catchAsync from "../utilites/catchAsync.js"; 
 
 // Function to send & save notifications
-export const sendNotification = async (userId, message) => {
-  try {
-    // Emit real-time notification
-    io.to(userId).emit("notification", { message });
+export const sendNotification = catchAsync(async (userId, message) => {
+  // Emit real-time notification
+  io.to(userId).emit("notification", { message });
 
-    // Save to MongoDB
-    const newNotification = new Notification({ userId, message });
-    await newNotification.save();
-  } catch (error) {
-    console.error("Error sending notification:", error);
-  }
-};
+  // Save to MongoDB
+  const newNotification = new Notification({ userId, message });
+  await newNotification.save();
+});
 
 // API to send a new notification
-export const sendNotificationAPI = async (req, res) => {
-  try {
-    const { userId, message } = req.body;
-    if (!userId || !message) {
-      return res.status(400).json({ success: false, message: "User ID and message are required" });
-    }
-    await sendNotification(userId, message);
-    res.json({ success: true, message: "Notification sent and saved!" });
-  } catch (error) {
-    res.status(500).json({ success: false, message: "Error sending notification", error: error.message });
+export const sendNotificationAPI = catchAsync(async (req, res) => {
+  const { userId, message } = req.body;
+  if (!userId || !message) {
+    return res.status(400).json({ success: false, message: "User ID and message are required" });
   }
-};
+  await sendNotification(userId, message);
+  res.json({ success: true, message: "Notification sent and saved!" });
+});
 
 // API to get user notifications
-export const getUserNotifications = async (req, res) => {
-  try {
-    const { userId } = req.params;
-    if (!userId) {
-      return res.status(400).json({ success: false, message: "User ID is required" });
-    }
-    const notifications = await Notification.find({ userId }).sort({ createdAt: -1 });
-    res.json({ success: true, notifications });
-  } catch (error) {
-    res.status(500).json({ success: false, message: "Error fetching notifications", error: error.message });
+export const getUserNotifications = catchAsync(async (req, res) => {
+  const { userId } = req.params;
+  if (!userId) {
+    return res.status(400).json({ success: false, message: "User ID is required" });
   }
-};
+  const notifications = await Notification.find({ userId }).sort({ createdAt: -1 });
+  res.json({ success: true, notifications });
+});
 
+// Mark a notification as read
+export const markNotificationAsRead = catchAsync(async (req, res) => {
+  const { notificationId } = req.params;
+  const notification = await Notification.findById(notificationId);
 
-//  mark a notification as read
-export const markNotificationAsRead = async (req, res) => {
-    try {
-      const { notificationId } = req.params;
-      const notification = await Notification.findById(notificationId);
-      
-      if (!notification) {
-        return res.status(404).json({ success: false, message: "Notification not found" });
-      }
-  
-      notification.isRead= true;
-      await notification.save();
-  
-      res.json({ success: true, message: "Notification marked as read", notification });
-    } catch (error) {
-      res.status(500).json({ success: false, message: "Error updating notification", error: error.message });
-    }
-  };
-  // update notification
-  export const updateNotification = async (req, res) => {
-    try {
-      const { notificationId } = req.params;
-      const { message } = req.body;
-  
-      const notification = await Notification.findById(notificationId);
-      if (!notification) {
-        return res.status(404).json({ success: false, message: "Notification not found" });
-      }
-  
-      if (message) notification.message = message;
-      await notification.save();
-  
-      res.json({ success: true, message: "Notification updated", notification });
-    } catch (error) {
-      res.status(500).json({ success: false, message: "Error updating notification", error: error.message });
-    }
-  };
+  if (!notification) {
+    return res.status(404).json({ success: false, message: "Notification not found" });
+  }
 
-  // delete notification
-  export const deleteNotification = async (req, res) => {
-    try {
-      const { notificationId } = req.params;
-  
-      const notification = await Notification.findByIdAndDelete(notificationId);
-  
-      if (!notification) {
-        return res.status(404).json({ success: false, message: "Notification not found" });
-      }
-  
-      res.json({ success: true, message: "Notification deleted" });
-    } catch (error) {
-      res.status(500).json({ success: false, message: "Error deleting notification", error: error.message });
-    }
-  };
-  
-  
+  notification.isRead = true;
+  await notification.save();
+
+  res.json({ success: true, message: "Notification marked as read", notification });
+});
+
+// Update notification
+export const updateNotification = catchAsync(async (req, res) => {
+  const { notificationId } = req.params;
+  const { message } = req.body;
+
+  const notification = await Notification.findById(notificationId);
+  if (!notification) {
+    return res.status(404).json({ success: false, message: "Notification not found" });
+  }
+
+  if (message) notification.message = message;
+  await notification.save();
+
+  res.json({ success: true, message: "Notification updated", notification });
+});
+
+// Delete notification
+export const deleteNotification = catchAsync(async (req, res) => {
+  const { notificationId } = req.params;
+
+  const notification = await Notification.findByIdAndDelete(notificationId);
+
+  if (!notification) {
+    return res.status(404).json({ success: false, message: "Notification not found" });
+  }
+
+  res.json({ success: true, message: "Notification deleted" });
+});

@@ -1,12 +1,11 @@
 import PatientData from "../models/patientDataModel.js"; 
 import uploadToCloudinary from "../middlewares/uploadToCloudinary.js";
 
-//add 
+// Add patient
 export const addPatient = async (req, res) => {
   try {
     const { client, name, code, services, description, phoneNumber, date } = req.body;
 
-    // Get uploaded file paths
     let videoOrPhotos = null;
 
     // Check if an image is uploaded
@@ -36,8 +35,7 @@ export const addPatient = async (req, res) => {
   }
 };
 
-  
-// 2️⃣ Get All Patients
+// Get all patients
 export const getAllPatients = async (req, res) => {
   try {
     const patients = await PatientData.find().populate("services");
@@ -47,12 +45,12 @@ export const getAllPatients = async (req, res) => {
   }
 };
 
-// 3️⃣ Get Single Patient
+// Get single patient by clientId
 export const getPatientById = async (req, res) => {
   try {
     const { clientId } = req.params;
-    // console.log("Client ID:", clientId); 
     const patient = await PatientData.find({ client: clientId }).populate("services");
+
     if (!patient) return res.status(404).json({ success: false, message: "Patient not found" });
     res.status(200).json({ success: true, data: patient });
   } catch (error) {
@@ -60,10 +58,11 @@ export const getPatientById = async (req, res) => {
   }
 };
 
-// 4️⃣ Update Patient
+// Update patient
 export const updatePatient = async (req, res) => {
   try {
     const updatedPatient = await PatientData.findByIdAndUpdate(req.params.id, req.body, { new: true });
+
     if (!updatedPatient) return res.status(404).json({ success: false, message: "Patient not found" });
     res.status(200).json({ success: true, message: "Patient updated.", data: updatedPatient });
   } catch (error) {
@@ -71,10 +70,11 @@ export const updatePatient = async (req, res) => {
   }
 };
 
-// 5️⃣ Delete Patient
+// Delete patient
 export const deletePatient = async (req, res) => {
   try {
     const deletedPatient = await PatientData.findByIdAndDelete(req.params.id);
+
     if (!deletedPatient) return res.status(404).json({ success: false, message: "Patient not found" });
     res.status(200).json({ success: true, message: "Patient deleted." });
   } catch (error) {

@@ -12,6 +12,7 @@ import patientDataRouter from "./patientDataRouter.js"
 import requestsRouter from  "./requestsRouter.js"
 import adminRoutes from "./adminRouter.js";
 import {verifyToken ,authorizeRole}from "../middlewares/authMiddleware.js"
+import settingRoutes from './settingRoutes.js'
 
 
 
@@ -38,6 +39,7 @@ router.use("/patientDashboard", patientDashboardRouter)
 router.use("/serviceDashboard", serviceDashboardRouter)
 
 router.use("/requests",requestsRouter)
+router.use("/setting",settingRoutes)
 
 
 export default router
