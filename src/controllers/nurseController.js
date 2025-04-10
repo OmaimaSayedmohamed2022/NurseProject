@@ -227,4 +227,3 @@ export const updateNurseStatus = catchAsync(async (req, res) => {
     nurse: updatedNurse
   });
 });
-
