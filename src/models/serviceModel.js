@@ -21,6 +21,7 @@ const serviceSchema = new mongoose.Schema(
   },
     description: { type: String, required: true },
     price: { type: Number, required: true },
+    offer: { type: Number },
     duration: { type: String, required: true },
     icon: { type: String },
     subcategories: {

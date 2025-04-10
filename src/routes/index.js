@@ -16,6 +16,10 @@ import settingRoutes from './settingRoutes.js'
 
 
 
+import homeDashboardRouter from "./homeDashboardRouter.js"
+import nurseDashboardRouter from "./nurseDashboardRouter.js"
+import patientDashboardRouter from "./patientDashboardRouter.js"
+import serviceDashboardRouter from "./serviceDashboardRouter.js"
 
 
 router.use("/client",clientRoutes);
@@ -28,8 +32,15 @@ router.use("/service",serviceRouter)
 router.use("/consultation",consultationRouter)
 router.use("/booking",bookingRouter)
 router.use("/patientData",patientDataRouter)
+
+router.use("/homeDashboard", homeDashboardRouter)
+router.use("/nurseDashboard", nurseDashboardRouter)
+router.use("/patientDashboard", patientDashboardRouter)
+router.use("/serviceDashboard", serviceDashboardRouter)
+
 router.use("/requests",requestsRouter)
 router.use("/setting",settingRoutes)
+
 
 export default router
 

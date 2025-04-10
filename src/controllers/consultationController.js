@@ -1,9 +1,8 @@
 import { Consultation } from "../models/consultationModel.js";
-import { sendNotification } from "./notificationController.js"
+import { sendNotification } from "./notificationController.js";
 import catchAsync from "../utilites/catchAsync.js";
 
-//  Request a new consultation
-// 📝 Request a new consultation
+// Request a new consultation
 export const requestConsultation = catchAsync(async (req, res) => {
   const { userId, professionalId, type } = req.body;
 
@@ -15,7 +14,7 @@ export const requestConsultation = catchAsync(async (req, res) => {
   await consultation.save();
 
   // 🔔 Notify professional
-  // await sendNotification(professionalId, `New ${type} consultation request from a user.`);
+  await sendNotification(professionalId, `New ${type} consultation request from a user.`);
 
   res.status(201).json({
     success: true,

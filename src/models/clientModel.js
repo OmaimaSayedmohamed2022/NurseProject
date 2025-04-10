@@ -16,6 +16,7 @@ const clientSchema = new mongoose.Schema({
     idCard: { type: String, required: false },
     healthNumber: { type: String, required: false },
     bloodType: { type: String },
+    address:{type:String},
 
     generalHealthStatus: {
      chronicDiseases: { type: String },
