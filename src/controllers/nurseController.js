@@ -167,14 +167,11 @@ export const getNurseCompletedSessions = catchAsync(async (req, res) => {
 
     if (!nurse) {
         return res.status(404).json({ success: false, message: "Nurse not found" });
-      }
-  
-      res.status(200).json({ success: true, completedSessions: nurse.completedSessions });
-    } catch (error) {
-      logger.error(`Error fetching completed sessions: ${error.message}`);
-      res.status(500).json({ success: false, message: error.message });
     }
-  };
+
+    res.status(200).json({ success: true, completedSessions: nurse.completedSessions });
+});
+
   
 
   // Get all unconfirmed nurses
