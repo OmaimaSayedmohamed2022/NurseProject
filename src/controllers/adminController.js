@@ -1,6 +1,7 @@
 import Admin from "../models/adminModel.js";
 import catchAsync from "../utilites/catchAsync.js";
 import bcrypt from "bcryptjs";
+import uploadToCloudinary from "../middlewares/uploadToCloudinary.js"
 
 
 export const getAdminById = catchAsync(async (req, res) => {
