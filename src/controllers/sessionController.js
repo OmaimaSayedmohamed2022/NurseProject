@@ -185,3 +185,14 @@ export const getSessionsByClient = asyncCatch(async (req, res) => {
 
   res.status(200).json({ success: true, sessions });
 });
+
+// get all sessions
+export const getAllSessionData = asyncCatch(async (req, res) => {
+  const sessions = await Session.find();
+
+  res.status(200).json({
+    success: true,
+    count: sessions.length,
+    sessions,
+  });
+});
