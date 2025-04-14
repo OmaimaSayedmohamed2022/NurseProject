@@ -12,6 +12,24 @@ const settingSchema = new mongoose.Schema(
     privacyPolicy: {
         type: String,
       },
+      email: {
+        type: String,
+      },
+      location: {
+        type: String,
+      },
+      photo:{
+        type:String
+      },
+      contactUs: {
+        type: String,
+      },
+      facebook: {
+        type: String,
+      },
+      whatsapp: {
+        type: String,
+      },
   },
   {
     timestamps: true,

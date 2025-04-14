@@ -31,7 +31,9 @@ export const updateSetting = asyncCatch(async (req, res) => {
 
 // Get Setting
 export const getSetting = asyncCatch(async (req, res) => {
-  const setting = await Setting.findOne();
+  const setting = await Setting.findOne().select(
+    "image message"
+  );
 
   if (!setting) {
     return res.status(404).json({ success: false, message: "Setting not found" });
@@ -71,4 +73,53 @@ export const renderPrivacyPolicyPage = asyncCatch(async (req, res) => {
   `;
 
   res.send(htmlContent);
+});
+
+
+export const helpSetting = asyncCatch(async (req, res) => {
+  let photo  = "";
+
+  if (req.file) {
+    photo  = await uploadToCloudinary(req.file.buffer);
+  }
+
+  const {
+    email,
+    location,
+    contactUs,
+    facebook,
+    whatsapp
+  } = req.body;
+
+  const updated = await Setting.findOneAndUpdate(
+    {},
+    {
+      $set: {
+        ...(photo && { photo  }),
+        ...(email && { email }),
+        ...(location && { location }),
+        ...(contactUs && { contactUs }),
+        ...(facebook && { facebook }),
+        ...(whatsapp && { whatsapp }),
+      },
+    },
+    { new: true, upsert: true }
+  );
+
+  res.status(200).json({ success: true, setting: updated });
+});
+
+
+export const getHelp = asyncCatch(async (req, res) => {
+  const setting = await Setting.findOne().select(
+    "photo email location contactUs facebook whatsapp"
+  );
+
+  if (!setting) {
+    return res
+      .status(404)
+      .json({ success: false, message: "Help info not found" });
+  }
+
+  res.status(200).json({ success: true, help: setting });
 });
