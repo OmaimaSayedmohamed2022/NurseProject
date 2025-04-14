@@ -1,7 +1,8 @@
 import express from 'express';
 import { createSession, getSessions, addSessionData, getSessionByCode,
          getSessionsForNurse ,confirmSession,cancelSession,
-         getSessionsByClient
+         getSessionsByClient, getAllSessionData
+
        } from '../controllers/sessionController.js';
 import upload from '../middlewares/uploadImage.js';
 
@@ -24,6 +25,9 @@ router.get('/getClientRequests/:clientId',getSessionsByClient)
 
 router.put("/confirm/:sessionId", confirmSession)
 router.put("/cancel/:sessionId", cancelSession)
+
+router.get('/sessions', getAllSessionData);
+
 
 
 
