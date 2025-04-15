@@ -36,12 +36,12 @@ const nurseSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    licenseNumber: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true
-    },
+    // licenseNumber: {
+    //   type: String,
+    //   required: true,
+    //   unique: true,
+    //   trim: true
+    // },
     specialty: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Service",
