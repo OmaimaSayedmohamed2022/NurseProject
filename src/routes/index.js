@@ -7,12 +7,12 @@ import notificationRoutes from "./notificationRoutes.js"
 import sessionRoutes from "./sessionRoutes.js"
 import serviceRouter from "./serviceRouter.js"
 import consultationRouter from "./consultationRouter.js"
-import bookingRouter from'./bookingRouter.js'
 import patientDataRouter from "./patientDataRouter.js"
 import requestsRouter from  "./requestsRouter.js"
 import adminRoutes from "./adminRouter.js";
 import {verifyToken ,authorizeRole}from "../middlewares/authMiddleware.js"
 import settingRoutes from './settingRoutes.js'
+import historyRouter from "./historyRouter.js"
 
 
 
@@ -30,8 +30,9 @@ router.use("/notification",notificationRoutes)
 router.use("/session",sessionRoutes)
 router.use("/service",serviceRouter)
 router.use("/consultation",consultationRouter)
-router.use("/booking",bookingRouter)
+// router.use("/booking",bookingRouter)
 router.use("/patientData",patientDataRouter)
+router.use("/history",historyRouter)
 
 router.use("/homeDashboard", homeDashboardRouter)
 router.use("/nurseDashboard", nurseDashboardRouter)

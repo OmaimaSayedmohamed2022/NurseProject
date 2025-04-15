@@ -1,5 +1,5 @@
-
 import mongoose from "mongoose";
+import {historyPlugin} from "../utilites/historyPlugin.js"
 
 const nurseSchema = new mongoose.Schema(
   {
@@ -112,6 +112,8 @@ const nurseSchema = new mongoose.Schema(
 );
 
 nurseSchema.index({ location: "2dsphere" });
+
+nurseSchema.plugin(historyPlugin, { moduleName: "Nurse" });
 
 const Nurse = mongoose.model("Nurse", nurseSchema);
 export default Nurse;

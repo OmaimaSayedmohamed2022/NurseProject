@@ -1,5 +1,5 @@
-
 import mongoose from "mongoose";
+import {historyPlugin} from "../utilites/historyPlugin.js"
 
 const contactSchema = new mongoose.Schema(
   {
@@ -8,6 +8,7 @@ const contactSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+contactSchema.plugin(historyPlugin, { moduleName: "Contact" });
 
 export default mongoose.model("Contact", contactSchema);
 

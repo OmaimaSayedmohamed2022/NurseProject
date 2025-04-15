@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import {historyPlugin} from "../utilites/historyPlugin.js"
 
 const patientSchema = new mongoose.Schema({
   client: { type: mongoose.Schema.Types.ObjectId, ref: "Client", required: true, },
@@ -10,6 +11,8 @@ const patientSchema = new mongoose.Schema({
   date: { type: Date, required: true },
   videoOrPhotos: [{ type: String }], 
 }, { timestamps: true });
+
+patientSchema.plugin(historyPlugin, { moduleName: "PatientData" });
 
 const PatientData = mongoose.model("PatientData", patientSchema);
 export default PatientData;

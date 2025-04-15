@@ -105,3 +105,57 @@
 {"level":"info","message":"Server running on port 5005","timestamp":"2025-04-14T20:10:19.040Z"}
 {"level":"info","message":"Server running on port 5005","timestamp":"2025-04-14T20:10:22.005Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-14T20:10:24.086Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:13:15.844Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:13:19.114Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:13:20.381Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:16:07.730Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:16:08.902Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:25:49.190Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:25:50.361Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:37:07.565Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:37:44.706Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:37:45.801Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:39:32.243Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:39:33.344Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:39:46.570Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:39:47.583Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:39:55.569Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:39:56.610Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:40:13.708Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:40:21.403Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:40:27.992Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:40:28.978Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:40:58.564Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:40:59.840Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:41:10.707Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:41:11.763Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:41:45.093Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:41:59.043Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:42:10.365Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:42:14.135Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:42:15.168Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:42:34.215Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:42:35.165Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:42:43.892Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:42:44.915Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:42:59.339Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:43:04.220Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:43:05.266Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:43:12.944Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:43:13.975Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:43:30.933Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:43:36.526Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:43:37.497Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:43:45.025Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:43:46.071Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:43:51.752Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:44:02.720Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-15T01:44:17.001Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-15T01:44:18.003Z"}
+{"level":"info","message":"::1 - - [15/Apr/2025:01:44:45 +0000] \"DELETE /api/admin/deleteEmployee/67f317372b765987db3f78a5 HTTP/1.1\" 404 48 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:44:45.584Z"}
+{"level":"info","message":"::1 - - [15/Apr/2025:01:49:57 +0000] \"DELETE /api/admin/deleteEmployee/67f3272873966f31d2f01415 HTTP/1.1\" 404 48 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:49:57.798Z"}
+{"level":"info","message":"::1 - - [15/Apr/2025:01:50:37 +0000] \"GET /api/history/67fdbb43e8315d0ec39a5382 HTTP/1.1\" 404 175 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:50:37.179Z"}
+{"level":"info","message":"::1 - - [15/Apr/2025:01:52:15 +0000] \"POST /api/history/restore/67cfbd6fc36cb4b33f099bc6 HTTP/1.1\" 404 39 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:52:15.881Z"}
+{"level":"info","message":"::1 - - [15/Apr/2025:01:52:44 +0000] \"POST /api/history/restore/67fdbba6e8315d0ec39a5389 HTTP/1.1\" 500 103 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:52:44.172Z"}
+{"level":"info","message":"::1 - - [15/Apr/2025:01:53:36 +0000] \"DELETE /api/admin/deleteEmployee/67f3272873966f31d2f01415 HTTP/1.1\" 404 48 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:53:36.623Z"}
+{"level":"info","message":"::1 - - [15/Apr/2025:01:58:26 +0000] \"DELETE /api/client/delete/67cfcb64947e6d375e4f5405 HTTP/1.1\" 404 28 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:58:26.749Z"}

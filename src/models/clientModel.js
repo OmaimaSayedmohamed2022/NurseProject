@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import {historyPlugin} from "../utilites/historyPlugin.js"
 
 const clientSchema = new mongoose.Schema({
 
@@ -46,6 +47,8 @@ const clientSchema = new mongoose.Schema({
                      uploadedAt: { type: Date, default: Date.now } }]
 },
  { timestamps: true });
+
+ clientSchema.plugin(historyPlugin, { moduleName: "Client" });
 
 const Client = mongoose.model("Client" ,clientSchema);
 export default Client;

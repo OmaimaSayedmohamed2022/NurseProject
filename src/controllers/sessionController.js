@@ -3,7 +3,6 @@ import Session from "../models/sessionModel.js";
 import Nurse from "../models/nurseModel.js";
 import Service from "../models/serviceModel.js";
 import Client from "../models/clientModel.js";
-import Booking from "../models/bookingModel.js";
 import uploadToCloudinary from "../middlewares/uploadToCloudinary.js";
 import { generateCode } from "../utilites/generateCode.js";
 import logger from "../utilites/logger.js";
