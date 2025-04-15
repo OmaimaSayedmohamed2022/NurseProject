@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import {historyPlugin} from "../utilites/historyPlugin.js"
 
 const serviceSchema = new mongoose.Schema(
   {
@@ -38,6 +39,8 @@ const serviceSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+serviceSchema.plugin(historyPlugin, { moduleName: "Service" });
 
 const Service = mongoose.model("Service", serviceSchema);
 export default Service;

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import {historyPlugin} from "../utilites/historyPlugin.js"
 
 const sessionSchema = new mongoose.Schema(
   {
@@ -44,8 +45,9 @@ const sessionSchema = new mongoose.Schema(
    videoOrPhotos: { type: String },
 
   },
-  { timestamps: true }
-);
+  { timestamps: true });
+
+sessionSchema.plugin(historyPlugin, { moduleName: "Session" });
 
 const Session = mongoose.model("Session", sessionSchema);
 export default Session;

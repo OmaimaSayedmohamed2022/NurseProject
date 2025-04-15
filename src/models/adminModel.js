@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import {historyPlugin} from "../utilites/historyPlugin.js"
 
 const adminSchema = new mongoose.Schema(
   {
@@ -35,6 +36,8 @@ const adminSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+adminSchema.plugin(historyPlugin, { moduleName: "Admin" });
 
 const Admin = mongoose.model("Admin", adminSchema);
 export default Admin;
