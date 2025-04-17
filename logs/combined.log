@@ -389,3 +389,29 @@
 {"level":"info","message":"::1 - - [17/Apr/2025:00:55:53 +0000] \"GET /api/patientDashboard/allUsers HTTP/1.1\" 401 28 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T00:55:53.299Z"}
 {"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T00:58:44.905Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T00:58:46.122Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T01:32:14.340Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T01:32:17.858Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T01:32:18.979Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T01:35:04.517Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T01:35:05.619Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T13:53:24.877Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T13:53:28.116Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T13:53:29.570Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T13:58:35.464Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T13:58:36.666Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T13:59:06.463Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T13:59:07.647Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T14:10:39.790Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T14:10:41.199Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:14:10:47 +0000] \"GET /api/nurseDashboard/search?query=omaima HTTP/1.1\" 401 28 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T14:10:47.262Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:14:10:51 +0000] \"GET /api/nurseDashboard/search?query=omaima HTTP/1.1\" 401 28 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T14:10:51.928Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T15:33:21.530Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T15:33:25.708Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T15:33:26.887Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T15:39:24.808Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T15:39:25.979Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T15:40:03.394Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T15:40:04.429Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T15:41:02.317Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T15:41:03.569Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:15:41:43 +0000] \"GET /api/setting/contacts HTTP/1.1\" 401 47 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T15:41:43.377Z"}

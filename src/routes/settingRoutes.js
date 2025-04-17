@@ -1,8 +1,9 @@
 import express from "express";
 import multer from "multer";
 import { updateSetting,getSetting ,updatePrivacyPolicy,renderPrivacyPolicyPage,
-    helpSetting,getHelp
+    helpSetting,getHelp, 
 } from "../controllers/settingController.js";
+import { getAllContacts } from "../controllers/contactController.js";
 import upload from '../middlewares/uploadImage.js';
 import { verifyToken } from '../middlewares/authMiddleware.js';
 import { autoPermission } from '../middlewares/autoPermissions.js';
@@ -19,5 +20,6 @@ router.get("/getprivacy", renderPrivacyPolicyPage);
 
 router.put("/help", upload.single("photo"), helpSetting );
 router.get("/gethelp", getHelp);
+router.get("/contacts",getAllContacts)
 
 export default router;

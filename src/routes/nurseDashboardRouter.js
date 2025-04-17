@@ -76,3 +76,5 @@ router.patch('/updateNurseAvailability/:nurseId', nurseMiddleware, updateNurseAv
 router.patch('/updateNurseStatus/:nurseId', nurseMiddleware, updateNurseStatus);
 
 export default router;
+
+

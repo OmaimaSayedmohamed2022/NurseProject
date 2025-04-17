@@ -20,3 +20,15 @@ export const contactUs = catchAsync(async (req, res) => {
 
   res.status(200).json({ success: true, message: "Message sent successfully" });
 });
+
+
+// get contact
+export const getAllContacts = async (req, res) => {
+  try {
+    const contacts = await Contact.find().sort({ createdAt: -1 }); 
+    res.status(200).json(contacts);
+  } catch (err) {
+    console.error("❌ Error fetching contacts:", err);
+    res.status(500).json({ message: "Error fetching contacts" });
+  }
+};
