@@ -39,8 +39,7 @@ router.post("/contactUs",verifyToken,contactUs)
 router.get("/NumOfSessions/:nurseId",getNurseCompletedSessions)
 
 // dashboard
-router.get('/unconfirmed', getUnconfirmedNurses);
-router.put('/confirm/:id', confirmNurse);
+
 
 
 

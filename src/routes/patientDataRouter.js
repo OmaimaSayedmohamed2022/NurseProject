@@ -10,6 +10,7 @@ import upload from "../middlewares/uploadImage.js";
 
 const router = express.Router();
 
+
 router.post("/add", upload.single("videoOrPhotos"),addPatient);
 router.get("/", getAllPatients);
 router.get("/:clientId", getPatientById);

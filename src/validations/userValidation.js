@@ -41,7 +41,7 @@ export const userValidation = (isUpdate = false) => [
     .if(() => !isUpdate) 
     .notEmpty()
     .withMessage('Role is required')
-    .isIn(['nurse', 'sick']) 
+    .isIn(['nurse', 'client']) 
     .withMessage('Invalid role'),
 
   
