@@ -25,11 +25,14 @@ export const updateEmployeePermissions = catchAsync(async (req, res) => {
     return res.status(404).json({ success: false, message: "Admin not found" });
   }
 
+  // تأكد من وجود permissions
+  if (!admin.permissions) {
+    admin.permissions = {};
+  }
+
   // Update only provided fields 
   Object.keys(updates).forEach(key => {
-    if (key in admin.permissions) {
-      admin.permissions[key] = updates[key];
-    }
+    admin.permissions[key] = updates[key];
   });
 
   await admin.save();
