@@ -134,25 +134,3 @@ export const getAllEmployees = async (req, res) => {
     res.status(500).json({ success: false, message: err.message });
   }
 };
-
-
-export const getAllUsers = async (req, res) => {
-  try {
-    const nurses = await Nurse.find({}, "-password"); 
-    const clients = await Client.find({}, "-password");
-    const admins = await Admin.find({}, "-password");
-
-    const allUsers = [
-      ...nurses.map(user => ({ ...user._doc, userType: "nurse" })),
-      ...clients.map(user => ({ ...user._doc, userType: "client" })),
-      ...admins.map(user => ({ ...user._doc, userType: "admin" }))
-    ];
-
-    res.status(200).json({ count: allUsers.length, users: allUsers });
-  } catch (err) {
-    console.error("❌ Error fetching users:", err);
-    res.status(500).json({ message: "Failed to fetch users" });
-  }
-};
-
-

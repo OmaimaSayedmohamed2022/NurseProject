@@ -117,3 +117,29 @@ export const getNurseReviews = catchAsync(async (req, res) => {
 
   res.status(200).json({ success: true, reviews: formattedReviews });
 });
+
+// skills
+export const getSessionPercentagePerSkill = catchAsync(async (req, res) => {
+  const { nurseId } = req.params;
+
+  const sessions = await Session.find({ nurse: nurseId, status: "confirmed" }).populate("service", "name");
+
+  if (!sessions.length) {
+    return res.status(200).json({ success: true, data: [], message: "No sessions found for this nurse." });
+  }
+
+  const totalSessions = sessions.length;
+
+  const countMap = {};
+  sessions.forEach(session => {
+    const name = session.service?.name || "Unknown";
+    countMap[name] = (countMap[name] || 0) + 1;
+  });
+
+  const result = Object.entries(countMap).map(([name, count]) => ({
+    [name]: Math.round((count / totalSessions) * 100)
+  }));
+
+  res.status(200).json({ success: true, data: result });
+});
+
