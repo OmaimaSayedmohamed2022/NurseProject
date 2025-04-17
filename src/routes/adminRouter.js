@@ -16,7 +16,7 @@ router.put("/updateEmployee/:id",upload.single("image") ,updateEmployee);
 router.delete("/deleteEmployee/:id", deleteEmployee);
 router.get("/getAllEmployee", getAllEmployees);
 
-router.get("/allUsers", getAllUsers);
+router.get("/allUsers",getAllUsers);
 
 
 export default router;
