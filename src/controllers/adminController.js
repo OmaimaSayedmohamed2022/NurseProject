@@ -1,4 +1,6 @@
 import Admin from "../models/adminModel.js";
+import Nurse from "../models/nurseModel.js";
+import Client from "../models/clientModel.js";
 import catchAsync from "../utilites/catchAsync.js";
 import bcrypt from "bcryptjs";
 import uploadToCloudinary from "../middlewares/uploadToCloudinary.js"
