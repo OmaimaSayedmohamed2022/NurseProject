@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 import Nurse from '../models/nurseModel.js';
 import Client from '../models/clientModel.js';
 import Admin from '../models/adminModel.js'
+import { generateFullPermissions } from '../utilites/permissionHelper.js';
 
 export const verifyToken = async (req, res, next) => {
   try {
@@ -11,22 +12,26 @@ export const verifyToken = async (req, res, next) => {
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; 
 
-    let user = await Nurse.findById(req.user.id);
-    if (!user){
-        user = await Client.findById(req.user.id);
-    }
-    if (!user){
-      user = await Admin.findById(req.user.id);
-  }
+    let user =
+      await Nurse.findById(decoded.id) ||
+      await Client.findById(decoded.id) ||
+      await Admin.findById(decoded.id);
 
     if (!user) {
       return res.status(404).json({ message: 'User not found.' });
     }
+    const role = user.role || "client";
 
+    req.user = {
+      id: user._id,
+      role,
+      permissions:
+        (["Admin"].includes(role)) 
+          ? generateFullPermissions() 
+          : user.permissions || {}
+    };
 
-    req.user.role = user.role; 
     next();
   } catch (error) {
     res.status(401).json({ message: 'Invalid token.' });

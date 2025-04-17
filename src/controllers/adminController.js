@@ -18,29 +18,29 @@ export const getAdminById = catchAsync(async (req, res) => {
 
 export const updateEmployeePermissions = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const {
-    addService,
-    editService,
-    deleteService,
-    viewService
-  } = req.body;
+  const updates = req.body;
 
   const admin = await Admin.findById(id);
   if (!admin) {
     return res.status(404).json({ success: false, message: "Admin not found" });
   }
 
-  admin.permissions = {
-    addService: addService ?? admin.permissions.addService,
-    editService: editService ?? admin.permissions.editService,
-    deleteService: deleteService ?? admin.permissions.deleteService,
-    viewService: viewService ?? admin.permissions.viewService,
-  };
+  // Update only provided fields 
+  Object.keys(updates).forEach(key => {
+    if (key in admin.permissions) {
+      admin.permissions[key] = updates[key];
+    }
+  });
 
   await admin.save();
 
-  res.json({ success: true, message: "Permissions updated", admin });
+  res.status(200).json({
+    success: true,
+    message: "Permissions updated successfully",
+    admin
+  });
 });
+
 
 // ✅ Create new employee
 export const createEmployee = async (req, res) => {
