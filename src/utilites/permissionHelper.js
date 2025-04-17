@@ -1,7 +1,7 @@
 export const generateFullPermissions = () => {
     const modules = [
       "patient", "nurse", "service", "session",
-      "patientData", "setting", "notification"
+      "patientData", "setting", "notification","emergency"
     ];
   
     const fullAccess = {
