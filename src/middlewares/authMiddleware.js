@@ -13,6 +13,8 @@ export const verifyToken = async (req, res, next) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
+    console.log("✅ Decoded token:", decoded); // 👈 log the full payload
+
     let user =
       await Nurse.findById(decoded.id) ||
       await Client.findById(decoded.id) ||
@@ -21,7 +23,9 @@ export const verifyToken = async (req, res, next) => {
     if (!user) {
       return res.status(404).json({ message: 'User not found.' });
     }
+
     const role = user.role || "client";
+    console.log("👤 User role:", role); // 👈 log the role being used
 
     req.user = {
       id: user._id,
@@ -34,6 +38,7 @@ export const verifyToken = async (req, res, next) => {
 
     next();
   } catch (error) {
+    console.error("❌ Token verification failed:", error); // log token error
     res.status(401).json({ message: 'Invalid token.' });
   }
 };
