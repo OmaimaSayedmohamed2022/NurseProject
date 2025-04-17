@@ -135,7 +135,6 @@ export const getAllEmployees = async (req, res) => {
   }
 };
 
-
 export const getAllUsers = async (req, res) => {
   try {
     const nurses = await Nurse.find({}, "-password"); // exclude password
