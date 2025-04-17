@@ -158,4 +158,40 @@
 {"level":"info","message":"::1 - - [15/Apr/2025:01:52:15 +0000] \"POST /api/history/restore/67cfbd6fc36cb4b33f099bc6 HTTP/1.1\" 404 39 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:52:15.881Z"}
 {"level":"info","message":"::1 - - [15/Apr/2025:01:52:44 +0000] \"POST /api/history/restore/67fdbba6e8315d0ec39a5389 HTTP/1.1\" 500 103 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:52:44.172Z"}
 {"level":"info","message":"::1 - - [15/Apr/2025:01:53:36 +0000] \"DELETE /api/admin/deleteEmployee/67f3272873966f31d2f01415 HTTP/1.1\" 404 48 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:53:36.623Z"}
-{"level":"info","message":"::1 - - [15/Apr/2025:01:58:26 +0000] \"DELETE /api/client/delete/67cfcb64947e6d375e4f5405 HTTP/1.1\" 404 28 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:58:26.749Z"}
+{"level":"info","message":"::1 - - [15/Apr/2025:01:58:26 +0000] \"DELETE /api/client/delete/67cfcb64947e6d375e4f5405 HTTP/1.1\" 404 28 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-15T01:58:26.749Z"}{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-16T20:01:10.413Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-16T20:01:11.676Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:01:23 +0000] \"GET /nurse/getAllNurses HTTP/1.1\" 404 157 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:01:23.449Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:05:39 +0000] \"POST /api/nurse/register HTTP/1.1\" 400 127 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:05:39.468Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:05:56 +0000] \"POST /api/nurse/register HTTP/1.1\" 400 57 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:05:56.050Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:05:59 +0000] \"POST /api/nurse/register HTTP/1.1\" 400 117 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:05:59.304Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:06:05 +0000] \"POST /api/nurse/register HTTP/1.1\" 500 66 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:06:05.796Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:08:05 +0000] \"POST /api/service/addService HTTP/1.1\" 500 133 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:08:05.009Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:08:24 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:08:24.126Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:08:30 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:08:30.519Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:08:31 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:08:31.900Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:08:32 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:08:32.882Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:08:33 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:08:33.691Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:11:40 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:11:40.605Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:11:41 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:11:41.629Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:11:42 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:11:42.709Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:11:45 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:11:45.269Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:11:46 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:11:46.378Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:11:47 +0000] \"POST /api/nurse/addReview/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 184 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:11:47.113Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:12:35 +0000] \"POST /api/nurse/reviews/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 45 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:12:35.289Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:16:39 +0000] \"POST /api/nurse/reviews/67f27e06755412497e8685bc HTTP/1.1\" 500 103 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:16:39.380Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:16:42 +0000] \"POST /api/nurse/reviews/67f27e06755412497e8685bc HTTP/1.1\" 500 103 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:16:42.408Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:17:12 +0000] \"POST /api/nurse/reviews/67f27e06755412497e8685bc HTTP/1.1\" 500 103 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:17:12.322Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:17:14 +0000] \"POST /api/nurse/reviews/67f27e06755412497e8685bc HTTP/1.1\" 500 103 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:17:14.080Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:17:46 +0000] \"POST /api/nurse/reviews/67f27e06755412497e8685bc HTTP/1.1\" 500 103 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:17:46.193Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:17:47 +0000] \"POST /api/nurse/reviews/67f27e06755412497e8685bc HTTP/1.1\" 500 103 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:17:47.633Z"}
+{"level":"info","message":"::1 - - [16/Apr/2025:20:17:48 +0000] \"POST /api/nurse/reviews/67f27e06755412497e8685bc HTTP/1.1\" 500 103 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-16T20:17:48.733Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-17T11:42:31.322Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-17T11:42:33.466Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:11:42:54 +0000] \"GET /api/nurse/getNurseReviews/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 189 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T11:42:54.371Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:11:43:04 +0000] \"GET /api/nurse/reviews/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 45 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T11:43:04.152Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:11:43:05 +0000] \"GET /api/nurse/reviews/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 45 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T11:43:05.974Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:11:43:07 +0000] \"GET /api/nurse/reviews/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 45 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T11:43:07.304Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:11:43:08 +0000] \"GET /api/nurse/reviews/67d77cd069d92f6905e6c7a4 HTTP/1.1\" 404 45 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T11:43:08.393Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:11:44:01 +0000] \"POST /api/nurse/register HTTP/1.1\" 500 66 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T11:44:01.597Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:11:44:05 +0000] \"POST /api/nurse/register HTTP/1.1\" 500 66 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T11:44:05.093Z"}
+{"level":"info","message":"::1 - - [17/Apr/2025:11:44:09 +0000] \"POST /api/nurse/register HTTP/1.1\" 500 66 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-17T11:44:09.276Z"}

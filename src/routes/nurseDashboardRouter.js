@@ -3,7 +3,8 @@ import { search, getServicesCount, getAllNurses, getPatientsForNurse,
     getNurseEarnings,
     getNurseSessions,
     getRecentVisits,
-    getNurseReviews} from '../controllers/nurseDashboardController.js';
+    getNurseReviews,
+    getSessionPercentagePerSkill} from '../controllers/nurseDashboardController.js';
 import nurseMiddleware from '../middlewares/nurseMiddleware.js';
 
 const router = express.Router();
@@ -24,5 +25,6 @@ router.get('/nurseRecentVisits/:nurseId', nurseMiddleware, getRecentVisits);
 
 router.get('/nurseReviews/:nurseId', nurseMiddleware, getNurseReviews);
 
+router.get('/nurseSkills/:nurseId', nurseMiddleware, getSessionPercentagePerSkill);
 
 export default router;
