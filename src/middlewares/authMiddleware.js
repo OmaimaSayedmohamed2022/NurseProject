@@ -14,7 +14,10 @@ export const verifyToken = async (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     console.log("✅ Decoded token:", decoded); // 👈 log the full payload
-
+    
+    const currentTime = Math.floor(Date.now() / 1000); // وقت UNIX الحالي بالثواني
+    console.log(currentTime);
+    
     let user =
       await Nurse.findById(decoded.id) ||
       await Client.findById(decoded.id) ||
@@ -42,6 +45,7 @@ export const verifyToken = async (req, res, next) => {
     res.status(401).json({ message: 'Invalid token.' });
   }
 };
+
 
 export const authorizeRole = (roles) => {
   return (req, res, next) => {

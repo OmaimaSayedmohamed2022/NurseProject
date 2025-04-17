@@ -17,7 +17,6 @@ router.patch("/update/:id",userMiddleware, upload.single("image"),userValidation
 router.delete("/delete/:id",userMiddleware,deleteUser)
 router.get("/getUser/:id",userMiddleware,getUserById)
 router.get("/allUsers",getAllUsers)
-
 router.get('/search', search);
 router.get('/clients', getAllClients);
 
