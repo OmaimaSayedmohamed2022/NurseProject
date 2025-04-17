@@ -32,12 +32,7 @@ const sessionSchema = new mongoose.Schema(
    clientName:{ type: String},
    location: { type: String }, 
    date: { type: Date },
-    status: { type: String, enum: ["pending", "confirmed", "canceled", "returned"], default: "pending" },
-    tubeImage: { type: String },
-    videoOrPhotos: { type: String },
-
-
-   status: { type: String, enum: ["pending", "confirmed", "canceled"], default: "pending" },
+   status: { type: String, enum: ["pending", "confirmed", "canceled", "returned", "emergency"], default: "pending" },
    paymentStatus:{ type:String ,enum:["Cash","Visa"], defult:"Cash" },
    total: { type: Number },
 
