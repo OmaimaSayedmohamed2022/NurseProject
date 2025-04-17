@@ -8,7 +8,7 @@ import sessionRoutes from "./sessionRoutes.js"
 import serviceRouter from "./serviceRouter.js"
 import consultationRouter from "./consultationRouter.js"
 import patientDataRouter from "./patientDataRouter.js"
-import requestsRouter from  "./requestsRouter.js"
+// import requestsRouter from  "./requestsRouter.js"
 import adminRoutes from "./adminRouter.js";
 import {verifyToken ,authorizeRole}from "../middlewares/authMiddleware.js"
 import settingRoutes from './settingRoutes.js'
@@ -42,7 +42,7 @@ router.use("/patientDashboard", patientDashboardRouter)
 router.use("/serviceDashboard", serviceDashboardRouter)
 router.use("/sessionDashboard", sessionsDashboardRouter)
 
-router.use("/requests",requestsRouter)
+// router.use("/requests",requestsRouter)
 router.use("/setting",settingRoutes)
 
 
