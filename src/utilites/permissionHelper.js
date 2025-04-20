@@ -2,7 +2,7 @@ export const generateFullPermissions = () => {
     const modules = [
       "patient", "nurse", "service", "session",
       "patientData", "setting", "notification",
-      "emergency", "history","home"
+      "emergency", "history","home","patientData"
 
     ];
   

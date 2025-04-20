@@ -18,7 +18,8 @@ const permissionSchema = new mongoose.Schema({
   notification:modulePermissionSchema,
   emergency:modulePermissionSchema,
   history:modulePermissionSchema,
-  home:modulePermissionSchema
+  home:modulePermissionSchema,
+  patientData:modulePermissionSchema
 
  
 }, { _id: false });

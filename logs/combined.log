@@ -71,3 +71,21 @@
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-20T22:24:51.853Z"}
 {"level":"info","message":"Server running on port 5005","timestamp":"2025-04-20T22:25:10.881Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-20T22:25:11.978Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-20T23:32:29.016Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-20T23:32:32.187Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-20T23:32:33.258Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-20T23:39:40.071Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-20T23:39:41.164Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-20T23:39:55.655Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-20T23:39:56.687Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-20T23:40:01.572Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-20T23:40:02.647Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-20T23:40:25.463Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-20T23:40:26.482Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-20T23:42:50.457Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-20T23:42:51.529Z"}
+{"level":"info","message":"::1 - - [20/Apr/2025:23:44:38 +0000] \"DELETE /api/serviceDashboard/deleteService/67ca141088f4cce4b44b2d69 HTTP/1.1\" 401 28 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-20T23:44:38.063Z"}
+{"level":"info","message":"::1 - - [20/Apr/2025:23:44:47 +0000] \"PATCH /api/serviceDashboard/updateService/67d2edbe6ce7f2fc084ce6eb HTTP/1.1\" 401 28 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-20T23:44:47.627Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-20T23:44:51.257Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-20T23:44:52.302Z"}
+{"level":"info","message":"::1 - - [20/Apr/2025:23:44:56 +0000] \"POST /api/serviceDashboard/addService HTTP/1.1\" 401 28 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-20T23:44:57.000Z"}
