@@ -10,9 +10,13 @@ import {
   getTestsDistribution, 
   getAvailableNurses 
 } from '../controllers/homeDashboardController.js'; 
+import { verifyToken } from "../middlewares/authMiddleware.js";
+import { autoPermission } from "../middlewares/autoPermissions.js";
 
 const router = express.Router();
 
+router.use(verifyToken);
+router.use(autoPermission("home")); 
 
 // Appointments
 router.get('/appointments/count', getAppointmentsCount);

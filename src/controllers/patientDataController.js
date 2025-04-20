@@ -1,6 +1,7 @@
 import PatientData from "../models/patientDataModel.js";
 import uploadToCloudinary from "../middlewares/uploadToCloudinary.js";
 import catchAsync from "../utilites/catchAsync.js";
+import Service from "../models/serviceModel.js"
 
 // Add patient
 export const addPatient = catchAsync(async (req, res) => {
@@ -62,3 +63,24 @@ export const deletePatient = catchAsync(async (req, res) => {
   if (!deletedPatient) return res.status(404).json({ success: false, message: "Patient not found" });
   res.status(200).json({ success: true, message: "Patient deleted." });
 });
+
+
+// // Get all patients with service = "Medical Tests"
+// export const getAnalysisAndReports = catchAsync(async (req, res) => {
+//   const medicalTestService = await Service.findOne({ name: "Medical Tests" });
+
+//   if (!medicalTestService) {
+//     return res.status(404).json({
+//       success: false,
+//       message: "Medical Tests service not found",
+//     });
+//   }
+//   const patients = await PatientData.find({
+//     services: medicalTestService._id,
+//   }).populate("services");
+
+//   res.status(200).json({
+//     success: true,
+//     data: patients,
+//   });
+// });
