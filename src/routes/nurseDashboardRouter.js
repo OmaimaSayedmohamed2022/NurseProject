@@ -36,7 +36,7 @@ import { verifyToken } from "../middlewares/authMiddleware.js";
 import { autoPermission } from '../middlewares/autoPermissions.js';
 
 router.use(verifyToken);
-router.use(autoPermission("patient"));
+router.use(autoPermission("nurse"));
 
 // ✅ Dashboard/Admin Routes
 router.get('/nurses', getAllNurses);

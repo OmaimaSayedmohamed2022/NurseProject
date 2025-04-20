@@ -8,18 +8,15 @@ import sessionRoutes from "./sessionRoutes.js"
 import serviceRouter from "./serviceRouter.js"
 import consultationRouter from "./consultationRouter.js"
 import patientDataRouter from "./patientDataRouter.js"
+import patientDataDashboardRouter from "./patientDataDashboardRouter.js"
 // import requestsRouter from  "./requestsRouter.js"
 import adminRoutes from "./adminRouter.js";
-import {verifyToken ,authorizeRole}from "../middlewares/authMiddleware.js"
 import settingRoutes from './settingRoutes.js'
 import historyRouter from "./historyRouter.js"
 
-
-
-
 import homeDashboardRouter from "./homeDashboardRouter.js"
 import nurseDashboardRouter from "./nurseDashboardRouter.js"
-import patientDashboardRouter from "./patientDashboardRouter.js"
+import patientDashboardRouter from "./patientDataRouter.js"
 import serviceDashboardRouter from "./serviceDashboardRouter.js"
 
 import emergencyDashboard from "./emergencyDashboardRouter.js"
@@ -37,6 +34,8 @@ router.use("/service",serviceRouter)
 router.use("/consultation",consultationRouter)
 // router.use("/booking",bookingRouter)
 router.use("/patientData",patientDataRouter)
+router.use("/patientDataDashboard",patientDataDashboardRouter)
+
 router.use("/history",historyRouter)
 
 router.use("/homeDashboard", homeDashboardRouter)
