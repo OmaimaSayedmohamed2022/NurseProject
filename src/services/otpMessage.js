@@ -1,36 +1,42 @@
+import dotenv from 'dotenv';
 import twilio from 'twilio';
 
+dotenv.config();
+
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const verifySid = process.env.TWILIO_VERIFY_SID;
+const apiKey = process.env.TWILIO_API_KEY;
+const apiSecret = process.env.TWILIO_API_SECRET;
+const verifySid = process.env.TWILIO_VERIFY_SERVICE_SID;
 
-const client = twilio(accountSid, authToken);
+console.log('TWILIO_ACCOUNT_SID:', process.env.TWILIO_ACCOUNT_SID);
+console.log('TWILIO_API_KEY:', process.env.TWILIO_API_KEY);
+console.log('TWILIO_API_SECRET:', process.env.TWILIO_API_SECRET);
+console.log('TWILIO_VERIFY_SERVICE_SID:', process.env.TWILIO_VERIFY_SERVICE_SID);
 
-// Send OTP using Twilio Verify
-export const sendOTP = async (phoneNumber) => {
+
+const client = twilio(apiKey, apiSecret, { accountSid });
+
+export const sendOTP = async (phone) => {
   try {
-    const verification = await client.verify.v2
-      .services(verifySid)
-      .verifications.create({
-        to: phoneNumber,
-        channel: 'sms',
-      });
+    const verification = await client.verify.v2.services(verifySid)
+      .verifications
+      .create({ to: phone, channel: 'sms' });
 
-    console.log('OTP sent:', verification.status);
     return verification.status;
   } catch (error) {
-    console.error('Error sending OTP:', error);
-    throw new Error('Failed to send OTP');
+    console.error('OTP sending failed:', error.message);
+    throw error;
   }
 };
 
+
 // Verify OTP using Twilio Verify
-export const verifyOTP = async (phoneNumber, code) => {
+export const verifyOTP = async (phone, code) => {
   try {
     const verification_check = await client.verify.v2
       .services(verifySid)
       .verificationChecks.create({
-        to: phoneNumber,
+        to: phone,
         code,
       });
 
