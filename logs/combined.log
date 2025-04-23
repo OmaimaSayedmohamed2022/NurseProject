@@ -89,3 +89,63 @@
 {"level":"info","message":"Server running on port 5005","timestamp":"2025-04-20T23:44:51.257Z"}
 {"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-20T23:44:52.302Z"}
 {"level":"info","message":"::1 - - [20/Apr/2025:23:44:56 +0000] \"POST /api/serviceDashboard/addService HTTP/1.1\" 401 28 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-20T23:44:57.000Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:26:40.887Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:26:44.170Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:26:45.298Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:27:42.076Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:27:43.095Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:27:51.874Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:27:53.033Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:28:59 +0000] \"POST /api/auth//resetPassword' HTTP/1.1\" 404 168 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:28:59.646Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:29:07.349Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:29:08.400Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:29:16 +0000] \"POST /api/auth//resetPassword HTTP/1.1\" 500 36 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:29:16.114Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:34:58.214Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:34:59.302Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:35:27 +0000] \"POST /api/auth//resetPassword HTTP/1.1\" 500 36 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:35:27.466Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:37:21.148Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:37:22.135Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:37:56.783Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:38:17.406Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:38:18.379Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:38:33 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 404 156 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:38:33.384Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:38:54.198Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:38:55.198Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:38:56 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 500 30 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:38:56.590Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:39:06 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 500 30 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:39:06.131Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:39:09.815Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:39:10.917Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:39:51 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 500 30 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:39:51.023Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:47:24.554Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:47:25.603Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:47:56 +0000] \"GET /api/auth/resetPassword HTTP/1.1\" 404 161 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:47:56.765Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:48:04 +0000] \"POST /api/auth/resetPassword HTTP/1.1\" 500 36 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:48:04.288Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:48:23.828Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:48:24.840Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:48:41 +0000] \"PUT /api/auth/resetPassword HTTP/1.1\" 500 36 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:48:41.906Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:51:24.663Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:51:25.715Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:51:57.507Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:51:58.579Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:52:54.192Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:52:55.216Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:53:26 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 404 26 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:53:26.661Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:53:36 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 404 26 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:53:36.941Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:54:03.077Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:54:08.255Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:54:13.062Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:54:14.162Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:54:38.285Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:54:39.336Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:54:52 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 500 30 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:54:52.831Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:55:40 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 500 30 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:55:40.357Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:56:11.056Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:56:12.102Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-21T19:56:20.676Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-21T19:56:21.734Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:56:42 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 500 30 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:56:42.836Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:19:58:39 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 500 30 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T19:58:39.690Z"}
+{"level":"info","message":"::1 - - [21/Apr/2025:20:02:19 +0000] \"POST /api/auth/sendOtp HTTP/1.1\" 500 30 \"-\" \"PostmanRuntime/7.43.3\"","timestamp":"2025-04-21T20:02:19.934Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-23T12:47:33.419Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-04-23T12:47:39.717Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-04-23T12:47:41.881Z"}
