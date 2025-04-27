@@ -22,6 +22,7 @@ import serviceDashboardRouter from "./serviceDashboardRouter.js"
 import emergencyDashboard from "./emergencyDashboardRouter.js"
 import sessionsDashboardRouter from "./sessionsDashboardRouter.js"
 
+import paymentRouter from "./paymentRouter.js";
 
 
 router.use("/client",clientRoutes);
@@ -47,10 +48,10 @@ router.use("/emergencyDashboard", emergencyDashboard)
 
 router.use("/sessionDashboard", sessionsDashboardRouter)
 
-
 // router.use("/requests",requestsRouter)
 router.use("/setting",settingRoutes)
 
+router.use("/payments", paymentRouter)
 
 export default router
 

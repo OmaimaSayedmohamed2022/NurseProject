@@ -33,7 +33,7 @@ const sessionSchema = new mongoose.Schema(
    location: { type: String }, 
    date: { type: Date },
    status: { type: String, enum: ["pending", "confirmed", "canceled", "returned", "emergency"], default: "pending" },
-   paymentStatus:{ type:String ,enum:["Cash","Visa"], defult:"Cash" },
+   paymentStatus:{ type:String ,enum:["Cash", "Click", "Efawatercom"], default:"Cash" },
    total: { type: Number },
 
    tubeImage: { type: String },
