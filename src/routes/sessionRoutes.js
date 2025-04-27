@@ -28,6 +28,9 @@ router.put("/cancel/:sessionId", cancelSession)
 
 router.get('/sessions', getAllSessionData);
 
+// emwrgency sessions
+router.post("/createEmergencySession", createEmergencySession);
+
 
 
 
