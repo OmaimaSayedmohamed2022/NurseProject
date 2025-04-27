@@ -5,13 +5,12 @@ import { autoPermission  } from "../middlewares/autoPermissions.js";
 
 const router = express.Router();
 
-
-router.post("/createEmergencySession", createEmergencySession);
 router.use(verifyToken);
 router.use(autoPermission("emergency")); 
 
 router.get("/search", searchEmergencySessions);
 router.get("/emergencySessions", getEmergencySessions);
+router.post("/createEmergencySession", createEmergencySession);
 
 
 export default router;
