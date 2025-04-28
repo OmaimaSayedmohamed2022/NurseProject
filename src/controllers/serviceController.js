@@ -4,7 +4,7 @@ import asyncCatch  from '../utilites/catchAsync.js';
 
 // Add service
 export const addService = asyncCatch(async (req, res) => {
-    const { name, description, price, duration, subcategories } = req.body;
+    const { name, description, price, offer, duration, subcategories } = req.body;
 
     let icon = "";
         if (req.file) {
@@ -24,7 +24,7 @@ export const addService = asyncCatch(async (req, res) => {
             }
         }    
 
-    const newService = new Service({ name, description, price, duration, icon, subcategories: parsedSubcategories });
+    const newService = new Service({ name, description, price, offer, duration, icon, subcategories: parsedSubcategories });
     await newService.save();
     res.status(201).json({ status: true, message: "New service added successfully", newService });
 });
