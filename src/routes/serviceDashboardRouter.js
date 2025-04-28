@@ -16,7 +16,7 @@ router.get('/services', getAllServices);
 
 router.post("/addService", upload.single("icon"), addService);
 router.get("/getService/:serviceId", getServiceById);
-router.patch("/updateService/:serviceId",  updateService);
+router.patch("/updateService/:serviceId", upload.single("icon"), updateService);
 router.delete("/deleteService/:serviceId",  deleteService);
 
 
