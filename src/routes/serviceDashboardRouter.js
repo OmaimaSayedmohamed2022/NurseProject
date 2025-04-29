@@ -4,6 +4,7 @@ import { addService, getServiceById, updateService, deleteService } from "../con
 
 import { verifyToken } from '../middlewares/authMiddleware.js';
 import { autoPermission } from '../middlewares/autoPermissions.js';
+import upload from '../middlewares/uploadImage.js';
 
 const router = express.Router();
 
@@ -13,9 +14,9 @@ router.use(autoPermission("service"));
 router.get('/search', search);
 router.get('/services', getAllServices);
 
-router.post("/addService",  addService);
+router.post("/addService", upload.single("icon"), addService);
 router.get("/getService/:serviceId", getServiceById);
-router.patch("/updateService/:serviceId",  updateService);
+router.patch("/updateService/:serviceId", upload.single("icon"), updateService);
 router.delete("/deleteService/:serviceId",  deleteService);
 
 
