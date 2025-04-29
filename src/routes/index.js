@@ -9,7 +9,7 @@ import serviceRouter from "./serviceRouter.js"
 import consultationRouter from "./consultationRouter.js"
 import patientDataRouter from "./patientDataRouter.js"
 import patientDataDashboardRouter from "./patientDataDashboardRouter.js"
-// import requestsRouter from  "./requestsRouter.js"
+import requestsRouter from  "./requestsRouter.js"
 import adminRoutes from "./adminRouter.js";
 import settingRoutes from './settingRoutes.js'
 import historyRouter from "./historyRouter.js"
@@ -48,7 +48,7 @@ router.use("/emergencyDashboard", emergencyDashboard)
 
 router.use("/sessionDashboard", sessionsDashboardRouter)
 
-// router.use("/requests",requestsRouter)
+router.use("/requests",requestsRouter)
 router.use("/setting",settingRoutes)
 
 router.use("/payments", paymentRouter)
