@@ -25,7 +25,7 @@ import emergencyDashboard from "./emergencyDashboardRouter.js"
 import sessionsDashboardRouter from "./sessionsDashboardRouter.js"
 
 import paymentRouter from "./paymentRouter.js";
-
+import paymentDashboardRouter from "./paymentDashboardRouter.js"
 
 router.use("/client",clientRoutes);
 router.use("/nurse",nurseRouter);
@@ -54,6 +54,7 @@ router.use("/requests",requestsRouter)
 router.use("/setting",settingRoutes)
 
 router.use("/payments", paymentRouter)
+router.use("/paymentDashboard", paymentDashboardRouter)
 
 export default router
 
