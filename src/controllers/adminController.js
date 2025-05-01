@@ -50,7 +50,7 @@ export const updateEmployeePermissions = catchAsync(async (req, res) => {
 // ✅ Create new employee
 export const createEmployee = async (req, res) => {
   try {
-    const { userName, email, password, role } = req.body;
+    const { userName, email, password, role, ...rest } = req.body;
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -63,18 +63,19 @@ export const createEmployee = async (req, res) => {
       }
     }
 
+    
+    const permissions = {};
+    Object.keys(rest).forEach((key) => {
+      permissions[key] = rest[key] === "true";
+    });
+
     const newEmployee = new Admin({
       userName,
       email,
       password: hashedPassword,
       role,
       image,
-      permissions: {
-        addService: req.body.addService === "true",
-        editService: req.body.editService === "true",
-        deleteService: req.body.deleteService === "true",
-        viewService: req.body.viewService === "true",
-      },
+      permissions,
     });
 
     await newEmployee.save();
@@ -83,6 +84,7 @@ export const createEmployee = async (req, res) => {
     res.status(500).json({ success: false, message: err.message });
   }
 };
+
 
 // ✅ Update employee
 export const updateEmployee = async (req, res) => {
