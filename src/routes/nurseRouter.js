@@ -8,6 +8,7 @@ import { register, getAllNurses, getNurseById, updateNurse, deleteNurse ,
 import {
   getPatientsForNurse,
   getNurseEarnings,
+ getNurseSessions,
 } from '../controllers/nurseDashboardController.js';
 
 import { getSessionsForNurse } from '../controllers/sessionController.js';
@@ -43,13 +44,10 @@ router.get('/reviews/:nurseId', nurseMiddleware, getNurseReviews);
 router.post("/contactUs",verifyToken,contactUs)
 router.get("/NumOfSessions/:nurseId",getNurseCompletedSessions)
 
-router.get('/NurseSessions/:nurseId',getSessionsForNurse)
+// router.get('/NurseSessions/:nurseId',getSessionsForNurse)
 router.get('/nursePatients/:nurseId', nurseMiddleware, getPatientsForNurse);
 router.get('/nurseEarnings/:nurseId', nurseMiddleware, getNurseEarnings);
-
-//confirm
-
-
+router.get('/nurseSessions/:nurseId', nurseMiddleware, getNurseSessions);
 
 
 
