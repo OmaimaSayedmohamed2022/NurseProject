@@ -16,7 +16,9 @@ import historyRouter from "./historyRouter.js"
 
 import homeDashboardRouter from "./homeDashboardRouter.js"
 import nurseDashboardRouter from "./nurseDashboardRouter.js"
-import patientDashboardRouter from "./patientDashboardRouter.js";
+
+import patientDashboardRouter from "./patientDashboardRouter.js"
+
 import serviceDashboardRouter from "./serviceDashboardRouter.js"
 
 import emergencyDashboard from "./emergencyDashboardRouter.js"

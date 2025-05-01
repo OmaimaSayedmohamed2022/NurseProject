@@ -5,6 +5,12 @@ import { register, getAllNurses, getNurseById, updateNurse, deleteNurse ,
     getUnconfirmedNurses,confirmNurse,updateNurseAvailability,updateNurseStatus
         
 } from '../controllers/nurseController.js';
+import {
+  getPatientsForNurse,
+  getNurseEarnings,
+} from '../controllers/nurseDashboardController.js';
+
+import { getSessionsForNurse } from '../controllers/sessionController.js';
 import upload from '../middlewares/uploadImage.js';
 import {nurseValidation} from "../validations/nurseValidation.js"
 import nurseMiddleware from '../middlewares/nurseMiddleware.js';
@@ -31,14 +37,17 @@ router.get('/bySpecialty/:serviceId', getNursesBySpeciality);
 router.get('/search', searchNurses);
 
 router.post('/reviews/:nurseId', nurseMiddleware, addReview);
-
 router.get('/reviews/:nurseId', nurseMiddleware, getNurseReviews);
 
 //contact
 router.post("/contactUs",verifyToken,contactUs)
 router.get("/NumOfSessions/:nurseId",getNurseCompletedSessions)
 
-// dashboard
+router.get('/NurseSessions/:nurseId',getSessionsForNurse)
+router.get('/nursePatients/:nurseId', nurseMiddleware, getPatientsForNurse);
+router.get('/nurseEarnings/:nurseId', nurseMiddleware, getNurseEarnings);
+
+//confirm
 
 
 
