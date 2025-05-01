@@ -1,0 +1,13 @@
+Client 
+    ↓
+Backend API (payWithClick / payWithEfawatercom)
+    ↓
+Click / Efawatercom API (تحصل على payment URL)
+    ↓
+العميل يدفع من خلال رابط الدفع
+    ↓
+Click / Efawatercom يبعت Webhook للكولباك URL
+    ↓
+Webhook Handler يستقبل الكولباك
+    ↓
+يحدث الـ Transaction والـ Session في الداتابيز

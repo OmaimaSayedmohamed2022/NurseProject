@@ -1,12 +1,30 @@
 import Service from '../models/serviceModel.js';
-import logger from "../utilites/logger.js";
+import uploadToCloudinary from "../middlewares/uploadToCloudinary.js";
 import asyncCatch  from '../utilites/catchAsync.js';
 
 // Add service
 export const addService = asyncCatch(async (req, res) => {
-    const { name, description, price, duration, subcategories } = req.body;
+    const { name, description, price, offer, duration, subcategories } = req.body;
 
-    const newService = new Service({ name, description, price, duration, subcategories: subcategories || [] });
+    let icon = "";
+        if (req.file) {
+            try {
+                icon = await uploadToCloudinary(req.file.buffer);
+            } catch (error) {
+                return res.status(500).json({ success: false, message: "Icon upload failed" });
+            }
+        }
+    
+        let parsedSubcategories = [];
+        if (subcategories) {
+            try {
+                parsedSubcategories = JSON.parse(subcategories);
+            } catch (error) {
+                return res.status(400).json({ success: false, message: "Invalid subcategories format" });
+            }
+        }    
+
+    const newService = new Service({ name, description, price, offer, duration, icon, subcategories: parsedSubcategories });
     await newService.save();
     res.status(201).json({ status: true, message: "New service added successfully", newService });
 });
@@ -27,7 +45,28 @@ export const getServiceById = asyncCatch(async (req, res) => {
 // Update service
 export const updateService = asyncCatch(async (req, res) => {
     const { serviceId } = req.params;
-    const updateService = await Service.findByIdAndUpdate(serviceId, req.body, { new: true });
+    const { subcategories } = req.body;
+
+    let updatedData = { ...req.body };
+
+    if (req.file) {
+        try {
+            const icon = await uploadToCloudinary(req.file.buffer);
+            updatedData.icon = icon;
+        } catch (error) {
+            return res.status(500).json({ success: false, message: "Icon upload failed" });
+        }
+    }
+
+    if (subcategories) {
+        try {
+            updatedData.subcategories = JSON.parse(subcategories);
+        } catch (error) {
+            return res.status(400).json({ success: false, message: "Invalid subcategories format" });
+        }
+    }
+
+    const updateService = await Service.findByIdAndUpdate(serviceId, updatedData, { new: true });
     res.status(200).json({ status: true, message: "Service updated successfully", updateService });
 });
 
