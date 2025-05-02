@@ -1,4 +1,6 @@
 import Transaction from "../models/transactionModel.js";
+import Invoice from "../models/invoiceModel.js";
+import Nurse from "../models/nurseModel.js";
 import catchAsync from "../utilites/catchAsync.js";
 import moment from "moment";
 
@@ -48,5 +50,36 @@ export const getPaymentStats = catchAsync(async (req, res) => {
 
 
 // Detail Payments
+export const getInvoiceCountPerNurse = catchAsync(async (req, res) => {
+  const data = await Invoice.aggregate([
+    {
+      $group: {
+        _id: "$nurse",
+        invoiceCount: { $sum: 1 }
+      }
+    },
+    {
+      $lookup: {
+        from: "nurses",
+        localField: "_id",
+        foreignField: "_id",
+        as: "nurseInfo"
+      }
+    },
+    {
+      $unwind: "$nurseInfo"
+    },
+    {
+      $project: {
+        _id: 0,
+        nurseId: "$nurseInfo._id",
+        name: "$nurseInfo.name",
+        invoice: "$invoiceCount"
+      }
+    }
+  ]);
+
+  res.status(200).json({ success: true, data });
+});
 
 
