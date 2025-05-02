@@ -48,7 +48,8 @@ export const getAllInvoices = catchAsync(async (req, res) => {
     14,
     {},
     'services image amount date client',
-    { path: 'client', select: 'Username phone address' }
+    { path: 'client', select: 'userName phone address' },
+    { path: 'services', select: 'name' }
   );
 
   res.status(200).json({ message: "Invoices fetched successfully.", ...data });
@@ -63,10 +64,36 @@ export const getInvoiceById = catchAsync(async (req, res) => {
 
 // Update
 export const updateInvoice = catchAsync(async (req, res) => {
-  const invoice = await Invoice.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  if (!invoice) return res.status(404).json({ success: false, message: "Invoice not found" });
-  res.status(200).json({ success: true, data: invoice });
+  const { id } = req.params;
+
+  const updatedData = { ...req.body };
+
+  if (req.file) {
+    try {
+      const image = await uploadToCloudinary(req.file.buffer);
+      updatedData.image = image;
+    } catch (error) {
+      return res.status(500).json({ success: false, message: "Image upload failed" });
+    }
+  }
+
+  if (updatedData.services && typeof updatedData.services === 'string') {
+    try {
+      updatedData.services = JSON.parse(updatedData.services);
+    } catch (err) {
+      return res.status(400).json({ success: false, message: "Invalid services format" });
+    }
+  }
+
+  const invoice = await Invoice.findByIdAndUpdate(id, updatedData, { new: true });
+
+  if (!invoice) {
+    return res.status(404).json({ success: false, message: "Invoice not found" });
+  }
+
+  res.status(200).json({ success: true, message: "Invoice updated successfully", data: invoice });
 });
+
 
 // Delete
 export const deleteInvoice = catchAsync(async (req, res) => {
