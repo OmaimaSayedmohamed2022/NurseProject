@@ -11,7 +11,7 @@ import { sendNotification } from "./notificationController.js";
 
 // Create session
 export const createSession = asyncCatch(async (req, res) => {
-  const { service, client, nurse } = req.body;
+  const { service, client, nurse, total } = req.body;
 
   if (!service || !client || !nurse) {
     return res.status(400).json({ success: false, message: "Service, Client, and Nurse are required" });
@@ -35,6 +35,7 @@ export const createSession = asyncCatch(async (req, res) => {
     client: clientData._id,
     nurse: nurseData._id,
     code: uniqueCode,
+    total
   });
 
   await session.save();
