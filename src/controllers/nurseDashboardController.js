@@ -65,15 +65,26 @@ export const getNurseEarnings = catchAsync(async (req, res) => {
 export const getNurseSessions = catchAsync(async (req, res) => {
   const { nurseId } = req.params;
 
-  const statuses = ['confirmed', 'pending', 'canceled', 'completed']; // تم إضافة completed
+  const statuses = ['confirmed', 'pending', 'canceled', 'completed'];
 
   const results = await Promise.all(
     statuses.map(async (status) => {
-      const sessions = await Session.find({ nurse: nurseId, status });
+      const sessions = await Session.find({ nurse: nurseId, status })
+        .populate('client', 'userName')
+        .populate('service', 'name');
+
+      const formattedSessions = sessions.map(session => ({
+        sessionId: session._id,
+        serviceName: session.service?.name || 'Unknown',
+        patientName: session.client?.userName || 'Unknown',
+        status: session.status,
+        createdAt: session.createdAt
+      }));
+
       return {
         status,
         count: sessions.length,
-        sessions
+        sessions: formattedSessions
       };
     })
   );
@@ -85,6 +96,7 @@ export const getNurseSessions = catchAsync(async (req, res) => {
 
   res.status(200).json(response);
 });
+
 
 // Get recent visits
 export const getRecentVisits = catchAsync(async (req, res) => {
