@@ -10,18 +10,24 @@ import { autoPermission } from '../middlewares/autoPermissions.js';
 
 const router = express.Router();
 
+
+router.get("/getabout", getSetting);
+router.get("/getprivacy", renderPrivacyPolicyPage);
+router.get("/gethelp", getHelp);
+router.get("/contacts",getAllContacts)
+
 router.use(verifyToken);
 router.use(autoPermission("setting")); 
 // abou page
 router.put("/about",  upload.single("image"), updateSetting );
-router.get("/getabout", getSetting);
+
 // privacy 
 router.put("/privacy", updatePrivacyPolicy);
-router.get("/getprivacy", renderPrivacyPolicyPage);
+
 // help
 router.put("/help", upload.single("photo"), helpSetting );
-router.get("/gethelp", getHelp);
 
-router.get("/contacts",getAllContacts)
+
+
 
 export default router;

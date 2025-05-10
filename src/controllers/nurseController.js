@@ -8,7 +8,7 @@ import catchAsync from "../utilites/catchAsync.js";
 
 // Register nurse
 export const register = catchAsync(async (req, res) => {
-    const { userName, email, password, role, phone, experience, specialty, idCard, location } = req.body;
+    const { userName, email, password, role, phone, experience, about, specialty, idCard, location } = req.body;
 
     const validSpecialties = await Service.find({ _id: { $in: specialty } });
     if (validSpecialties.length !== specialty.length) {
@@ -48,6 +48,7 @@ export const register = catchAsync(async (req, res) => {
         image,
         cv,
         experience,
+        about,
         specialty,
         idCard,
         location

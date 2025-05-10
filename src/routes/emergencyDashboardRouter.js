@@ -8,10 +8,9 @@ const router = express.Router();
 router.use(verifyToken);
 router.use(autoPermission("emergency")); 
 
+router.get("/search", searchEmergencySessions);
+router.get("/emergencySessions", getEmergencySessions);
 router.post("/createEmergencySession", createEmergencySession);
 
-router.get("/search", searchEmergencySessions);
-
-router.get("/emergencySessions", getEmergencySessions);
 
 export default router;

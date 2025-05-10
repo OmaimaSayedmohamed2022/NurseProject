@@ -4,6 +4,8 @@ import { createSession, getSessions, addSessionData, getSessionByCode,
          getSessionsByClient, getAllSessionData
 
        } from '../controllers/sessionController.js';
+
+import { createEmergencySession } from "../controllers/emergencyDashboardController.js";
 import upload from '../middlewares/uploadImage.js';
 
 const router = express.Router();
@@ -27,6 +29,9 @@ router.put("/confirm/:sessionId", confirmSession)
 router.put("/cancel/:sessionId", cancelSession)
 
 router.get('/sessions', getAllSessionData);
+
+// emwrgency sessions
+router.post("/createEmergencySession", createEmergencySession);
 
 
 

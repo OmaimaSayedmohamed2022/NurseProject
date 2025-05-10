@@ -65,14 +65,38 @@ export const getNurseEarnings = catchAsync(async (req, res) => {
 export const getNurseSessions = catchAsync(async (req, res) => {
   const { nurseId } = req.params;
 
-  const [confirmedCount, pendingCount, canceledCount] = await Promise.all([
-    Session.countDocuments({ nurse: nurseId, status: "confirmed" }),
-    Session.countDocuments({ nurse: nurseId, status: "pending" }),
-    Session.countDocuments({ nurse: nurseId, status: "canceled" })
-  ]);
+  const statuses = ['confirmed', 'pending', 'canceled', 'completed'];
 
-  res.status(200).json({ success: true, pendingCount, canceledCount, confirmedCount });
+  const results = await Promise.all(
+    statuses.map(async (status) => {
+      const sessions = await Session.find({ nurse: nurseId, status })
+        .populate('client', 'userName')
+        .populate('service', 'name');
+
+      const formattedSessions = sessions.map(session => ({
+        sessionId: session._id,
+        serviceName: session.service?.name || 'Unknown',
+        patientName: session.client?.userName || 'Unknown',
+        status: session.status,
+        createdAt: session.createdAt
+      }));
+
+      return {
+        status,
+        count: sessions.length,
+        sessions: formattedSessions
+      };
+    })
+  );
+
+  const response = { success: true };
+  results.forEach(({ status, count, sessions }) => {
+    response[status] = { count, sessions };
+  });
+
+  res.status(200).json(response);
 });
+
 
 // Get recent visits
 export const getRecentVisits = catchAsync(async (req, res) => {

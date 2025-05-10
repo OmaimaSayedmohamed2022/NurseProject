@@ -1,23 +1,28 @@
 import PatientData from "../models/patientDataModel.js";
-import uploadToCloudinary from "../middlewares/uploadToCloudinary.js";
+import uploadToCloudinary ,{createAndUploadPdf} from "../middlewares/uploadToCloudinary.js";
 import catchAsync from "../utilites/catchAsync.js";
-import Service from "../models/serviceModel.js"
 
-// Add patient
+
+
 export const addPatient = catchAsync(async (req, res) => {
   const { client, name, code, services, description, phoneNumber, date } = req.body;
-
+  
   let videoOrPhotos = null;
 
-  // Check if an image is uploaded
+  // If a file is provided, upload it to Cloudinary
   if (req.file) {
     try {
-      videoOrPhotos = await uploadToCloudinary(req.file.buffer);
+      // Ensure req.file.buffer exists before uploading
+      if (!req.file.buffer) {
+        return res.status(400).json({ success: false, message: "No file buffer found" });
+      }
+      videoOrPhotos = await uploadToCloudinary(req.file);  // Ensure req.file is passed correctly
     } catch (error) {
       return res.status(500).json({ success: false, message: "Image upload failed", error: error.message });
     }
   }
 
+  // Create a new PatientData object
   const patient = new PatientData({
     client,
     name,
@@ -30,8 +35,25 @@ export const addPatient = catchAsync(async (req, res) => {
   });
 
   await patient.save();
-  res.status(201).json({ success: true, message: "Patient added successfully.", data: patient });
+
+  let pdfUrl;
+  try {
+    // If videoOrPhotos exists, use it, otherwise generate a PDF without the image
+    pdfUrl = await createAndUploadPdf( videoOrPhotos || null, description);
+  
+  } catch (error) {
+    return res.status(500).json({ success: false, message: "PDF creation or upload failed", error: error.message });
+  }
+
+  // Respond with success
+  res.status(201).json({
+    success: true,
+    message: "تم رفع البيانات وإرسال الإشعار بنجاح",
+    data: { pdfUrl }
+  });
 });
+
+
 
 // Get all patients
 export const getAllPatients = catchAsync(async (req, res) => {
