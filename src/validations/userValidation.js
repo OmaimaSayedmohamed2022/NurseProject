@@ -1,6 +1,6 @@
 import { body } from 'express-validator';
 import { validateRequest } from '../middlewares/validationResultMiddleware.js';
-import User from '../models/userModel.js';
+import User from '../models/clientModel.js';
 
 export const userValidation = (isUpdate = false) => [
 
@@ -10,19 +10,18 @@ export const userValidation = (isUpdate = false) => [
     .withMessage('userName is required')
     .trim(), 
   // Validate email
-  body('email')
-  .isEmail()
-  .withMessage('Invalid email format')
-  .custom(async (value, { req }) => {
-    if (isUpdate) {
-      const user = await User.findById(req.params.id);
-      if (!user) throw new Error('User not found');
-      if (value === user.email) return true; 
-    }
-    const existingUser = await User.findOne({ email: value, _id: { $ne: req.params.id } });
-    if (existingUser) throw new Error('Email already registered');
-    return true;
-  }),
+  body("email")
+    .optional()
+    .isEmail()
+    .withMessage("Invalid email format")
+    .custom(async (value) => {
+      if (!value) return true;
+
+      const existingUser = await User.findOne({ email: value });
+      if (existingUser) {
+        throw new Error("Email already registered");
+      }
+    }),
 
   body('password')
     .if(() => !isUpdate) // Only validate for registration
@@ -42,7 +41,7 @@ export const userValidation = (isUpdate = false) => [
     .if(() => !isUpdate) 
     .notEmpty()
     .withMessage('Role is required')
-    .isIn(['nurse', 'sick']) 
+    .isIn(['nurse', 'client']) 
     .withMessage('Invalid role'),
 
   
