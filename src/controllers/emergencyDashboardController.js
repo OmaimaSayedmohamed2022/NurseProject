@@ -37,36 +37,26 @@ export const searchEmergencySessions = catchAsync(async (req, res) => {
   
 // Create emergency session
 export const createEmergencySession = catchAsync(async (req, res) => {
-  const { service, client, nurse } = req.body;
+  const { client } = req.body;
 
-  if (!service || !client || !nurse) {
-    return res.status(400).json({ success: false, message: "Service, Client, and Nurse are required" });
+  if (!client) {
+    return res.status(400).json({ success: false, message: "Client is required" });
   }
 
-  const serviceData = mongoose.Types.ObjectId.isValid(service)
-    ? await Service.findById(service)
-    : await Service.findOne({ name: service });
-
   const clientData = await Client.findById(client);
-  const nurseData = await Nurse.findById(nurse);
-
-  if (!serviceData || !clientData || !nurseData) {
-    return res.status(404).json({ success: false, message: "Invalid IDs: Service, Client, or Nurse not found" });
+  if (!clientData) {
+    return res.status(404).json({ success: false, message: "Client not found" });
   }
 
   const uniqueCode = generateCode();
 
   const session = new Session({
-    service: serviceData._id,
     client: clientData._id,
-    nurse: nurseData._id,
     code: uniqueCode,
-    status: "emergency" 
+    status: "emergency"
   });
 
   await session.save();
-
-  await sendNotification(nurse, `Emergency request from client ${clientData.userName}`);
 
   res.status(201).json({
     success: true,
@@ -91,7 +81,7 @@ export const getEmergencySessions = catchAsync(async (req, res) => {
     [
       {
         path: "client",
-        select: "userName location",
+        select: "userName address",
       }
     ]
   );
