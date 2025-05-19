@@ -103,7 +103,7 @@ export const getNursesBySpeciality = catchAsync(async (req, res) => {
     const { serviceId } = req.query;
     const service = await Service.findById(serviceId);
     const nurses = await Nurse.find({ service })
-        .select("userName rating clients specialty")
+        .select("userName rating clients specialty image")
         .populate('specialty', "name duration price")
         .populate('clients');
     res.status(200).json({ success: true, nurses });
