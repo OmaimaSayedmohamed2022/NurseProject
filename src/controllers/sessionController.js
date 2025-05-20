@@ -153,6 +153,45 @@ export const confirmSession = asyncCatch(async (req, res) => {
   res.status(200).json({ success: true, message: "Session confirmed", session });
 });
 
+
+// complete session
+export const completeSession = asyncCatch(async (req, res) => {
+  const { sessionId } = req.params;
+
+  const session = await Session.findById(sessionId);
+  if (!session) {
+    return res.status(404).json({ success: false, message: "Session not found" });
+  }
+
+  if (session.status !== "confirmed") {
+    return res.status(400).json({ 
+      success: false, 
+      message: "Only confirmed sessions can be completed" 
+    });
+  }
+
+  session.status = "completed";
+  await session.save();
+
+  // التحقق من وجود nurse
+  const nurse = await Nurse.findById(session.nurse).lean();
+  if (!nurse) {
+    return res.status(404).json({ success: false, message: "Nurse not found for this session" });
+  }
+
+  // البحث عن تقييم العميل داخل reviews
+  const clientReview = nurse.reviews.find(
+    review => review.client.toString() === session.client.toString()
+  );
+
+  res.status(200).json({
+    success: true,
+    message: "Session completed",
+    session,
+    review: clientReview || null
+  });
+});
+
 // Cancel session
 export const cancelSession = asyncCatch(async (req, res) => {
   const { sessionId } = req.params;
