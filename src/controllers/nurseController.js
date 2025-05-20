@@ -97,15 +97,18 @@ export const deleteNurse = catchAsync(async (req, res) => {
     await Nurse.findByIdAndDelete(nurseId);
     res.status(200).json({ success: true, message: 'Nurse deleted successfully' });
 });
-
-// Get nurses by specialty
+// get by spcality
 export const getNursesBySpeciality = catchAsync(async (req, res) => {
-    const { serviceId } = req.query;
-    const service = await Service.findById(serviceId);
-    const nurses = await Nurse.find({ service })
+    const { serviceId } = req.params;
+
+    if (!serviceId) {
+        return res.status(400).json({ success: false, message: "Service ID is required" });
+    }
+    const nurses = await Nurse.find({ specialty: serviceId })
         .select("userName rating clients specialty image")
         .populate('specialty', "name duration price")
         .populate('clients');
+
     res.status(200).json({ success: true, nurses });
 });
 
