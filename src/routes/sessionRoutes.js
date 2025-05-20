@@ -1,11 +1,9 @@
 import express from 'express';
 import { createSession, getSessions, addSessionData, getSessionByCode,
          getSessionsForNurse ,confirmSession,cancelSession,
-         getSessionsByClient, getAllSessionData
+         getSessionsByClient, getAllSessionData,completeSession
 
        } from '../controllers/sessionController.js';
-
-import { createEmergencySession } from "../controllers/emergencyDashboardController.js";
 import upload from '../middlewares/uploadImage.js';
 
 const router = express.Router();
@@ -27,11 +25,9 @@ router.get('/getClientRequests/:clientId',getSessionsByClient)
 
 router.put("/confirm/:sessionId", confirmSession)
 router.put("/cancel/:sessionId", cancelSession)
+router.put("/complete/:sessionId",completeSession)
 
 router.get('/sessions', getAllSessionData);
-
-// emwrgency sessions
-router.post("/createEmergencySession", createEmergencySession);
 
 
 
