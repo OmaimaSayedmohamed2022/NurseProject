@@ -32,7 +32,7 @@ const sessionSchema = new mongoose.Schema(
    clientName:{ type: String},
    location: { type: String }, 
    date: { type: Date },
-   status: { type: String, enum: ["pending", "confirmed", "canceled", "returned", "emergency"], default: "pending" },
+   status: { type: String, enum: ["pending", "confirmed", "canceled","completed", "returned", "emergency"], default: "pending" },
    paymentStatus:{ type:String ,enum:["Cash", "Click", "Efawatercom"], default:"Cash" },
    total: { type: Number },
 
