@@ -11,7 +11,7 @@ import { sendNotification } from "./notificationController.js";
 
 // Create session
 export const createSession = asyncCatch(async (req, res) => {
-  const { service, client, nurse, total } = req.body;
+  const { service, client, nurse } = req.body;
 
   if (!service || !client || !nurse) {
     return res.status(400).json({ success: false, message: "Service, Client, and Nurse are required" });
@@ -35,7 +35,6 @@ export const createSession = asyncCatch(async (req, res) => {
     client: clientData._id,
     nurse: nurseData._id,
     code: uniqueCode,
-    total
   });
 
   await session.save();
@@ -153,7 +152,6 @@ export const confirmSession = asyncCatch(async (req, res) => {
   res.status(200).json({ success: true, message: "Session confirmed", session });
 });
 
-
 // complete session
 export const completeSession = asyncCatch(async (req, res) => {
   const { sessionId } = req.params;
@@ -192,6 +190,8 @@ export const completeSession = asyncCatch(async (req, res) => {
   });
 });
 
+
+
 // Cancel session
 export const cancelSession = asyncCatch(async (req, res) => {
   const { sessionId } = req.params;
@@ -216,7 +216,7 @@ export const getSessionsByClient = asyncCatch(async (req, res) => {
     return res.status(404).json({ success: false, message: "Client not found" });
   }
 
-  const sessions = await Session.find({ client: clientId }).populate("nurse");
+  const sessions = await Session.find({ client: clientId }).populate("nurse").populate("service");
 
   if (!sessions.length) {
     return res.status(404).json({ success: false, message: "No sessions found for this client" });
@@ -224,6 +224,7 @@ export const getSessionsByClient = asyncCatch(async (req, res) => {
 
   res.status(200).json({ success: true, sessions });
 });
+
 
 // get all sessions
 export const getAllSessionData = asyncCatch(async (req, res) => {
