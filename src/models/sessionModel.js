@@ -4,7 +4,7 @@ import {historyPlugin} from "../utilites/historyPlugin.js"
 const sessionSchema = new mongoose.Schema(
   {
     service: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Service",
       // required: true,
     },
