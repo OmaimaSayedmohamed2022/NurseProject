@@ -37,8 +37,7 @@ const nurseSchema = new mongoose.Schema(
       required: true,
     },
     about: {
-      type: String,
-      required: true
+      type: String
     },
     // licenseNumber: {
     //   type: String,
