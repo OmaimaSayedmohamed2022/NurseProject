@@ -51,8 +51,16 @@ const nurseSchema = new mongoose.Schema(
       required: true,
     }],
     location: {
-        type: String,
+      type: {
+      type: String,
+      enum: ['Point'],
+      required: true
       },
+      coordinates: {
+      type: [Number], // [longitude, latitude]
+      required: true
+      }
+  },
     idCard: {
       type: String,
       required: true,
