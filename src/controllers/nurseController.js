@@ -39,6 +39,30 @@ export const register = catchAsync(async (req, res) => {
         }
     }
 
+    // Convert location from string to GeoJSON if needed
+  let processedLocation;
+  
+  if (typeof location === 'string') {
+    const coords = location.split(',').map(Number);
+    if (coords.length !== 2 || coords.some(isNaN)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid location format. Use 'longitude,latitude'"
+      });
+    }
+    processedLocation = {
+      type: "Point",
+      coordinates: coords
+    };
+  } else if (location?.type === 'Point' && Array.isArray(location.coordinates)) {
+    processedLocation = location;
+  } else {
+    return res.status(400).json({
+      success: false,
+      message: "Location must be in valid GeoJSON format"
+    });
+  }
+
     const newNurse = new Nurse({
         userName,
         email,
@@ -51,7 +75,7 @@ export const register = catchAsync(async (req, res) => {
         about,
         specialty,
         idCard,
-        location
+        location: processedLocation
     });
 
     const token = generateToken({ _id: newNurse._id, email, role });
@@ -59,7 +83,6 @@ export const register = catchAsync(async (req, res) => {
     await newNurse.save();
     res.status(201).json({ success: true, message: 'Nurse registered successfully', newNurse, token });
 });
-
 // Get all nurses
 export const getAllNurses = catchAsync(async (req, res) => {
     const nurses = await Nurse.find({ confirmed: true }, { "password": 0, "__v": 0 }).populate("specialty");
@@ -139,30 +162,50 @@ export const getNurseReviews = catchAsync(async (req, res) => {
 });
 
 // Search nurses by location
-export const searchNurses = catchAsync(async (req, res) => {
-    const { service, latitude, longitude, range } = req.query;
+export const searchNurses = async (req, res) => {
+  try {
+    const { lat, lng, range, service } = req.query;
 
-    if (!service || !latitude || !longitude || !range) {
-        return res.status(400).json({ success: false, message: "Missing required parameters" });
+    // Check for required parameters
+    if (!lat || !lng || !service || !range) {
+      return res.status(400).json({
+        success: false,
+        message: "Missing required parameters"
+      });
     }
 
-    const serviceDoc = await Service.findOne({ service });
+    // Build the query
+    const query = {
+      available: true,
+      specialty: service,
+      location: {
+        $near: {
+          $geometry: {
+            type: "Point",
+            coordinates: [parseFloat(lng), parseFloat(lat)]
+          },
+          $maxDistance: parseInt(range) * 1000 
+        }
+      }
+    };
 
-    const nurses = await Nurse.find({
-        specialty: serviceDoc,
-        location: {
-            $near: {
-                $geometry: {
-                    type: "Point",
-                    coordinates: [parseFloat(longitude), parseFloat(latitude)],
-                },
-                $maxDistance: parseFloat(range) * 1000,
-            },
-        },
-    }).select("-password -__v");
+    const nurses = await Nurse.find(query)
+      .select("-password -__v");
 
-    res.status(200).json({ success: true, nurses });
-});
+    res.status(200).json({
+      success: true,
+      count: nurses.length,
+      data: nurses
+    });
+
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Server error",
+      error: err.message
+    });
+  }
+};
 
 // Get nurse completed sessions
 export const getNurseCompletedSessions = catchAsync(async (req, res) => {
@@ -196,6 +239,7 @@ export const confirmNurse = catchAsync(async (req, res) => {
     res.status(200).json({ success: true, message: "Nurse confirmed successfully", data: nurse });
 });
 
+// Update Status
 export const updateNurseAvailability = catchAsync(async (req, res) => {
   const { nurseId } = req.params;
 
