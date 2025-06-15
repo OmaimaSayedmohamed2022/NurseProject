@@ -4,6 +4,7 @@ import logger from "../utilites/logger.js";
 import Nurse from "../models/nurseModel.js";
 import Service from "../models/serviceModel.js";
 import { generateToken } from "../middlewares/authMiddleware.js";
+import { io } from "../../app.js";
 import catchAsync from "../utilites/catchAsync.js";
 
 // Register nurse
@@ -206,6 +207,61 @@ export const searchNurses = async (req, res) => {
     });
   }
 };
+
+
+// tracking location
+export const trackNurseLocation = async (req, res) => {
+  try {
+    const { nurseId, lng, lat } = req.body;
+
+    if (!nurseId || typeof lng === "undefined" || typeof lat === "undefined") {
+      return res.status(400).json({
+        success: false,
+        message: "nurseId, lng, and lat are required."
+      });
+    }
+
+    // update location
+    const updatedNurse = await Nurse.findByIdAndUpdate(
+      nurseId,
+      {
+        location: {
+          type: "Point",
+          coordinates: [parseFloat(lng), parseFloat(lat)]
+        }
+      },
+      { new: true }
+    ).select("userName location image");
+
+    if (!updatedNurse) {
+      return res.status(404).json({
+        success: false,
+        message: "Nurse not found."
+      });
+    }
+
+    io.emit(`nurseLocation:${nurseId}`, {
+      nurseId,
+      lng: parseFloat(lng),
+      lat: parseFloat(lat),
+      image: updatedNurse.image,
+      userName: updatedNurse.userName
+    });
+
+    res.status(200).json({
+      success: true,
+      message: "Nurse location updated and broadcasted.",
+      data: updatedNurse
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Server error.",
+      error: err.message
+    });
+  }
+};
+
 
 // Get nurse completed sessions
 export const getNurseCompletedSessions = catchAsync(async (req, res) => {

@@ -1,7 +1,7 @@
 import express from 'express';
 
 import { register, getAllNurses, getNurseById, updateNurse, deleteNurse ,
-    getNursesBySpeciality,searchNurses, addReview,getNurseReviews,getNurseCompletedSessions,
+    getNursesBySpeciality,searchNurses, trackNurseLocation, addReview,getNurseReviews,getNurseCompletedSessions,
     getUnconfirmedNurses,confirmNurse,updateNurseAvailability,updateNurseStatus
         
 } from '../controllers/nurseController.js';
@@ -36,6 +36,7 @@ router.patch('/updateNurseStatus/:nurseId', nurseMiddleware, updateNurseStatus);
 router.get('/bySpecialty/:serviceId', getNursesBySpeciality);
 
 router.get('/search', searchNurses);
+router.get('/tracking', trackNurseLocation);
 
 router.post('/reviews/:nurseId', nurseMiddleware, addReview);
 router.get('/reviews/:nurseId', nurseMiddleware, getNurseReviews);
