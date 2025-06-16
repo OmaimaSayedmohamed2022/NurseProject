@@ -158,7 +158,7 @@ export const addReview = catchAsync(async (req, res) => {
 // Get nurse reviews
 export const getNurseReviews = catchAsync(async (req, res) => {
     const { nurseId } = req.params;
-    const nurse = await Nurse.findById(nurseId).populate("reviews.client", "userName").select("userName image experience rating specialty reviews");
+    const nurse = await Nurse.findById(nurseId).populate("reviews.client", "userName image").select("userName image reviews");
 ; 
     res.status(200).json({ success: true, data: nurse });
 });
