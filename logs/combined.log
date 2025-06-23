@@ -1,0 +1,19 @@
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-06-23T19:36:15.804Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-06-23T19:36:16.741Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:36:26 +0000] \"GET /api/nurse/tracking/ HTTP/1.1\" 404 46 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:36:26.339Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:36:27 +0000] \"GET /api/nurse/tracking/ HTTP/1.1\" 404 46 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:36:27.613Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:36:29 +0000] \"GET /api/nurse/tracking/ HTTP/1.1\" 404 46 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:36:29.179Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:36:43 +0000] \"GET /api/nurse/tracking/ HTTP/1.1\" 404 46 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:36:43.934Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:36:44 +0000] \"GET /api/nurse/tracking/ HTTP/1.1\" 404 46 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:36:44.972Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:36:46 +0000] \"GET /api/nurse/tracking/ HTTP/1.1\" 404 46 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:36:46.062Z"}
+{"level":"info","message":"Server running on port 5005","timestamp":"2025-06-23T19:36:57.303Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-06-23T19:36:58.142Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:37:50 +0000] \"POST /api/nurse/register HTTP/1.1\" 400 126 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:37:50.912Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:37:53 +0000] \"POST /api/nurse/register HTTP/1.1\" 400 126 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:37:53.007Z"}
+{"level":"info","message":"Server running on port 5000","timestamp":"2025-06-23T19:38:54.175Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2025-06-23T19:38:55.041Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:39:02 +0000] \"POST /api/nurse/register HTTP/1.1\" 400 126 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:39:02.560Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:39:08 +0000] \"POST /api/nurse/register HTTP/1.1\" 400 57 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:39:08.760Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:39:15 +0000] \"POST /api/nurse/register HTTP/1.1\" 500 66 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:39:15.635Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:40:29 +0000] \"GET /api/nurse/tracking/ HTTP/1.1\" 404 46 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:40:29.445Z"}
+{"level":"info","message":"::1 - - [23/Jun/2025:19:42:47 +0000] \"POST /api/nurse/register HTTP/1.1\" 400 126 \"-\" \"PostmanRuntime/7.44.0\"","timestamp":"2025-06-23T19:42:47.508Z"}
