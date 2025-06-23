@@ -70,13 +70,14 @@ export const getNurseSessions = catchAsync(async (req, res) => {
   const results = await Promise.all(
     statuses.map(async (status) => {
       const sessions = await Session.find({ nurse: nurseId, status })
-        .populate('client', 'userName')
+        .populate('client', 'userName image')
         .populate('service', 'name');
 
       const formattedSessions = sessions.map(session => ({
         sessionId: session._id,
         serviceName: session.service?.name || 'Unknown',
         patientName: session.client?.userName || 'Unknown',
+        patientImage: session.client?.image || null, 
         status: session.status,
         createdAt: session.createdAt
       }));
